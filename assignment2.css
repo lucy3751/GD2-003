@@ -1,3 +1,22 @@
+
+/* DECLARING VARIABLES */
+:root{
+    --borderOutline: 1.6px;
+    --roundedCornerBorderOutline:1.4px;
+
+    /* COLOURS */
+    --orange:#e86f50;
+    --red:#db3e2d;
+    --beige:#e3e1d4;
+    --cyan:#6dcde4;
+    --darkerCyan:#00aeef;
+    --indigo:#052f45;
+    --grey:#3e5960;
+    --white:white;
+}
+
+
+
 body{
     background:rgb(9, 2, 64);
     color: black;
@@ -30,9 +49,11 @@ body{
     height: 45vw;
 }
 
+/* //////////////////////////////////////////
+///////////////// HALLWAYS /////////////////
+ */
 
-
-/* HALLWAYS */
+ /* /////////HALLWAY VERTICAL/////////// */
 .hallwayVertical{
     background-color:rgb(177, 227, 247);
     /* background-image: url();
@@ -40,43 +61,474 @@ body{
         background-position: center;
         background-size: cover; */
     /* width:10%; */
-    width: 30vw;
+    width: 37vw;
     flex: 2;
-    
-    
-
 }
 
+
+
+/* ///////////HALLWAY HORIZONTAL////////////// */
 .hallwayHorizontal{
-    /* background-image: url();
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size:cover; */
-    height: 30vw;
+    background-color: purple;
+    height: 37vw;
     flex: 3;  /*  Flex ratios for children occupying the parent div. How much space does each children occupy in the main-axis*/ 
     display:flex;
-    flex-direction: column;
- 
+    flex-direction: row;
 }
 
-.hallwayHorizontalWindow{
-    background-color: tomato;
-    flex:5;
+.hallwayHorizontalModule{
+    height:100%;
+    width:30%;
+    position:relative;
+}
+
+#module1{
+    background-color: var(--indigo);
+     flex:1;
+}
+
+#module2{
+    background-color: var(--indigo);
+    flex:1;
+}
+
+#module3{
+    background-color: var(--indigo);
+    flex:1;
+
+}
+
+
+
+/* ////HALLWAY HORIZONTAL - LITTLE CEILING ON THE TOP */
+.hallwayHorizontalCeiling{
+    background-color:var(--indigo);
+    height:10.255%;
+    width: 100%;
+    position:absolute;
+    left:0px;
+    top:0px;
+}
+
+/*////HALLWAY HORIZONTAL - WINDOW */
+.hallwayHorizontalWindowContainer{
+    background-color: transparent;
+    height:65.755%;
+    width:100%;
+    position:absolute;
+    left:0px;
+    top:3.489%;
+}
+
+/* HALLWAY HORIZONTAL - WINDOW - TOP */
+.hallwayHorizontalWindowTopContainer{
+    background-color: transparent;
+    height:15.8099%;
+    width:100%;
+    position:absolute;
+    left:0px;
+    top:0px;
+    z-index: 1;
+}
+
+.hallwayHorizontalWindowSquare{
+    background-color: var(--orange);
+    outline: var(--borderOutline) solid black;
+    height:72.886%;
+    width:16.298%;
+    position:absolute;
+    z-index:3;
+}
+
+#squareLeft{
+    left:0px;
+    top:0px;
+}
+
+#squareRight{
+    right:0px;
+    top:0px;
+}
+
+
+.hallwayHorizontalWindowBeam{
+    background-color: var(--orange);
+    outline: var(--borderOutline) solid black;
+    height:57.0657%;
+    width:100%;
+    position:absolute;
+    left:0px;
+    top: 8.09337%;
+    z-index:2;
+}
+
+.hallwayHorizontalWindowBeamLight{
+    background-color: var(--cyan);
+    outline: var(--borderOutline)  solid var(--darkerCyan);
+    box-shadow: 0px 0px 9px 2px #8bd4e2;
+    height:70.4398%;
+    width:40.9743%;
+    position:absolute;
+    left:29.5133%;
+    bottom:64.7801%;
+    z-index:2;
+    /* skew the rectangle into a trapezoid */
+    transform: perspective(70px) rotateX(-20deg);
+}
+
+.hallwayHorizontalWindowBeamStrip{
+    background-color: var(--beige);
+    outline: var(--borderOutline) solid black;
+    height:35.4276%;
+    width:100%;
+    position:absolute;
+    left:0px;
+    top: 64.7930%;
+    z-index:2;
+}
+
+.hallwayHorizontalWindowStripLight{
+    background-color: var(--cyan);
+    border-top:var(--borderOutline) solid var(--darkerCyan); 
+    border-bottom:var(--borderOutline) solid var(--darkerCyan); 
+    /* outline: var(--borderOutline) solid var(--darkerCyan);  */
+    /* box-shadow values: offset-x, offset-y, blur, spread */
+    box-shadow: 0px 0px 20px 8px #8bd4e2;
+    height:16.4606%;
+    width:100%;
+    position:absolute;
+    left:0px;
+    top: 28.9085%;
+    z-index:3;
+}
+
+
+
+/* HALLWAY HORIZONTAL - WINDOW - BOTTOM/SILL */
+.hallwayHorizontalWindowBottom{
+    background-color: var(--beige);
+    outline: var(--borderOutline) solid black;
+    height:23.367%;
+    width:100%;
+    position:absolute;
+    left:0px;
+    top: 77.7848%;
+    z-index:1;
+}
+
+.hallwayHorizontalWindowBottomMask{
+    /* background-color: var(--indigo); */
+    background-color: var(--indigo);
+    border-top: 1px solid var(--indigo);
+    border-left: var(--borderOutline) solid black;
+    border-right: var(--borderOutline) solid black;
+    border-bottom: var(--borderOutline) solid black;
+    height:33.6856%;
+    width:59.3746%;
+    position:absolute;
+    left:20.3136%;
+    top:-0.9px;
+    /* skew the rectangle into a trapezoid */
+    transform: perspective(70px) rotateX(-20deg);
+
+}
+
+
+
+/*//// HALLWAY HORIZONTAL - FLOOR */
+.hallwayHorizontalFloorContainer{
+    background-color:transparent;
+    outline: var(--borderOutline) solid black;
+    height:30.756%;
+    width:100%;
+    position:absolute;
+    left:0px;
+    top:69.1618%;
+}
+
+
+.hallwayHorizontalFloorStrip{
+    background-color:var(--orange);
+    outline: var(--borderOutline) solid black;
+    height:20.2546%;
+    width:100%;
+    position:absolute;
+    left:0px;
+    top:0px;
+}
+
+.hallwayHorizontalFloorStripTop{
+    background-color:var(--red);
+    outline: var(--borderOutline) solid black;
+    height:26.6057%;
+    width:100%;
+    position:absolute;
+    left:0px;
+    top:0px;
 }
 
 .hallwayHorizontalFloor{
-    background-color:turquoise;
-    flex:3;
+    background-color:var(--indigo);
+    border-top: var(--borderOutline) solid black;
+    height:79.7453%;
+    width:100%;
+    position:absolute;
+    left:0px;
+    top:20.2546%;
 }
 
-.hallwayHorizontalPillar{
-    background-color: blueviolet;
-    width: 500px;
-    height: 500px;
-    position: absolute;
-    top:3000px;
-    /* z-index: 0; */
+.hallwayHorizontalFloorTiles{
+    background-color:var(--grey);
+    /* rounded corner outlines using box shadow */
+    /* box-shadow: 0 0 0 var(--roundedCornerBorderOutline)  black; */
+    height:73.551%;
+    width:23.2916%;
+    position:absolute;
+    bottom:13.225%;
 }
+
+#floorTilesLeft{
+    left:0px;
+    border-radius: 0px 10px 10px 0px;
+    /* border radius values (top-left, top-right, bottom-right, bottom-left) */
+}
+
+#floorTilesMiddle{
+    width:46.5845%;
+    left: 26.7064%;
+    border-radius: 10px;
+}
+
+#floorTilesRight{
+    right:0px;
+    border-radius: 10px 0px 0px 10px;
+}
+
+
+/*////HALLWAY HORIZONTAL - PILLARS */
+
+/* PILLARS - BIG PILLARS MODULE */
+.twoPillarsContainer{
+    background-color: transparent;
+    height: 78.8732%;
+    width:100%;
+    position:absolute;
+    left:0px;
+    top:3.489%;
+    z-index:3;
+}
+
+/* PILLARS - ONE PILLAR MODULE */
+.pillarContainer{
+    background-color: transparent;
+    height:100%;
+    width:11.7422%;
+    position:absolute;
+    left:0px;
+    top:0px;
+}
+
+#pillarRight{
+    position:absolute;
+    left:88.2578%;
+    top:0px;
+    z-index: 10;
+    transform: scaleX(-1);
+}
+
+/* PILLAR - VERTICAL PART */
+.pillarVertical{
+    background-color: var(--white);
+    border-right:var(--borderOutline)solid black;
+    /* outline:var(--borderOutline) solid black; */
+    height:55.5668%;
+    width:48.571%;
+    position:absolute;
+    left:0px;
+    top:0px;
+}
+
+.pillarVerticalSquare{
+    background-color: var(--orange);
+    border-bottom:var(--borderOutline)solid black;
+    border-right:var(--borderOutline)solid black;
+    /* outline:var(--borderOutline) solid black; */
+    height:29.5073%;
+    width:125.1790%;
+    position:absolute;
+    left:0px;
+    top:0px;
+}
+
+.pillarVerticalRectangle{
+    background-color: transparent;
+    box-shadow: 0 0 0 var(--roundedCornerBorderOutline)  black;
+    height:37.957%;
+    width:58.997%;
+    position:absolute;
+    right:0px;
+    bottom:13.837%;
+    border-radius: 5px 0px 0px 5px;
+}
+
+/* PILLAR - LINK */
+.pillarLink{
+    background-color: var(--orange);
+    border-right:var(--borderOutline)solid black;
+    border-bottom:var(--borderOutline)solid black;
+    /* outline:var(--borderOutline) solid black; */
+    height:8.32093%;
+    width:50.8946%;
+    position:absolute;
+    left:0px;
+    top:55.5668%;
+}
+
+.pillarLinkTop{
+    background-color: var(--orange);
+    border-top:var(--borderOutline)solid black;
+    border-bottom:var(--borderOutline)solid black;
+    border-right:var(--borderOutline)solid black;
+    /* outline:var(--borderOutline) solid black; */
+    height:42.2747%;
+    width:119.470%;
+    position:absolute;
+    left:0px;
+    top:0px;
+}
+
+.pillarLinkBottomMask{
+    background-color: var(--white);
+    border-top:var(--borderOutline)solid black;
+    border-right:var(--borderOutline)solid black;
+    height:36.5017%;
+    width:43.7971%;
+    position:absolute;
+    left:calc(0px - var(--borderOutline));
+    bottom:calc(0px - var(--borderOutline));;
+}
+
+/* PILLAR - TRAPEZOID PART */
+
+
+/* TRAPEZOID ONE SIDE */
+.pillarTrapezoidBorder{
+    border-bottom:11vw solid black;
+    border-right:2vw solid transparent;
+    /* width: 48.7754%; */
+    width: calc(50% + var(--borderOutline));
+    position:absolute;
+    left:calc(0px - var(--borderOutline));
+    bottom:0px;
+    z-index:-1;
+}
+
+.pillarTrapezoid{
+    border-bottom:11vw solid var(--white);
+    border-right:2vw solid transparent;
+    /* width: 48.7754%; */
+    width: 50%;
+    position:absolute;
+    left:calc(0px - var(--borderOutline));
+    bottom:var(--borderOutline);
+    z-index:-1;
+}
+
+
+.pillarTrapezoidFloor{
+    border-bottom:2vw solid var(--indigo);
+    border-right:0.45vw solid transparent;
+    width: 100%;
+    position:absolute;
+    left:calc(0px - var(--borderOutline));
+    bottom:-1.2%;
+    z-index:-2;
+}
+
+.pillarTrapezoidLineRectangle{
+    border-top:var(--borderOutline)solid black;
+    height:4.8033%;
+    width:73.2597%;
+    position:absolute;
+    bottom:16.9146%;
+    left:calc(0px - var(--borderOutline));
+    z-index: 1;
+}
+
+.pillarTrapezoidLineMask{
+    background-color: white;
+    border-bottom:var(--borderOutline)solid black;
+    border-right:var(--borderOutline)solid black;
+    height:100%;
+    width:67.7986%;
+    position:absolute;
+    bottom:0px;
+    left:0px;
+    z-index: 2;
+}
+
+.pillarTrapezoidVerticalLine{
+    border-left:calc(var(--borderOutline)/2)solid black;
+    height:29.7047%;
+    position:absolute;
+    bottom:9.41815%;
+    left:calc(0px - var(--borderOutline));
+    z-index: 3;
+}
+
+.pillarTrapezoidLight{
+    background-color: var(--cyan);
+    border-top:var(--borderOutline)solid var(--darkerCyan);
+    border-bottom:var(--borderOutline)solid var(--darkerCyan);
+    border-right:var(--borderOutline)solid var(--darkerCyan);
+    border-radius: 0px 4px 4px 0px;
+    height:4.799703%;
+    width: 50.8946%;
+    position: absolute;
+    left:calc(0px - var(--borderOutline));
+    bottom:5.3391%;
+    z-index:4;
+    box-shadow: 0px 0px 20px 2px #8bd4e2;
+
+}
+
+
+/* TRAPEZOID TWO SIDES */
+/* .pillarTrapezoidBorder{
+    background-color: black;
+    height: 37.9029%;
+    height: 47%;
+    width: 97.5508%;
+    width: 106%;
+    position:absolute;
+    left:-50%;
+    bottom:5%;
+    z-index:-1;
+    transform: perspective(200px) rotateX(40deg);
+  
+}
+
+.pillarTrapezoid{
+    background-color: var(--white);
+    height: 37.9029%;
+    height: calc(47% - var(--borderOutline));
+    width: 97.5508%;
+    width: calc(106% - var(--borderOutline));
+    position:absolute;
+    left:-50%;
+    bottom:calc(5% + var(--borderOutline));
+    z-index:-1;
+    transform: perspective(200px) rotateX(40deg);
+} */
+
+
+
+
+
+
+
+
+
 
 
 
@@ -170,6 +622,20 @@ https://medium.com/front-end-weekly/absolute-centering-in-css-ea3a9d0ad72e
 CSS SHAPES: 
 https://css-tricks.com/the-shapes-of-css/#trapezoid-shape
 
+SKEWING RECTANGLE INTO A TRAPEZOID:
+https://stackoverflow.com/questions/23177903/css-transform-to-skew-the-shape-to-a-trapezium
 
+
+ADDING/SUBTRACTING VALUES IN CSS
+https://stackoverflow.com/questions/8643401/is-there-a-way-to-add-and-subtract-values-in-css
+
+
+ROUNDED CORNERS OUTLINE USING BOX SHADOWS
+https://stackoverflow.com/questions/5394116/outline-radius
+
+
+USING CSS VARIABLES TO CHANGE BORDER VALUES MORE EFFICIENTLY
+https://www.w3schools.com/css/css3_variables.asp
 
 */
+
