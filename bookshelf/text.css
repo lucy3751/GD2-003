@@ -1,0 +1,301 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&family=Space+Mono:wght@400;700&display=swap');
+
+/* DECLARING VARIABLES */
+:root{
+
+
+/* COLOURS */
+    --black: #121212;
+    --white: rgba(238, 238, 238, 0.9);
+    
+
+}
+
+
+
+*{
+    box-sizing:border-box;
+    margin:0px;
+    padding:0px;
+}
+
+
+body{
+    background: var(--white);
+    height:1200vw;
+}
+
+h1{
+    font-family: IBM Plex Mono, Space Mono, 'Courier New', Courier, monospace;
+    color: var(--white);
+    font-size:2em;
+    line-height: 1.4;
+    letter-spacing: .04em; 
+    font-weight:normal;
+}
+
+p{
+    font-family:IBM Plex Mono;
+    color: var(--white);
+    font-size: 1.5em;
+}
+
+
+.smallText{
+    font-size:1em;
+}
+
+.textBlack{
+    color: var(--black);
+}
+
+.topLayer{
+    position: relative;
+    z-index: 1;
+    height: 55%;
+    width: 100%;
+    /* margin-top: 300px; */
+    background: var(--black);
+}
+
+.bottomLayer{
+    position: fixed;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    height: 90%;
+    width: 100%;
+    /* margin-top: 300px; */
+    background: var(--white);
+}
+
+.topLayer2{
+    position: relative;
+    z-index: 1;
+    height: 55%;
+    width: 100%;
+    margin-top: 50%;
+    background: var(--black);
+}
+
+.shape{
+    background-color:var(--white);
+    height:50%;
+}
+
+.introduction{
+    padding: 5%;
+    padding-left: 20%;
+    padding-right: 20%;
+    padding-bottom:30%;
+    height:500vw; 
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: center;
+    position:relative;
+}
+
+.centeredText{
+    /* background:yellow; */
+    margin-top: 10%;
+    margin-bottom: 10%;
+    text-align:center;  
+}
+
+#fermiParadox{
+    margin-top:25%;
+}
+
+.line{
+    background-color: white;
+    width: 1px;
+    height:100%;
+}
+
+
+
+
+
+#paragraph1{
+    /* background-color: indigo; */
+    padding-bottom:25%
+}
+
+#p1{
+    padding-bottom: 30%;
+}
+
+#voices1{
+    color: rgba(238, 238, 238, 0.9);
+}
+
+#voices2{
+    color: rgba(238, 238, 238, 0.855);
+}
+
+#voices3{
+    color: rgba(238, 238, 238, 0.81);
+}
+
+#voices4{
+    color: rgba(238, 238, 238, 0.765);
+}
+
+#voices5{
+    color: rgba(238, 238, 238, 0.72);
+}
+
+#voices6{
+    color: rgba(238, 238, 238, 0.675);
+}
+
+#voices7{
+    color: rgba(238, 238, 238, 0.635);
+}
+
+#voices8{
+    color: rgba(238, 238, 238, 0.595);
+}
+
+#voices9{
+    color: rgba(238, 238, 238, 0.555);
+}
+
+#voices10{
+    color: rgba(238, 238, 238, 0.51);
+}
+
+#voices11{
+    color: rgba(238, 238, 238, 0.465);
+}
+
+#voices12{
+    color: rgba(238, 238, 238, 0.42);
+}
+
+#voices13{
+    color: rgba(238, 238, 238, 0.375);
+}
+
+#voices14{
+    color: rgba(238, 238, 238, 0.33);
+}
+
+#voices15{
+    color: rgba(238, 238, 238, 0.285);
+}
+
+#voices16{
+    color: rgba(238, 238, 238, 0.24);
+}
+
+#voices17{
+    color: rgba(238, 238, 238, 0.195);
+}
+
+#voices18{
+    color: rgba(238, 238, 238, 0.15);
+}
+
+#voices19{
+    color: rgba(238, 238, 238, 0.105);
+}
+
+#voices20{
+    color: rgba(238, 238, 238, 0.06);
+}
+
+#voices21{
+    color: rgba(238, 238, 238, 0.015);
+}
+
+
+.dingbat{
+    /* background-color: yellow; */
+    padding-top:50%;
+}
+
+
+
+
+
+
+
+.container{
+    display:flex;
+    flex-direction: column;
+    padding: 5%;
+}
+
+.leftParagraphContainer{
+    display:flex;
+    flex-direction:row;
+    justify-content: space-between;
+    /* background-color: green; */
+    margin-bottom:30%;
+
+}
+
+.rightParagraphContainer{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom:30%;
+}
+
+.leftParagraph{
+    /* background-color: red; */
+    flex:3;
+}
+
+.imageContainer{
+    flex:2;
+    display: flex;
+    flex-direction: row;
+}
+
+.imageContainerLeft{
+    /* background-color:white; */
+    flex:2;
+}
+
+.imageContainerRight{
+    flex:2;
+    /* background-color: red; */
+}
+
+.numbers{
+    font-size: 8em;
+    font-weight: 700;    
+}
+
+.rightParagraph{
+    /* background-color: blue; */
+    flex:3;
+}
+
+#whiteContainer{
+    background-color:red;
+    position:absolute;
+    width:50%;
+    top:-200px;
+    
+    
+    
+
+    
+}
+
+
+
+
+/*
+
+REFERENCES
+
+PARALLAX SCROLLING EFFECT:
+http://jsfiddle.net/RjGsM/ */
+
+
+
