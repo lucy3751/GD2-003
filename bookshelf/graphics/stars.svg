@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1920" height="2205" viewBox="0 0 1920 2205">
+  <defs>
+    <style>
+      .cls-1 {
+        clip-path: url(#clip-Web_1920_1);
+      }
+
+      .cls-2 {
+        fill: #121212;
+      }
+
+      .cls-3 {
+        fill: #d9d9d9;
+        font-size: 32px;
+        font-family: IBMPlexMono, IBM Plex Mono;
+      }
+
+      .cls-4 {
+        stroke: none;
+      }
+
+      .cls-5 {
+        fill: none;
+      }
+
+      .cls-6 {
+        fill: #fff;
+      }
+    </style>
+    <clipPath id="clip-Web_1920_1">
+      <rect width="1920" height="2205"/>
+    </clipPath>
+  </defs>
+  <g id="Web_1920_1" data-name="Web 1920 – 1" class="cls-1">
+    <rect class="cls-6" width="1920" height="2205"/>
+    <g id="Group_28" data-name="Group 28">
+      <g id="Rectangle_6" data-name="Rectangle 6" class="cls-2">
+        <rect class="cls-4" width="1920" height="2205"/>
+        <rect class="cls-5" x="0.5" y="0.5" width="1919" height="2204"/>
+      </g>
+      <g id="Group_27" data-name="Group 27" transform="translate(83.5 -11462.5)">
+        <text id="_" data-name="*" class="cls-3" transform="translate(1339.5 11868.5)"><tspan x="0" y="33">*</tspan></text>
+        <text id="_2" data-name="*" class="cls-3" transform="translate(660.5 12009.5)"><tspan x="0" y="33">*</tspan></text>
+        <text id="_3" data-name="*" class="cls-3" transform="translate(1232.5 12256.5)"><tspan x="0" y="33">*</tspan></text>
+        <text id="_4" data-name="*" class="cls-3" transform="translate(579.5 12316.5)"><tspan x="0" y="33">*</tspan></text>
+        <text id="_5" data-name="*" class="cls-3" transform="translate(1151.5 11967.5)"><tspan x="0" y="33">*</tspan></text>
+        <text id="_6" data-name="*" class="cls-3" transform="translate(947.5 12648.5)"><tspan x="0" y="33">*</tspan></text>
+        <text id="_7" data-name="*" class="cls-3" transform="translate(171.5 13557.5)"><tspan x="0" y="33">*</tspan></text>
+        <text id="_8" data-name="*" class="cls-3" transform="translate(1420.5 12980.5)"><tspan x="0" y="33">*</tspan></text>
+        <text id="_9" data-name="*" class="cls-3" transform="translate(1212.5 13429.5)"><tspan x="0" y="33">*</tspan></text>
+        <text id="_10" data-name="*" class="cls-3" transform="translate(798.5 11531.5)"><tspan x="0" y="33">*</tspan></text>
+        <text id="_11" data-name="*" class="cls-3" transform="translate(529.5 13169.5)"><tspan x="0" y="33">*</tspan></text>
+      </g>
+    </g>
+  </g>
+</svg>

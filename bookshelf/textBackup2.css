@@ -1,0 +1,438 @@
+/* @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&family=Space+Mono:wght@400;700&display=swap'); */
+
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&family=Lexend+Mega&family=Space+Mono:ital,wght@0,700;1,400&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&display=swap');
+
+
+/* DECLARING VARIABLES */
+:root{
+
+
+/* COLOURS */
+    --black: #121212;
+    --white: rgb(219, 219, 219);
+    
+
+}
+
+
+
+*{
+    box-sizing:border-box;
+    margin:0px;
+    padding:0px;
+}
+
+
+body{
+    background: green;
+    /* height:1200vw; */
+ 
+}
+
+/* HEADING STYLES*/
+.headingStyle1{
+    font-family: 'IBM Plex Mono', 'Space Mono', 'Courier New', Courier, monospace;
+    color: var(--white);
+    font-size:2em;
+    line-height: 1.4;
+    letter-spacing: .04em; 
+    font-weight:normal;
+}
+
+/* larger than headingStyle1 */
+.headingStyle2{
+    font-family: 'IBM Plex Mono', 'Space Mono', 'Courier New', Courier, monospace;
+    font-size:8em;
+    font-weight: 700;
+    color: var(--white);
+}
+
+
+/* PARAGRAPH STYLES */
+.paragraphStyle1{
+    font-family: "IBM Plex Mono", 'Space Mono', 'Courier New', Courier, monospace;
+    color: var(--white);
+    font-size: 1.5em;
+}
+
+.paragraphStyle2{
+    font-family: 'IBM Plex Mono', 'Space Mono', 'Courier New', Courier, monospace;
+    font-size:1em;
+    color:var(--white);
+}
+
+/* TEXT ALIGNMENT */
+.centeredText{
+    padding-left: 20%;
+    padding-right: 20%;
+    text-align:center;  
+}
+
+.rightText{
+
+}
+
+
+.topLayer{
+    /* position: relative; */
+    z-index: 1;
+    height: 55%;
+    width: 100%;
+    /* margin-top: 300px; */
+    /* background: var(--black); */
+    /* background:green; */
+}
+
+/* .bottomLayer{
+    position: fixed;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    height: 90%;
+    width: 100%;
+
+    background: var(--white);
+} */
+
+.topLayer2{
+    /* position: relative; */
+    z-index: 1;
+    height: 55%;
+    width: 100%;
+    /* margin-top: 50%; */
+    background: var(--black);
+} */
+
+.shape{
+    background-color:var(--white);
+    height:50%;
+}
+
+
+
+
+#section2B2p3{
+    padding-left:0%;
+    padding-right:0%;
+}
+
+
+
+
+#section2B2p3FermiParadox{
+    padding-left:0%;
+    padding-right:0%;
+    font-family: 'Krona One', sans-serif;
+    font-size:6em;
+    letter-spacing: 0.5vw;
+}
+
+
+
+/* INTRODUCTION */
+#introduction{
+    padding-top: 10%;
+    padding-bottom: 5%;
+    display: flex;
+        flex-direction: column;
+        align-items:center;
+        justify-content: center;
+    /* height:500vw;  */
+
+    background-color: var(--black);
+}
+
+#introductionp1{
+    /* background-color:blue; */
+    padding-bottom:10%;
+    
+}
+
+
+.line{
+    background-color: white;
+    width: 1px;
+    /* can only use % for height if height of "introduction" is defined in values */
+    height:3000px;
+}
+
+
+#introductionp2{
+    /* background-color:green; */
+    padding-top: 5%;
+    padding-bottom: 25%;
+}
+
+
+#introductionp2Voices{
+    /* background-color:blue; */
+}
+
+
+.sectionsContainer{
+    /* background-color:rgb(4, 4, 70); */
+    position: relative;
+    overflow:hidden;
+}
+
+/* SECTION ONE */
+
+#section1{
+    padding-top: 8%;
+    padding-bottom: 20%;
+    /* background-color:rgb(1, 55, 1); */
+    background-color: var(--black);
+
+    /* cursor:pointer; */
+}
+
+.cursorNext{
+    /* cursor:progress; */
+    cursor: url("graphics/next.svg"), auto;
+}
+
+.cursorPrevious{
+    cursor: url("graphics/previous.svg"), auto;
+}
+
+/* slider dots */
+.sliderDotsContainer{
+    background-color: var(--black);
+    padding-bottom:5%;
+}
+
+.sliderDots.fade{
+    animation: fade 2s;
+    animation-delay: 1s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+    
+}
+
+@keyframes fade{
+    from {opacity: 1;}
+    to {opacity: 0; display: none;}
+}
+
+.hiddenContent{
+    display:none;
+}
+
+/* SECTION TWO */
+#section2A{
+    position: absolute;
+        top:0px;
+        left:100%;
+    display:flex;
+        flex-direction:row;
+    padding-top: 8%;
+    padding-bottom: 20%;
+    padding-left: 5%;
+    padding-right: 5%;
+    background-color:var(--black);
+    width:100%;
+    transition:ease 0.6s;
+}
+/* section 2A slide in from the left (with jQuery) */
+#section2A.active{
+   left:0px;
+
+}
+
+#section2p1{
+    /* background-color: green; */
+    flex:3
+}
+
+#section2p1Right{
+    /* background-color: coral; */
+    flex:1;
+    
+}
+
+.spacer{
+    /* background-color: purple; */
+    flex:1;
+}
+
+#section2BContainer{
+    background-color: var(--black);
+}
+
+#section2B{
+    /* background-color: var(--black); */
+    padding-top: 8%;
+    padding-bottom: 45%;
+    padding-left: 5%;
+    padding-right: 5%;
+    display:flex;
+        flex-direction: row;
+}
+
+#section2Bp2Left{
+    /* background-color:white; */
+    flex:1;
+}
+
+#section2Bp2{
+    /* background-color: yellow; */
+    flex:3;
+}
+
+#section2B2p3{
+    /* background-color: black; */
+    padding-bottom: 35%;
+}
+
+#section2B2p3FermiParadox{
+    padding-bottom: 10%;
+}
+
+
+
+ 
+
+  /* https://www.w3schools.com/howto/howto_js_slideshow.asp
+  https://codepen.io/doodlemarks/pen/aFcly */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .container{
+    display:flex;
+    flex-direction: column;
+    padding: 5%;
+} */
+
+.leftParagraphContainer{
+    display:flex;
+    flex-direction:row;
+    justify-content: space-between;
+    /* background-color: green; */
+    margin-bottom:30%;
+
+}
+
+.rightParagraphContainer{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom:30%;
+}
+
+.leftParagraph{
+    /* background-color: red; */
+    flex:3;
+}
+
+.imageContainer{
+    flex:2;
+    display: flex;
+    flex-direction: row;
+}
+
+.imageContainerLeft{
+    /* background-color:white; */
+    flex:2;
+}
+
+.imageContainerRight{
+    flex:2;
+    /* background-color: red; */
+}
+
+.numbers{
+    font-size: 8em;
+    font-weight: 700;    
+}
+
+.rightParagraph{
+    /* background-color: blue; */
+    flex:3;
+}
+
+#whiteContainer{
+    background-color:red;
+    position:absolute;
+    width:50%;
+    top:-200px;
+    
+    
+    
+
+    
+}
+
+
+
+
+/*
+
+REFERENCES
+
+PARALLAX SCROLLING EFFECT:
+http://jsfiddle.net/RjGsM/ 
+
+
+FAKE SLIDER
+https://stackoverflow.com/questions/16989585/css-3-slide-in-from-left-transition
+
+https://www.w3schools.com/css/css_overflow.asp#:~:text=By%20default%2C%20the%20overflow%20is,better%20control%20of%20the%20layout.
+
+https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations#making_text_slide_across_the_browser_window 
+
+
+CSS ANIMATIONS
+
+https://www.w3schools.com/css/css3_animations.asp
+
+
+CSS CUSTOM CURSOR WITH SVG
+https://stackoverflow.com/questions/46706847/cursor-svg-not-working-in-chrome-61-0-3163-100
+
+
+
+REM VS EM
+
+REM- relative to the "base" font size of the html (root) font-size
+EM - relative to the "base" font size of the direct/nearest parent
+
+
+
+RESPONSIVE DESIGN/MEDIA QUERY:
+
+@media (max-width:1000px){
+
+    anything inside this will only exist if it is less than 1000px
+
+
+
+
+
+
+
+}
+
+
+
+
+*/
+
+
+

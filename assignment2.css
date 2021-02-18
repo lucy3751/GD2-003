@@ -560,12 +560,11 @@ body{
     position:relative;
 }
 
-#cockpit{
+/* #cockpit{
     background-color: thistle;
     flex: 3;
-    /* width: 20%; */
     height: 100%;
-}
+} */
 
 
 #lab{

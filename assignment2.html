@@ -6,6 +6,7 @@
         <title>Insert spaceship name here</title>
 
         <link rel="stylesheet" href="assignment2.css">
+        <link rel="stylesheet" href="spaceshipCockpit.css">
 
     </head>
 
@@ -325,14 +326,16 @@
 
 
 
-
+             <!-- /////////////WELCOME ROOM/////////////////
+                /////////////////////////////////////////////// -->
             <div id="welcomeRoom">
-                <h1>Welcome to the no name spaceship</h1>
                 <div id="welcomeScreen">
-                    <p>Next destination: ???</p>
+                    <p id="welcomeText"></p>
                 </div>
             </div>
 
+             <!-- /////////////HALLWAY HORIZONTAL/////////////////
+                /////////////////////////////////////////////// -->
             <div class="hallwayHorizontal">
             
                 
@@ -614,13 +617,22 @@
             </div>
 
 
+            <!-- /////////////COCKPIT/////////////////
+            /////////////////////////////////////////////// -->
             <div id="cockpit">
-                <h1>Cockpit</h1>
-                <p>Help reach our next destination faster by piloting the spaceship at full speed!</p>
+                <div id="nextDestinationPanelContainer">
+                    <div id="nextDestionationPanel">   
+                        <div id="nextDestinationRectangleUI">
+                            <div id="nextDestinationText">
+                                Next Destination
+                            </div>
+                            <div id="nextDestinationSlider">slider</div>
+                            <div id="nextDestinationGoButton">Go button</div>
+                        </div>
+                    </div> 
 
-                <canvas id="gameCanvas"></canvas>
-                <!-- set up html canvas size and style using Javascript, NOT CSS. Because we need to set the amount of pixels for us to draw in the Canvas using Js. CSS only scales the Canvas, doesn't add pixels -->
-                
+                    <div id="nextDestinationPanelProjector">projector</div>
+                </div>
             </div>
 
         </div>

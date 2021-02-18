@@ -1,0 +1,336 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&family=Space+Mono:wght@400;700&display=swap');
+
+/* DECLARING VARIABLES */
+:root{
+
+
+/* COLOURS */
+    --black: #121212;
+    --white: rgba(238, 238, 238, 0.9);
+    
+
+}
+
+
+
+*{
+    box-sizing:border-box;
+    margin:0px;
+    padding:0px;
+}
+
+
+body{
+    background: green;
+    /* height:1200vw; */
+ 
+}
+
+.headingStyle1{
+    font-family: IBM Plex Mono, Space Mono, 'Courier New', Courier, monospace;
+    color: var(--white);
+    font-size:2em;
+    line-height: 1.4;
+    letter-spacing: .04em; 
+    font-weight:normal;
+}
+
+.paragraphStyle1{
+    font-family:IBM Plex Mono;
+    color: var(--white);
+    font-size: 1.5em;
+}
+
+
+.smallText{
+    font-size:1em;
+}
+
+.textBlack{
+    color: var(--black);
+}
+
+.topLayer{
+    /* position: relative; */
+    z-index: 1;
+    height: 55%;
+    width: 100%;
+    /* margin-top: 300px; */
+    /* background: var(--black); */
+    /* background:green; */
+}
+
+/* .bottomLayer{
+    position: fixed;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    height: 90%;
+    width: 100%;
+
+    background: var(--white);
+} */
+
+.topLayer2{
+    /* position: relative; */
+    z-index: 1;
+    height: 55%;
+    width: 100%;
+    /* margin-top: 50%; */
+    background: var(--black);
+} */
+
+.shape{
+    background-color:var(--white);
+    height:50%;
+}
+
+
+
+
+
+
+
+.centeredText{
+    /* background:yellow; */
+    text-align:center;  
+}
+
+#fermiParadox{
+    /* margin-top:25%; */
+}
+
+
+
+/* INTRODUCTION */
+.introduction{
+    padding-top: 10%;
+    padding-left:20%;
+    padding-right: 20%;
+    padding-bottom: 0%;
+    display: flex;
+        flex-direction: column;
+        align-items:center;
+        justify-content: center;
+    /* height:500vw;  */
+
+    background-color: var(--black);
+}
+
+#introductionp1{
+    /* background-color:blue; */
+    padding-bottom:10%;
+    
+}
+
+
+.line{
+    background-color: white;
+    width: 1px;
+    /* can only use % for height if height of "introduction" is defined in values */
+    height:3000px;
+}
+
+
+#introductionp2{
+    /* background-color:green; */
+    padding-top: 5%;
+    padding-bottom: 25%;
+}
+
+
+#introductionVoices{
+    /* background-color:blue; */
+}
+
+
+.sectionsContainer{
+    /* background-color:rgb(4, 4, 70); */
+    position: relative;
+    overflow:hidden;
+}
+
+/* SECTION ONE */
+
+.section1{
+    padding-top: 15%;
+    padding-bottom: 20%;
+    padding-left: 20%;
+    padding-right: 20%;
+    /* background-color:rgb(1, 55, 1); */
+    background-color: black;
+
+    cursor:pointer;
+}
+
+.sliderDots{
+    padding-bottom:5%;
+    background-color: green;
+}
+
+
+/* SECTION TWO */
+
+.section2{
+    position: absolute;
+        top:0px;
+        left:100%;
+    
+    padding-top: 15%;
+    padding-bottom: 20%;
+    padding-left: 20%;
+    padding-right: 20%;
+    /* background-color:black; */
+    width:100%;
+    transition:ease 0.6s;
+}
+
+.section2.active{
+   left:0px;
+
+}
+
+#section2p1{
+    background-color: green;
+}
+
+#section2p2{
+    font-size:3em;
+}
+
+
+
+ 
+
+  /* https://www.w3schools.com/howto/howto_js_slideshow.asp
+  https://codepen.io/doodlemarks/pen/aFcly */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .container{
+    display:flex;
+    flex-direction: column;
+    padding: 5%;
+} */
+
+.leftParagraphContainer{
+    display:flex;
+    flex-direction:row;
+    justify-content: space-between;
+    /* background-color: green; */
+    margin-bottom:30%;
+
+}
+
+.rightParagraphContainer{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom:30%;
+}
+
+.leftParagraph{
+    /* background-color: red; */
+    flex:3;
+}
+
+.imageContainer{
+    flex:2;
+    display: flex;
+    flex-direction: row;
+}
+
+.imageContainerLeft{
+    /* background-color:white; */
+    flex:2;
+}
+
+.imageContainerRight{
+    flex:2;
+    /* background-color: red; */
+}
+
+.numbers{
+    font-size: 8em;
+    font-weight: 700;    
+}
+
+.rightParagraph{
+    /* background-color: blue; */
+    flex:3;
+}
+
+#whiteContainer{
+    background-color:red;
+    position:absolute;
+    width:50%;
+    top:-200px;
+    
+    
+    
+
+    
+}
+
+
+
+
+/*
+
+REFERENCES
+
+PARALLAX SCROLLING EFFECT:
+http://jsfiddle.net/RjGsM/ 
+
+
+FAKE SLIDER
+https://stackoverflow.com/questions/16989585/css-3-slide-in-from-left-transition
+
+https://www.w3schools.com/css/css_overflow.asp#:~:text=By%20default%2C%20the%20overflow%20is,better%20control%20of%20the%20layout.
+
+https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations#making_text_slide_across_the_browser_window 
+
+
+REM VS EM
+
+REM- relative to the "base" font size of the html (root) font-size
+EM - relative to the "base" font size of the direct/nearest parent
+
+
+
+RESPONSIVE DESIGN/MEDIA QUERY:
+
+@media (max-width:1000px){
+
+    anything inside this will only exist if it is less than 1000px
+
+
+
+
+
+
+
+}
+
+
+
+
+*/
+
+
+

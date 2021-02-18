@@ -1,0 +1,32 @@
+/* DECLARING VARIABLES */
+:root{
+    --borderOutline: 1.3px;
+    --roundedCornerBorderOutline:1.1px;
+
+    /* COLOURS */
+    --orange:#e86f50;
+    --red:#db3e2d;
+    --beige:#e3e1d4;
+    --cyan:#6dcde4;
+    --darkerCyan:#00aeef;
+    --indigo:#052f45;
+    --grey:#3e5960;
+    --white:white;
+}
+
+
+
+#cockpit{
+    background-color: var(--indigo);
+    flex: 3;
+    height: 100%;
+    color:var(--white);
+}
+
+#nextDestinationPanelContainer{
+    background-color: purple;
+    height:59.740%;
+    width: 40.032%;
+    position:absolute;
+}
+

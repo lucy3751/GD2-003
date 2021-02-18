@@ -1,13 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&family=Space+Mono:wght@400;700&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&family=Space+Mono:wght@400;700&display=swap'); */
+
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&family=Lexend+Mega&family=Space+Mono:ital,wght@0,700;1,400&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&display=swap');
+
 
 /* DECLARING VARIABLES */
 :root{
 
-
 /* COLOURS */
     --black: #121212;
-    --white: rgba(238, 238, 238, 0.9);
-    
+    --white: rgb(219, 219, 219);
 
 }
 
@@ -21,12 +24,24 @@
 
 
 body{
-    background: var(--white);
-    height:1200vw;
+    background: rgb(39, 22, 22);
+    /* z-index:2; */
+    height:auto;
+ 
 }
 
-h1{
-    font-family: IBM Plex Mono, Space Mono, 'Courier New', Courier, monospace;
+
+br{
+    content:"";
+    display:block;
+    margin:2.5em;
+}
+
+
+
+/* HEADING STYLES*/
+.headingStyle1{
+    font-family: 'IBM Plex Mono', 'Space Mono', 'Courier New', Courier, monospace;
     color: var(--white);
     font-size:2em;
     line-height: 1.4;
@@ -34,258 +49,738 @@ h1{
     font-weight:normal;
 }
 
-p{
-    font-family:IBM Plex Mono;
+/* larger than headingStyle1 */
+.headingStyle2{
+    font-family: 'IBM Plex Mono', 'Space Mono', 'Courier New', Courier, monospace;
+    font-size:8em;
+    font-weight: 700;
+    color: var(--white);
+}
+
+
+/* PARAGRAPH STYLES */
+.paragraphStyle1{
+    font-family: "IBM Plex Mono", 'Space Mono', 'Courier New', Courier, monospace;
     color: var(--white);
     font-size: 1.5em;
 }
 
-
-.smallText{
+.paragraphStyle2{
+    font-family: 'IBM Plex Mono', 'Space Mono', 'Courier New', Courier, monospace;
     font-size:1em;
+    color:var(--white);
 }
 
-.textBlack{
-    color: var(--black);
-}
-
-.topLayer{
-    position: relative;
-    z-index: 1;
-    height: 55%;
-    width: 100%;
-    /* margin-top: 300px; */
-    background: var(--black);
-}
-
-.bottomLayer{
-    position: fixed;
-    z-index: 0;
-    top: 0;
-    left: 0;
-    height: 90%;
-    width: 100%;
-    /* margin-top: 300px; */
-    background: var(--white);
-}
-
-.topLayer2{
-    position: relative;
-    z-index: 1;
-    height: 55%;
-    width: 100%;
-    margin-top: 50%;
-    background: var(--black);
-}
-
-.shape{
-    background-color:var(--white);
-    height:50%;
-}
-
-.introduction{
-    padding: 5%;
+/* TEXT ALIGNMENT */
+.centeredText{
     padding-left: 20%;
     padding-right: 20%;
-    padding-bottom:30%;
-    height:500vw; 
-    display: flex;
-    flex-direction: column;
-    align-items:center;
-    justify-content: center;
-    position:relative;
-}
-
-.centeredText{
-    /* background:yellow; */
-    margin-top: 10%;
-    margin-bottom: 10%;
     text-align:center;  
 }
 
-#fermiParadox{
-    margin-top:25%;
+.sideText{
+    padding-top: 8%;
+    padding-left: 5%;
+    padding-right: 5%;
+    display: flex;
+        flex-direction: row;
+    text-align: left;
 }
+
+.span3Columns{
+    flex:3;
+}
+
+.span2Columns{
+    flex:2;
+}
+
+.span1Column{
+    /* background-color: purple; */
+    flex:1;
+}
+
+
+
+
+
+/* TEXT COLOR */
+.textBlack{
+    color:var(--black);
+}
+
+
+
+
+
+
+.topLayer{
+    /* have to set a position in order for z-index to work */
+    position:relative;
+    width: 100%;
+    background: var(--black);
+    /* background:green; */
+    z-index: 20;
+}
+
+
+.bottomLayer{
+    /* fixed position relative to the viewport */
+    position: fixed;
+        top: 0;
+        left: 0;
+    /* padding-top:0%; */
+    height:100vh;
+    width: 100%;
+    background:var(--white);
+    z-index: 10;
+}
+
+/* bottom layer change color animation */
+.bottomLayer.changeColor{
+    left:0;
+    animation: changeColor 3s;
+    animation-delay: 1s;
+    /* make animation end at last frame */
+    animation-fill-mode: forwards;
+}
+
+
+/* have to have topLayer2 in order for parallax to work */
+.topLayer2{
+    /* have to set a position in order for z-index to work */
+    position:relative;
+    z-index: 20;
+    /* height: 10vh; */
+    width: 100%;
+    /* need margin-top in order for parallax effect to work */
+    margin-top: 100vh;
+} 
+
+
+
+
+
+
+#section2B2p3{
+    padding-left:0%;
+    padding-right:0%;
+}
+
+
+
+
+#section2B2p3FermiParadox{
+    padding-left:0%;
+    padding-right:0%;
+    font-family: 'Krona One', sans-serif;
+    font-size:6em;
+    letter-spacing: 0.5vw;
+}
+
+
+
+/* INTRODUCTION */
+#introduction{
+    padding-top: 10%;
+    padding-bottom: 5%;
+    display: flex;
+        flex-direction: column;
+        align-items:center;
+        justify-content: center;
+    /* height:500vw;  */
+
+    /* background-color: var(--black); */
+}
+
+#introductionp1{
+    /* background-color:blue; */
+    padding-bottom:10%;
+    
+}
+
 
 .line{
     background-color: white;
     width: 1px;
-    height:100%;
+    /* can only use % for height if height of "introduction" is defined in values */
+    height:3000px;
 }
 
 
-
-
-
-#paragraph1{
-    /* background-color: indigo; */
-    padding-bottom:25%
-}
-
-#p1{
-    padding-bottom: 30%;
-}
-
-#voices1{
-    color: rgba(238, 238, 238, 0.9);
-}
-
-#voices2{
-    color: rgba(238, 238, 238, 0.855);
-}
-
-#voices3{
-    color: rgba(238, 238, 238, 0.81);
-}
-
-#voices4{
-    color: rgba(238, 238, 238, 0.765);
-}
-
-#voices5{
-    color: rgba(238, 238, 238, 0.72);
-}
-
-#voices6{
-    color: rgba(238, 238, 238, 0.675);
-}
-
-#voices7{
-    color: rgba(238, 238, 238, 0.635);
-}
-
-#voices8{
-    color: rgba(238, 238, 238, 0.595);
-}
-
-#voices9{
-    color: rgba(238, 238, 238, 0.555);
-}
-
-#voices10{
-    color: rgba(238, 238, 238, 0.51);
-}
-
-#voices11{
-    color: rgba(238, 238, 238, 0.465);
-}
-
-#voices12{
-    color: rgba(238, 238, 238, 0.42);
-}
-
-#voices13{
-    color: rgba(238, 238, 238, 0.375);
-}
-
-#voices14{
-    color: rgba(238, 238, 238, 0.33);
-}
-
-#voices15{
-    color: rgba(238, 238, 238, 0.285);
-}
-
-#voices16{
-    color: rgba(238, 238, 238, 0.24);
-}
-
-#voices17{
-    color: rgba(238, 238, 238, 0.195);
-}
-
-#voices18{
-    color: rgba(238, 238, 238, 0.15);
-}
-
-#voices19{
-    color: rgba(238, 238, 238, 0.105);
-}
-
-#voices20{
-    color: rgba(238, 238, 238, 0.06);
-}
-
-#voices21{
-    color: rgba(238, 238, 238, 0.015);
+#introductionp2{
+    /* background-color:green; */
+    padding-top: 5%;
+    padding-bottom: 25%;
 }
 
 
-.dingbat{
-    /* background-color: yellow; */
-    padding-top:50%;
+#introductionp2Voices{
+    /* background-color:blue; */
+}
+
+/* SECTIONS CONTAINER FOR NESTING CONTENTS INSIDE SLIDERS */
+.sectionsContainer{
+    /* background-color:rgb(4, 4, 70); */
+    position: relative;
+    overflow:hidden;
+}
+
+.sectionsContainer1{
+    position: relative;
+    overflow:hidden;
+}
+
+.sectionsContainer2{
+    position: relative;
+    overflow:hidden;
+}
+
+.sectionsContainer3{
+    position: relative;
+    overflow:hidden;
+}
+
+.sectionsContainer4{
+    position: relative;
+    overflow:hidden;
+}
+
+.sectionsContainer5{
+    position: relative;
+    overflow:hidden;
+}
+
+.sectionsContainer6{
+    position: relative;
+    overflow:hidden;
+}
+
+.sectionsContainer7{
+    position: relative;
+    overflow:hidden;
+}
+
+.sectionsContainer8{
+    position: relative;
+    overflow:hidden;
+}
+
+.sectionsContainer9{
+    position: relative;
+    overflow:hidden;
+}
+
+.sectionsContainer10{
+    position: relative;
+    overflow:hidden;
+}
+
+.sectionsContainer11{
+    position: relative;
+    overflow:hidden;
+}
+
+/* //////////////// */
+/* SECTION ONE */
+
+#section1{
+    padding-top: 8%;
+    padding-bottom: 10%;
+    /* background-color:rgb(1, 55, 1); */
+    /* background-color: var(--black); */
+
+    /* cursor:pointer; */
+}
+
+.cursorNextWhite{
+    /* cursor:progress; */
+    cursor: url("graphics/nextWhite.svg"), auto;
+}
+
+.cursorPrevious{
+    cursor: url("graphics/previous.svg"), auto;
+}
+
+.cursorNextBlack{
+    cursor:url("graphics/nextBlack.svg"), auto;
+}
+
+/* slider dots */
+.sliderDotsContainer{
+    /* background-color: var(--black); */
+    padding-top:10%;
+    padding-bottom:5%;
+}
+
+.sliderDotsFade{
+    animation: fade 2s;
+    animation-delay: 1s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+    
+}
+
+@keyframes fade{
+    from {opacity: 1;}
+    to {opacity: 0; display: none;}
 }
 
 
-
-
-
-
-
-.container{
-    display:flex;
-    flex-direction: column;
-    padding: 5%;
+/* //////////////// */
+/* SECTION TWO */
+#section2A{
+    position: absolute;
+        top:0px;
+        left:100%;
+    /* padding-bottom: 10%; */
+    background-color:var(--black);
+    width:100%;
+    transition:ease 0.6s;
+}
+/* section 2A slide in from the left (with jQuery) */
+#section2A.active{
+   left:0px;
 }
 
-.leftParagraphContainer{
-    display:flex;
-    flex-direction:row;
-    justify-content: space-between;
+.hiddenContent{
+    display:none;
+}
+
+#section2p1{
     /* background-color: green; */
-    margin-bottom:30%;
-
 }
 
-.rightParagraphContainer{
-    display:flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-bottom:30%;
+#section2p1Right{
+    /* background-color: coral; */   
 }
 
-.leftParagraph{
-    /* background-color: red; */
-    flex:3;
+#section2BContainer{
+    /* background-color: var(--black); */
 }
 
-.imageContainer{
-    flex:2;
-    display: flex;
-    flex-direction: row;
+#section2B{
+    /* background-color: var(--black); */
+    padding-bottom: 45%;
 }
 
-.imageContainerLeft{
+#section2Bp2Left{
     /* background-color:white; */
-    flex:2;
 }
 
-.imageContainerRight{
-    flex:2;
-    /* background-color: red; */
+#section2Bp2{
+    /* background-color: yellow; */
 }
 
-.numbers{
-    font-size: 8em;
-    font-weight: 700;    
+#section2B2p3{
+    /* background-color: black; */
+    padding-bottom: 35%;
 }
 
-.rightParagraph{
-    /* background-color: blue; */
+#section2B2p3FermiParadox{
+    padding-bottom: 10%;
+}
+
+
+
+#section2C{
+    padding-top:5%;
+    /* background-color: purple; */
+}
+
+
+/* slider dots for section 2 and 3 transition */
+#sliderDots2{
+    padding-top:10%;
+    /* background-color:black; */
+
+}
+
+/* //////////////// */
+/* SECTION 3 */
+#section3A{
+    position:absolute;
+        top:0%;
+        left:100%;
+    width:100%;
+    height:100vh;
+    padding-top:20%;
+    
+    transition: ease 0.6s;
+    background-color: var(--white);
+}
+
+
+/* section 3 slide in from the left using jQuery */
+#section3A.active{
+    left:0;
+    animation: changeColor 3s, changeFontColor 3s;
+    animation-delay: 1s;
+    /* animation-timing-function: ease; */
+    animation-fill-mode: forwards;
+}
+
+@keyframes changeColor{
+    from {background-color: var(--white);}
+    to {background-color: var(--black);}   
+}
+
+@keyframes changeFontColor{
+    from {color: var(--black);}
+    to {color: var(--white);}   
+}
+
+
+.hiddenContent2{
+    display:none;
+}
+
+#floatingVoicesImage{
+    margin-top:10%;
+    margin-bottom:30%;
+    background-image: url("graphics/section3p1Voices.svg");
+    height:1622px;
+    width:1080px;
+   
+}
+
+#section3Background{
+    margin-top: 20%;
+    background-image: url("graphics/stars.svg");
+    text-align: center;
+    
+}
+
+#section3p2{
+    background-color: var(--black);
+    padding-top: 30%;
+    padding-bottom:30%;
+}
+
+#section3p3Image{
+    background-color: var(--black);
     flex:3;
 }
 
-#whiteContainer{
-    background-color:red;
-    position:absolute;
-    width:50%;
-    top:-200px;
-    
-    
-    
 
-    
+#section3C{
+    padding-bottom:10%;
 }
+
+
+/* //////////////// */
+/* SECTION 4 */
+#section4A{
+    position:absolute;
+        top:0px;
+        left:100%;
+    width:100%;
+    background-color: var(--black);
+    transition:ease 0.6s;
+}
+
+/* section 4A slide in from the left (with jQuery) */
+#section4A.active{
+    left:0;
+}
+
+.hiddenContent3{
+    display:none;
+}
+
+#section4p1Image{
+    background-color: darkcyan;
+}
+
+#section4p3{
+    padding-bottom: 25%;
+}
+
+#section4p5{
+    padding-bottom:25%;
+}
+
+#section4C{
+    padding-bottom:10%;
+}
+
+
+/* ///////////////////// */
+/* SECTION 5 */
+#section5A{
+    position:absolute;
+        top:0px;
+        left:100%;
+    width:100%;
+    padding-top:0;
+    background-color: var(--black);
+    transition:ease 0.6s;
+}
+
+/* section 5A slide in from the left (with jQuery) */
+#section5A.active{
+    left:0;
+}
+
+.hiddenContent4{
+    display:none;
+}
+
+#section5B{
+    padding-bottom: 15%;
+}
+
+
+/* ///////////////////// */
+/* SECTION 6 */
+#section6A{
+    position:absolute;
+        top:0px;
+        left:100%;
+    width:100%;
+    padding-top:8%;
+    padding-bottom: 10%;
+    background-color: var(--black);
+    transition:ease 0.6s;
+}
+
+/* section 6A slide in from the left (with jQuery) */
+#section6A.active{
+    left:0;
+}
+
+.hiddenContent5{
+    display:none;
+}
+
+#section6B{
+    padding-top:10%;
+    padding-bottom: 15%;
+}
+
+/* ///////////////////// */
+/* SECTION 7 */
+#section7A{
+    position:absolute;
+        top:0px;
+        left:100%;
+    width:100%;
+    padding-top:10%;
+    padding-bottom: 10%;
+    background-color: var(--black);
+    transition:ease 0.6s;
+}
+
+/* section 7A slide in from the left (with jQuery) */
+#section7A.active{
+    left:0;
+}
+
+.hiddenContent6{
+    display:none;
+}
+
+#section7B{
+    padding-top: 20%;
+    padding-bottom:30%
+}
+
+#section7C{
+    padding-bottom:10%;
+}
+
+
+
+/* ///////////////////// */
+/* SECTION 8 */
+#section8A{
+    position:absolute;
+        top:0px;
+        left:100%;
+    padding-top:0%;
+    width:100%;
+    background-color: var(--black);
+    transition:ease 0.6s;
+}
+
+/* section 8A slide in from the left (with jQuery) */
+#section8A.active{
+    left:0;
+}
+
+.hiddenContent7{
+    display: none;
+}
+
+#section8B{
+    padding-bottom: 10%;
+    padding-top:10%;
+}
+
+/* ///////////////////// */
+/* SECTION 9 */
+#section9A{
+    position:absolute;
+        top:0px;
+        left:100%;
+    padding-top:10%;
+    width:100%;
+    background-color: var(--black);
+    transition:ease 0.6s;
+}
+
+/* section 9A slide in from the left (with jQuery) */
+#section9A.active{
+    left:0;
+}
+
+.hiddenContent8{
+    display:none;
+}
+
+#section9C{
+    padding-top:20%;
+    padding-bottom: 10%;
+}
+
+
+/* ///////////////////// */
+/* SECTION 10 */
+#section10A{
+    position:absolute;
+        top:0px;
+        left:100%;
+    padding-top:20%;
+    padding-bottom:10%;
+    width:100%;
+    background-color: var(--black);
+    transition:ease 0.6s;
+}
+
+/* section 10A slide in from the left (with jQuery) */
+#section10A.active{
+    left:0;
+}
+
+.hiddenContent9{
+    display:none;
+}
+
+#section10B{
+    padding-top:20%;
+}
+
+#section10Bp1{
+    padding-top: 20%;
+    padding-bottom:20%;
+}
+
+#section10C{
+    padding-top: 20%;
+    padding-bottom: 20%;
+}
+
+
+/* ///////////////////// */
+/* SECTION 11 */
+#section11A{
+    position:absolute;
+        top:0px;
+        left:100%;
+    padding-top:20%;
+    padding-bottom:10%;
+    width:100%;
+    background-color: var(--black);
+    transition:ease 0.6s;
+}
+
+/* section 11A slide in from the left (with jQuery) */
+#section11A.active{
+    left:0;
+}
+
+.hiddenContent10{
+    display:none;
+}
+
+#section11Bp3{
+    padding-top:10%;
+    padding-bottom:20%;
+}
+
+#section11Bp3Language{
+    padding-top: 10%;
+}
+
+#section11Bp3Rituals{
+    padding-top: 10%;
+}
+
+#section11Bp3Traditions{
+    padding-top: 10%;
+    padding-bottom:30%;
+}
+
+#section11C{
+    padding-bottom:20%;
+}
+
+
+/* ///////////////////// */
+/* SECTION 12 */
+#section12A{
+    position:absolute;
+        top:0px;
+        left:100%;
+    padding-top:0;
+    padding-bottom:10%;
+    width:100%;
+    background-color:var(--black);
+    transition:ease 0.6s;
+}
+
+/* section 12A slide in from the left (with jQuery) */
+#section12A.active{
+    left:0;
+}
+
+.hiddenContent11{
+    display:none;
+}
+
+#section12Bp3{
+    padding-top:30%;
+}
+
+#section12Bp5{
+    padding-top:40%;
+    padding-bottom:40%;
+}
+
+#section12Bp5Image{
+    background-color: darkcyan;
+    height:400px;
+    width: 200px;
+}
+
+
+
+
+
+
+  /* https://www.w3schools.com/howto/howto_js_slideshow.asp
+  https://codepen.io/doodlemarks/pen/aFcly */
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -295,7 +790,57 @@ p{
 REFERENCES
 
 PARALLAX SCROLLING EFFECT:
-http://jsfiddle.net/RjGsM/ */
+http://jsfiddle.net/RjGsM/ 
+
+
+FAKE SLIDER
+https://stackoverflow.com/questions/16989585/css-3-slide-in-from-left-transition
+
+https://www.w3schools.com/css/css_overflow.asp#:~:text=By%20default%2C%20the%20overflow%20is,better%20control%20of%20the%20layout.
+
+https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations#making_text_slide_across_the_browser_window 
+
+
+CSS ANIMATIONS
+https://www.w3schools.com/css/css3_animations.asp
+
+
+CSS CUSTOM CURSOR WITH SVG
+https://stackoverflow.com/questions/46706847/cursor-svg-not-working-in-chrome-61-0-3163-100
+
+
+CSS STYLE BREAK (CHANGE SIZE OF A BR TAG)
+https://stackoverflow.com/questions/967776/br-line-height-in-safari-and-chrome-leaving-gap
+
+
+
+
+
+REM VS EM
+
+REM- relative to the "base" font size of the html (root) font-size
+EM - relative to the "base" font size of the direct/nearest parent
+
+
+
+RESPONSIVE DESIGN/MEDIA QUERY:
+
+@media (max-width:1000px){
+
+    anything inside this will only exist if it is less than 1000px
+
+
+
+
+
+
+
+}
+
+
+
+
+*/
 
 
 
