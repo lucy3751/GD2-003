@@ -3,7 +3,7 @@
 
 
 //EXECUTABLE CODE
-
+// inputPopUp();
 
 
 // FUNCTIONS
@@ -14,7 +14,9 @@ function inputPopUp(){
     var user = prompt("Please enter your name");
 
     if(user != null){
-        document.querySelector("#welcomeText").innerHTML=
+        document.querySelector("#welcomeText").innerHTML= "Welcome to the spaceship "+ user + "!";
+    }else{
+        document.querySelector("#welcomeText").innerHTML= "Welcome to the spaceship!";
     }
 
 }
@@ -23,3 +25,6 @@ function inputPopUp(){
 
 
 
+
+// POP UP INPUT
+// https://www.w3schools.com/jsref/met_win_prompt.asp

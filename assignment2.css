@@ -2,10 +2,14 @@
 /* DECLARING VARIABLES */
 :root{
     --borderOutline: 1.3px;
+    --borderOutlineCockpit: calc(1.5*var(--borderOutline));
     --roundedCornerBorderOutline:1.1px;
+    --borderOutlineRooms: 5px;
+    --borderOutlineRamp: 5px;
+    --backgroundColor: rgb(9,2,64);
 
     /* COLOURS */
-    --orange:#e86f50;
+    --orange:#f6892f;
     --red:#db3e2d;
     --beige:#e3e1d4;
     --cyan:#6dcde4;
@@ -25,12 +29,19 @@
 body{
     background:rgb(9, 2, 64);
     color: black;
-    font-family: 'Courier New', Courier, monospace;
     text-align: center;
     font-size: 1vw;
     padding:5vw;
 }
 
+p{
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* remove the black border that shows up when clicking the button */
+button{
+    outline:none;
+}
 
 /* BIG PARENT FOR FLEXBOXES */
 .sittingVertical{
@@ -43,6 +54,9 @@ body{
     height: 200vw;
 } 
 
+#sittingVerticalBottom{
+    height:140vw; 
+}
 
 .sittingHorizontal{
     /* background-color: rgb(52, 25, 6); */
@@ -55,7 +69,159 @@ body{
 }
 
 /* //////////////////////////////////////////
-///////////////// HALLWAYS /////////////////
+///////////////// RAMP /////////////////
+ */
+#ramp{
+    /* background-color: darkcyan; */
+    flex:2;
+    width:10%;
+    position:relative;
+    z-index:-1;
+}
+
+/*////// RAMP - TOP PART */
+#rampTop{
+    /* background-color: purple; */
+    width: 100%;
+    height: 42.546%;
+    position:absolute;
+        top:0;
+        left:0;
+}
+
+/* blue floor */
+#rampTopFloor{
+    background-color: var(--indigo);
+    border: var(--borderOutlineRamp) solid var(--grey);
+    border-top:none;
+    border-bottom:none;
+    width:100%;
+    height:85.3411%;
+    position:absolute;
+        top:0;
+        left:0;
+}
+
+.rampTopFloorTiles{
+    background-color: var(--grey);
+    width:89.567%;
+    height: 50.6013%;
+    position:absolute;
+        bottom: 5.0968%;
+        left: 5.0968%;
+    border-radius:2vw;
+}
+
+#rampTopFloorTilesTop{
+    bottom: calc(5.0968% + 50.6013% + 5.0968%);
+}
+
+/* orange link part */
+#rampTopLink{
+    background-color: var(--orange);
+    width:100%;
+    height:14.6589%;
+    position:absolute;
+        left:0;
+        bottom:0;
+}
+
+#rampTopLinkMask{  
+    border-bottom:5vw solid var(--indigo);
+    border-left:1.5vw solid transparent;
+    border-right:1.5vw solid transparent;
+    width:37.213%;
+    /* height:58.2544%; */
+    position:absolute;
+        bottom:0;
+        left:31.3952%;
+}
+
+/*////// RAMP - BOTTOM PART */
+#rampBottom{
+    background-color: var(--grey);
+    border: var(--borderOutlineRamp) solid var(--indigo);
+    border-top:none;
+    width:95.9644%;
+    height:57.4544%;
+    position:absolute;
+        bottom:0;
+        left: calc((100% - 95.9644%)/2);
+}
+
+#rampBottomFloor{
+    background-color: var(--indigo);
+    width: 87.73379%;
+    height:calc(100% - ((100% - 87.73379%)/2));
+    position:absolute;
+        top:0;
+        left: calc((100% - 87.73379%)/2);
+}
+
+/* ramp floor pattern whole container */
+.rampBottomFloorPattern{
+    /* background-color: white; */
+    width:100%;
+    height:6.06471%;
+    position: absolute;
+        top:20%;
+        /* top: calc((51.8032%/1767.6365%)*100); */
+        left:0;
+}
+
+
+#rampBottomFloorPattern2{
+    top:40%;
+    /* top: 17.789%; */
+}
+
+#rampBottomFloorPattern3{
+    top:60%;
+    /* top: 32.641%; */
+}
+
+#rampBottomFloorPattern4{
+    top: 80%;
+    /* top: 47.497%; */
+}
+
+
+
+/* ramp floor pattern module */
+.rampBottomFloorPatternSide{
+    background-color: var(--grey);
+    height:29.883%;
+    width:100%;
+    position:absolute;
+        bottom:0;
+        left:0;
+}
+
+
+.rampBottomFloorPatternCenter{
+    background-color: var(--grey);
+    height:100%;
+    width:69.0107%;
+    position:absolute;
+        bottom:0;
+        left:15.024%;
+    transform: perspective(400px) rotateX(20deg);
+}
+
+.rampBottomFloorPatternCenterMask{
+    background-color: var(--indigo);
+    height:73.5353%;
+    width:61.5047%;
+    position:absolute;
+        bottom:-2%;
+        left:18.77189%;
+    transform: perspective(400px) rotateX(20deg);
+}
+
+
+/*//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////// HALLWAYS /////////////////////////////////////////////////////////////////////////////////////////////////////
  */
 
  /* /////////HALLWAY VERTICAL/////////// */
@@ -71,9 +237,9 @@ body{
 }
 
 
-
 /* ///////////HALLWAY HORIZONTAL////////////// */
 .hallwayHorizontal{
+    overflow: hidden;
     background-color: transparent;
     height: 37vw;
     flex: 3;  /*  Flex ratios for children occupying the parent div. How much space does each children occupy in the main-axis*/ 
@@ -91,17 +257,17 @@ body{
 }
 
 .module1{
-    background-color: var(--indigo);
+    /* background-color: var(--indigo); */
      flex:1; 
 }
 
 .module2{
-    background-color: var(--indigo);
+    /* background-color: var(--indigo); */
     flex:1;
 }
 
 .module3{
-    background-color: var(--indigo);
+    /* background-color: var(--indigo); */
     flex:1;
 }
 
@@ -232,8 +398,8 @@ body{
 
 .hallwayHorizontalWindowBottomMask{
     /* background-color: var(--indigo); */
-    background-color: var(--indigo);
-    border-top: 1px solid var(--indigo);
+    background-color: var(--backgroundColor);
+    border-top: 1px solid var(--backgroundColor);
     border-left: var(--borderOutline) solid black;
     border-right: var(--borderOutline) solid black;
     border-bottom: var(--borderOutline) solid black;
@@ -439,12 +605,11 @@ body{
 
 /* PILLAR - TRAPEZOID PART */
 
-/* TRAPEZOID ONE SIDE */
+
 .pillarTrapezoidBorder{
     border-bottom:10.5vw solid black;
     border-right:2vw solid transparent;
     border-left:2vw solid transparent;
-    /* width: 48.7754%; */
     width: 100%;
     position:absolute;
     left:0px;
@@ -523,7 +688,9 @@ body{
 }
 
 
-
+/*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+ //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
 
 
 
@@ -560,18 +727,932 @@ body{
     position:relative;
 }
 
-/* #cockpit{
-    background-color: thistle;
+
+
+
+
+
+
+
+
+
+
+/* ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////// COCKPIT /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+#cockpit{
+    background-color: transparent;
+    border: var(--borderOutlineRooms) solid var(--grey);
     flex: 3;
     height: 100%;
-} */
+    color:var(--white);
+    position:relative;
+    overflow: hidden;
+}
+
+/* ///// COCKPIT - NEXT DESTINATION PANEL //////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////*/
+#nextDestinationPanelBigContainer{
+    /* background-color: purple; */
+    height:59.741%;
+    width: 38.953%;
+    position:absolute;  
+        left: 50%;
+        top: 6.7567%;
+        transform: translateX(-50%);
+}
+
+#nextDestinationPanelContainer{
+    background-color: rgba(78,198,224,0.3);
+        border:calc(var(--borderOutlineCockpit)*1.5) solid var(--cyan);
+        border-radius: 1vw;
+    height: calc((122/125)*100%);
+    width: 100%;
+    position:absolute;  
+        left: 50%;
+        top: 0;
+        transform: translateX(-50%);
+    box-shadow: 0px 0px 10px 3px rgba(78,198,224,0.3);
+    mix-blend-mode: overlay;
+}
+
+#nextDestinationRectangleUI{
+    background-color: rgba(78,198,224,0);
+        border:calc(var(--borderOutlineCockpit)*1.5) solid var(--cyan);
+        border-radius: 1vw;
+    /* width:94.144%; */
+    width: calc((174/185)*100%);
+    height: calc((113/122)*100%);
+    position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+}
+
+/* content container */
+#nextDestinationContentContainer{
+    /* background-color: purple; */
+    width: calc((123/174)*100%);
+    height: 100%;
+    position:absolute;
+        left:50%;
+        top:0;
+        transform: translateX(-50%);
+}
+
+/* next destination text */
+#nextDestinationTextContainer{
+    /* background-color: green; */
+    color:var(--orange);
+        font-weight: bold;
+    height: calc((12/113)*100%);
+    width:100%;
+    position:absolute;
+        left:50%;
+        top:0;
+        transform: translateX(-50%);
+}
+
+#nextDestinationText{
+    position:absolute;
+        bottom:0;
+        left:50%;
+        transform: translateX(-50%);
+}
+
+/* slider */
+#nextDestinationSlider{
+    background-color: darkcyan;
+    width: 100%;
+    height: calc((81/113)*100%);
+    position:absolute;
+        left:50%;
+        bottom:calc((21/113)*100%);
+        transform: translateX(-50%);
+}
+
+/* Go button */
+#nextDestinationGoButtonContainer{
+    /* background-color: purple; */
+    height:calc((21/113)*100%);
+    width:100%;
+    position:absolute;
+        left:50%;
+        bottom:0;
+        transform: translateX(-50%);
+}
+
+#nextDestinationGoButton{
+    background-color: transparent;
+        border:calc(var(--borderOutlineCockpit)*1.5) solid var(--darkerCyan);
+        border-radius: 5vw;
+    font-family: 'Courier New', Courier, monospace;
+        font-weight: bolder;
+        font-size:2em;
+        color:var(--darkerCyan);
+    padding: 0.5% 10%;
+    position:absolute;
+        left:50%;
+        top:50%;
+        transform: translate(-50%,-50%);
+    cursor:pointer;
+    transition-duration: 0.4s;
+}
+
+#nextDestinationGoButton:hover{
+    background-color: var(--darkerCyan);
+    color:var(--white);
+}
+
+/* trapezoid projector thingy */
+#nextDestinationPanelProjector{
+    background-color: var(--grey);
+        border: var(--borderOutlineCockpit) solid var(--indigo);
+    width:97%;
+    height: calc((3/125)*100%);
+    position:absolute;
+        bottom:0;
+        left:50%;
+        transform: translateX(-50%);
+}
 
 
+/* ///// COCKPIT - CONTROL PANEL PART A //////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////*/
+#controlPanelABigContainer{
+    /* background-color: purple; */
+    width: 82.643%;
+    height:23.8%;
+    position:absolute;
+        bottom:7.4324%;
+        left:50%;
+        transform: translateX(-50%);
+    z-index:3;
+}
+
+/* TRAPEZOID BASE */
+#controlPanelTrapezoidOutline{
+    border-bottom: 7.5vw solid var(--indigo);
+    border-right: 2vw solid transparent;
+    border-left: 2vw solid transparent;
+    width:100%;
+    /* height:calc((34/50)*100%); */
+    position: absolute;
+        top:0;
+        left:50%;
+    transform: translateX(-50%)
+}
+
+#controlPanelTrapezoid{
+    border-bottom: calc(7.5vw - var(--borderOutlineCockpit)*2) solid var(--grey);
+    border-right: 2vw solid transparent;
+    border-left: 2vw solid transparent;
+    width: calc(100% - var(--borderOutlineCockpit)*2);
+    /* height:calc((34/50)*100%); */
+    position: absolute;
+        top:var(--borderOutlineCockpit);
+        left:50%;
+    transform: translateX(-50%)
+}
+
+
+/* CONTROLS ON THE TRAPEZOID - CONTAINER - ONE MODULE */
+.controlContainerModule{
+    /* background-color: darkcyan;  */
+    height: calc(7.5vw);
+    /* width:calc(((111/392)*100%)/3); */
+    width:calc(((116.45/392)*100%)/3);
+    position:absolute;
+        left:1.8%;
+        top: 0;
+}
+
+.controlContainerModule.leftSide.Left{
+    left:1.8%;
+    transform:skew(-15deg);
+}
+
+.controlContainerModule.leftSide.Center{
+    left: calc(1.8% + ((116.45/392)*100%)/3);
+    border-left: var(--borderOutlineCockpit) solid var(--indigo);
+    border-right: var(--borderOutlineCockpit) solid var(--indigo);
+    transform: skew(-15deg);
+}
+
+.controlContainerModule.leftSide.Right{
+    left: calc(1.8% + 2*((116.45/392)*100%)/3);
+    border:none;
+    transform:skew(-15deg);
+}
+
+.controlContainerModule.rightSide.Right{
+    left: calc(100% - 1.8% - 9.9%);
+    transform:skew(15deg);
+}
+
+.controlContainerModule.rightSide.Center{
+    left: calc(100% - 1.8% - 2*(9.9%));
+    border-left: var(--borderOutlineCockpit) solid var(--indigo);
+    border-right: var(--borderOutlineCockpit) solid var(--indigo);
+    transform:skew(15deg);
+}
+
+.controlContainerModule.rightSide.Left{
+    left: calc(100% - 1.8% - 3*(9.9%));
+    transform:skew(15deg);
+}
+
+
+.controlPanelWrapper{
+    height:calc((27/35)*100%); 
+    width: calc((32/40)*100%);
+    /* background-color: green; */
+    position:absolute; 
+        left:50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+}
+
+.controlPanel{
+    border: var(--borderOutlineCockpit) solid var(--darkerCyan);
+    background-color: var(--cyan);
+    width:100%;
+    height:calc(100%/6*4.5);
+    position:absolute;
+        top:0;
+        left:0;
+}
+
+.controlPanel::after{
+    content:"";
+    border: var(--borderOutlineCockpit) solid var(--darkerCyan);
+    background-color: var(--cyan);
+    filter: blur(20px);
+    width:100%;
+    height:calc(100%/6*4.5);
+    position:absolute;
+        top:0;
+        left:0;
+}
+
+.controlButtonWrapper{
+    /* background-color: purple; */
+    width:100%;
+    height:calc(100%/6);
+    position:absolute;
+        bottom:0;
+        left:0;
+}
+
+.controlButton{
+    border: var(--borderOutlineCockpit) solid var(--indigo);
+    background-color: var(--red);
+    width: calc(100%/11*3);
+    height: 100%;
+    position:absolute;
+        top:50%;
+        left:0;
+        transform: translateY(-50%);
+}
+
+.controlButton.center{
+    left: calc(100%/11*4)
+}
+
+.controlButton.right{
+    left: calc(100% - (100%/11*3));
+}
+
+
+
+
+
+/* BOTTOM PART OF TRAPEZOID CONTROL PANEL - DEPTH */
+#controlPanelRectangle{
+    background-color: var(--indigo);
+    border-bottom: var(--borderOutlineCockpit) solid var(--grey);
+    width:100%;
+    height: calc((16/50)*100%);
+    position: absolute;
+        bottom:0;
+    z-index:-1;
+}
+
+
+
+
+
+/* ////////BIG CONTROL PANEL CONTAINER ////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+#bigControlPanelContainer{
+    /* background-color: purple; */
+    height: calc((70/209)*100%);
+    width: calc((152/474)*100%);
+    position: absolute;
+        left: 50%;
+        bottom:0;
+        transform: translateX(-50%);
+    z-index:4;
+}
+
+/* big control panel trapezoid */
+#bigControlPanelTrapezoidOutline{
+    border-bottom:14vw solid var(--indigo);
+    border-left:1.5vw solid transparent;
+    border-right:1.5vw solid transparent;
+    width:100%;
+    position:absolute;
+        top:0;
+        left:0;
+}
+
+#bigControlPanelTrapezoid{
+    border-bottom:14vw solid var(--grey);
+    border-left:1.5vw solid transparent;
+    border-right:1.5vw solid transparent;   
+    width: calc(100% - var(--borderOutlineCockpit) - var(--borderOutlineCockpit));
+    position:absolute;
+        top:0;
+        left:calc(var(--borderOutlineCockpit));
+}
+
+/* control panel buttons */
+#bigControlPanelButtonsContainer{
+    /* background-color: green; */
+    height:calc((14.59/70)*100%);
+    width: calc((111.01/151.77)*100%);
+    position:absolute;
+        top:0;
+        left:50%;
+        transform: translateX(-50%);
+}
+
+.circleButtons{
+    background-color: var(--red);
+    border: var(--borderOutlineCockpit) solid var(--indigo);
+    height:calc((10.24/14.59)*100%);
+    width:calc((10.24/111.01)*100%);
+    border-radius: 100%;
+    position:absolute;
+        top:50%;
+        left:0;
+        transform: translateY(-50%);
+}
+
+#circleButtonsLeft2{
+    left: 15%;
+}
+
+#circleButtonsRight1{
+    left: calc(100% - 9%);
+}
+
+#circleButtonsRight2{
+    left: calc(100% - 24%);
+}
+
+.rectangleButton{
+    background-color: var(--orange);
+    border: var(--borderOutlineCockpit) solid var(--indigo);
+    height: calc((7/14.59)*100%);
+    width: calc((40/111.01)*100%);
+    position:absolute;
+        top:50%;
+        left:50%;
+        transform: translate(-50%,-50%);
+}
+
+/* control panel display */
+#bigControlPanelDisplayOutline{
+    border-bottom:7.1vw solid var(--darkerCyan);
+    border-left:0.8vw solid transparent;
+    border-right:0.8vw solid transparent;
+    width:calc((130.01/151.78)*100%);
+    position:absolute;
+        top: calc((19.82/70)*100%);
+        left: calc((10.88/152)*100%);
+}
+
+#bigControlPanelDisplayOutline::after{
+    content:"";
+    border-bottom:7.1vw solid var(--darkerCyan);
+    border-left:0.8vw solid transparent;
+    border-right:0.8vw solid transparent;
+    width:calc((130.01/151.78)*100%);
+    position:absolute;
+        top: calc((19.82/70)*100%);
+        left: calc((10.88/152)*100%);
+    /* glow effect for trapezoid */
+    filter: blur(50px);
+}
+
+#bigControlPanelDisplay{
+    border-bottom:calc(7.1vw - var(--borderOutlineCockpit) - var(--borderOutlineCockpit)) solid var(--cyan);
+    border-left:0.8vw solid transparent;
+    border-right:0.8vw solid transparent;
+    width:calc((130.01/151.78)*100% - var(--borderOutlineCockpit) - var(--borderOutlineCockpit));
+    position:absolute;
+        top: calc((19.82/70)*100% + var(--borderOutlineCockpit));
+        left: calc((10.88/152)*100% + var(--borderOutline));
+}
+
+
+/* big control panel display line - horizontal */
+.bigControlPanelDisplayLine{
+    border-top: var(--borderOutlineCockpit) solid var(--darkerCyan) ;
+    width:101.5%;
+    position:absolute;
+        top: calc(7.1vw/5);
+        left:calc(50% + var(--borderOutlineCockpit));
+        transform: translateX(calc(-50% - var(--borderOutlineCockpit)));
+}
+
+#bigControlPanelDisplayLine2{
+    top: calc(7.1vw/5*2);
+    width:103%;
+}
+
+#bigControlPanelDisplayLine3{
+    top: calc(7.1vw/5*3);
+    width:104.5%;
+}
+
+#bigControlPanelDisplayLine4{
+    top: calc(7.1vw/5*4);
+    width:105.5%;
+}
+
+
+/* big control panel display line - vertical */
+.bigControlPanelDisplayLineVertical{
+    border-left: var(--borderOutlineCockpit) solid var(--darkerCyan);
+    height: 6.9vw;
+    position:absolute;
+        top: calc((19.82/70)*100% + var(--borderOutlineCockpit));
+        left: calc((10.88/152)*100% + ((130.01/151.78)*100%)/11);
+    transform: rotate(5deg);
+}
+
+#bigControlPanelDisplayLineVertical2{
+    left: calc((10.88/152)*100% + ((130.01/151.78)*100%)/11*2);
+}
+
+#bigControlPanelDisplayLineVertical3{
+    left: calc((10.88/152)*100% + ((130.01/151.78)*100%)/11*3);
+    transform: rotate(4deg);
+}
+
+#bigControlPanelDisplayLineVertical4{
+    left: calc((10.88/152)*100% + ((130.01/151.78)*100%)/11*4);
+    transform: rotate(3deg);
+}
+
+
+#bigControlPanelDisplayLineVertical5{
+    left: calc((10.88/152)*100% + ((130.01/151.78)*100%)/11*5);
+    transform: rotate(2deg);
+}
+
+#bigControlPanelDisplayLineVertical6{
+    left: calc((10.88/152)*100% + ((130.01/151.78)*100%)/11*6);
+    transform: rotate(-2deg);
+}
+
+#bigControlPanelDisplayLineVertical7{
+    left: calc((10.88/152)*100% + ((130.01/151.78)*100%)/11*7);
+    transform: rotate(-3deg);
+}
+
+#bigControlPanelDisplayLineVertical8{
+    left: calc((10.88/152)*100% + ((130.01/151.78)*100%)/11*8);
+    transform: rotate(-4deg);
+}
+
+#bigControlPanelDisplayLineVertical9{
+    left: calc((10.88/152)*100% + ((130.01/151.78)*100%)/11*9);
+    transform: rotate(-5deg);
+}
+
+#bigControlPanelDisplayLineVertical10{
+    left: calc((10.88/152)*100% + ((130.01/151.78)*100%)/11*10);
+    transform: rotate(-5deg);
+}
+
+#bigControlPanelDisplayLineVertical11{
+    left: calc((10.88/152)*100% + ((130.01/151.78)*100%)/12*11);
+    transform: rotate(-5deg);
+}
+
+
+/* rectangle underneath the big control panel */
+#bigControlPanelRectangle{
+    background-color: var(--grey);
+    border: var(--borderOutlineCockpit) solid var(--indigo);
+    width:100%;
+    height:calc((8.7/70)*100%);
+    position: absolute;
+        bottom:0;
+        left:0;
+}
+
+
+
+/* //////// COCKPIT FLOOR ////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+#cockpitFloor{
+    background-color: var(--grey);
+    width: calc((439.44/474.46)*100%);
+    height: calc((15.53/208.94)*100% + var(--borderOutlineCockpit));
+    position:absolute;
+        bottom:0;
+        left:50%;
+        transform: translateX(-50%); 
+}
+
+#cockpitFloorDarkShade{
+    background-color: var(--indigo);
+    width: calc((406.56/474.46)*100%);
+    height:calc(100% - var(--borderOutlineCockpit));
+    position:absolute;
+        bottom:0;
+        left:50%;
+        transform: translateX(-50%);
+}
+
+
+/* //////// ORANGE SIDE CONTROLS  ////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+.sideControlContainer{
+    background-color: green;
+    width: calc((55.14/474.46)*100%);
+    height: calc((17.33/208.94)*100%);
+    position: absolute;
+    z-index:3;
+}
+
+.sideControlContainer.left{
+    bottom: calc((8.67/208.94)*100%*(-1));
+    left: 0;
+    transform: rotate(-26.5deg);
+    transform-origin: 0% 100%;
+}
+
+.sideControlContainer.right{
+    bottom: calc((8.67/208.94)*100%*(-1));
+    left: calc(100% - 11.622%);
+    transform: rotate(26.5deg);
+    transform-origin: 100% 100%;
+}
+
+.sideControlBar{
+    background-color: var(--orange);
+    border: var(--borderOutlineCockpit) solid var(--indigo);
+    width:100%;
+    height:100%;
+    position:absolute; 
+        bottom:0;
+        left:0;
+}
+
+.sideControl{
+    background-color: var(--cyan);
+    border: var(--borderOutlineCockpit) solid var(--darkerCyan);
+    width: calc((30.65/51.14)*100%);
+    height: calc((11.13/17.33)*100%);
+    position:absolute;
+        right: 10%;
+        top:50%;
+        transform: translateY(-50%);
+}
+
+.sideControl.right{
+    left:10%;
+}
+
+.sideControl::after{
+    content: "";
+    background-color: var(--cyan);
+    border: var(--borderOutlineCockpit) solid var(--darkerCyan);
+    width: 100%;
+    height: 100%;
+    position:absolute;
+        right: 10%;
+        top:50%;
+        transform: translateY(-50%);
+    filter: blur(20px);
+}
+
+.sideControlLineHorizontal{
+    border-top: var(--borderOutlineCockpit) solid var(--darkerCyan);
+    width:101%;
+    position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%);
+    z-index:3;
+}
+
+.sideControlLineVertical{
+    border-left: var(--borderOutlineCockpit) solid var(--darkerCyan);
+    height: 100%;
+    z-index:3;
+}
+
+.sideControlLineVertical.left{
+    position:absolute;
+        top:0;
+        left: 25%;
+}
+
+.sideControlLineVertical.center{
+    position:absolute;
+        top:0;
+        left: 50%;
+}
+
+.sideControlLineVertical.right{
+    position:absolute;
+        top:0;
+        left: 75%;
+}
+
+
+
+/* //////// ORANGE LIGHTS ON WINDSHIELD  ////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+.windShieldBarContainer{
+    /* background-color: green; */
+    width: calc((163.91/474.46)*100%);
+    height: calc((17.56/208.94)*100%);
+    position:absolute;
+        top: calc((-17.56/208.94) *100%);
+        left:0;
+    transform: rotate(70.6deg);
+    transform-origin: 0% 100%;
+    z-index:2;
+}
+
+
+.windShieldBarContainer.left{
+    transform: rotate(70.6deg);
+    transform-origin: 0% 100%;
+}
+
+.windShieldBarContainer.right{
+    left:100%;
+    transform: scaleX(-1) rotate(-289.4deg);
+    transform-origin: 0% 100%;
+
+}
+
+
+.windShieldBar{
+    background-color: var(--orange);
+    border: var(--borderOutlineCockpit) solid var(--indigo);
+    width:calc((163.91/163.91)*100%);
+    height: calc((14.35/17.56)*100%);
+    position: absolute;
+        bottom:0;
+        left:0;
+
+}
+
+.windShieldBarLightOutline{
+   border-top: 2vw solid var(--darkerCyan);
+   border-right: 1.5vw solid transparent;
+   border-left: 1.5vw solid transparent;
+   width: 69.32%;
+   position:absolute;
+        top:0;
+        left: 50%;
+        transform: translateX(-50%);
+}
+
+
+
+.windShieldBarLight{
+    border-top: calc(2vw - var(--borderOutlineCockpit)*2) solid var(--cyan);
+    border-right: 1.3vw solid transparent;
+    border-left: 1.3vw solid transparent;
+    width: calc(69.32% - var(--borderOutlineCockpit)*4);
+    position:absolute;
+        top:var(--borderOutlineCockpit);
+        left: 50%;
+        transform: translateX(-50%);
+}
+
+.windShieldBarLight::after{
+    content: "";
+    border-top: calc(2vw - var(--borderOutlineCockpit)*2) solid var(--cyan);
+    border-right: 1.3vw solid transparent;
+    border-left: 1.3vw solid transparent;
+    width: calc(69.32% - var(--borderOutlineCockpit)*4);
+    position:absolute;
+        top:-20%;
+        left: 50%;
+        transform: translateX(-50%);
+    filter: blur(30px);
+}
+
+
+/* //////// STEERING WHEEL  ////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+.steeringWheel{
+    /* background-color: green; */
+    width: calc((100.33/474.46)*100%);
+    height: calc((60.53/208.94)*100%);
+    position:absolute;
+        bottom:0;
+        left: calc((62.59/474.46)*100%);
+    z-index:5;
+}
+
+.steeringWheel.right{
+    left: calc((311.56/474.46)*100%);
+}
+
+/* STEERING WHEEL STEM */
+.steeringWheelStem{
+    background-color: var(--grey);
+    border: var(--borderOutlineCockpit) solid var(--indigo);
+    border-bottom: none;
+    width: calc((13.65/100.33)*100%);
+    height: calc((55.04/60.53)*100%);
+    position:absolute;
+        bottom:0;
+        left:50%;
+        transform: translateX(-50%);
+}
+
+/* TOP PART */
+.steeringWheelTopContainer{
+    /* background-color: purple; */
+    width: 100%;
+    height: calc((39.98/60.53)*100%);
+    position: absolute;
+        left:0;
+        top:0;
+}
+
+.steeringWheelCenterPartOutline{
+    border-bottom: 7vw solid var(--indigo);
+    border-left: 1vw solid transparent;
+    border-right: 1vw solid transparent;
+    width: 36.23%;
+    position:absolute;
+        top:0;
+        left:31.88%;
+}
+
+.steeringWheelCenterPart{
+    border-bottom: calc(7vw - var(--borderOutlineCockpit)*2) solid var(--orange);
+    border-left: 1vw solid transparent;
+    border-right: 1vw solid transparent;
+    width: calc(36.23% - var(--borderOutlineCockpit)*2);
+    position:absolute;
+        top:var(--borderOutlineCockpit);
+        left: calc(31.88% + var(--borderOutlineCockpit));      
+}
+
+.steeringWheelInnerPartOutline{
+    border-bottom: 7vw solid var(--indigo);
+    border-left: 1vw solid transparent;
+    border-right: 1vw solid transparent;
+    width: 26.86%;
+    position:absolute;
+        top:0;
+        left:36.569%    
+}
+
+.steeringWheelInnerPart{
+    border-bottom: calc(7vw - 2*var(--borderOutlineCockpit)) solid var(--red);
+    border-left: 1vw solid transparent;
+    border-right: 1vw solid transparent;
+    width: calc(26.86% - (var(--borderOutlineCockpit)*2));
+    position:absolute;
+        top:var(--borderOutlineCockpit);;
+        left: calc(36.569% + var(--borderOutlineCockpit));
+}
+
+.steeringWheelInnerPartLines{
+    border-top: var(--borderOutlineCockpit) solid var(--indigo);
+    position: absolute;
+        left:50%;
+        transform: translateX(-50%);
+}
+
+.steeringWheelInnerPartLines.line1{
+    width:18%;
+        top:8%;
+}
+
+.steeringWheelInnerPartLines.line2{
+    width:19%;
+        top:16%;
+}
+
+.steeringWheelInnerPartLines.line3{
+    width:20%;
+        top:24%;
+}
+
+.steeringWheelInnerPartLines.line4{
+    width:20%;
+        top:32%;
+}
+
+.steeringWheelInnerPartLines.line5{
+    width:21%;
+        top:40%;
+}
+
+.steeringWheelInnerPartLines.line6{
+    width:22%;
+        top:48%;
+}
+
+.steeringWheelInnerPartLines.line7{
+    width:23%;
+        top:56%;
+}
+
+.steeringWheelInnerPartLines.line8{
+    width:24%;
+        top:64%;
+}
+
+.steeringWheelInnerPartLines.line9{
+    width:25%;
+        top:72%;
+}
+
+
+/* STEERING WHEEL HANDLE */
+.steeringWheelHandleContainer{
+    /* background-color: green; */
+    width: 50%;
+    height: 100%;
+    position:absolute;
+        left:0;
+        top:0;
+    z-index: -1;
+}
+
+.steeringWheelHandleContainer.right{
+    left:50%;
+    transform: scaleX(-1);
+}
+
+.steeringWheelHandle1{
+    background-color: var(--beige);
+    border: var(--borderOutlineCockpit) solid var(--indigo);
+    width:20%;
+    height:100%;
+    border-radius: 2vw;
+    transform: rotate(-18deg);
+    position:absolute;
+        top:-17.5%;
+        left: 15%;
+    z-index: 3;
+}
+
+.steeringWheelHandle2{
+    background-color: var(--beige);
+    border: var(--borderOutlineCockpit) solid var(--indigo);
+    width:20%;
+    height:100%;
+    border-radius: 2vw;
+    transform: rotate(59deg);
+    position:absolute;
+        top: -1.5%;
+        left: 50%;
+    z-index:2;
+}
+
+.steeringWheelHandleMask{
+    background-color: var(--beige);
+    width: calc(20.5% - var(--borderOutlineCockpit)*2);
+    height: 26%;
+    /* border-radius: 2vw; */
+    transform: rotate(59deg);
+    position: absolute;
+    bottom: 27%;
+    left: 36%;
+    z-index: 3;
+}
+
+
+
+
+
+
+/* ////////////////////
+////////LAB/////////// */
 #lab{
     background-color: rgb(230, 233, 57);
     width: 20%;
     /* height: 100%; */
-    flex: 3;
+    flex: 1;
 }
 
 
@@ -587,6 +1668,38 @@ body{
    
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -619,13 +1732,13 @@ vh - relative to 1% of the height of the viewport
 
 ////////////SOURCES/////////
 
-POSITIONING IN CSS:
+POSITIONING IN CSS
 https://medium.com/front-end-weekly/absolute-centering-in-css-ea3a9d0ad72e
 
-CSS SHAPES: 
+CSS SHAPES:
 https://css-tricks.com/the-shapes-of-css/#trapezoid-shape
 
-SKEWING RECTANGLE INTO A TRAPEZOID:
+SKEWING RECTANGLE INTO A TRAPEZOID
 https://stackoverflow.com/questions/23177903/css-transform-to-skew-the-shape-to-a-trapezium
 
 
@@ -639,6 +1752,15 @@ https://stackoverflow.com/questions/5394116/outline-radius
 
 USING CSS VARIABLES TO CHANGE BORDER VALUES MORE EFFICIENTLY
 https://www.w3schools.com/css/css3_variables.asp
+
+
+GLOW EFFECT FOR TRAPEZOID
+https://stackoverflow.com/questions/54436650/adding-shadow-to-trapezoid
+
+
+
+REMOVE BORDER THAT SHOWS UP WHEN CLICKING THE BUTTON
+https://stackoverflow.com/questions/19886843/how-to-remove-outline-border-from-input-button
 
 */
 
