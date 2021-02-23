@@ -11,7 +11,7 @@ $("#section1").click(function(){
 
     sectionEnterPage("#section2A",".sectionsContainer");
     sliderDot(".dot1",".dot2","#sliderDots1","var(--white)");
-    displayHiddenContent(".hiddenContent", 0.001);
+    displayHiddenContent(".hiddenContent", 2);
 
 })
 
@@ -61,7 +61,7 @@ $("#section2C").click(function(){
     $(".bottomLayer").addClass("changeColor");//make background layer change color
 
     sliderDot(".dot2",".dot3","#sliderDots2","var(--black)");
-    displayHiddenContent(".hiddenContent2", 0.001);
+    displayHiddenContent(".hiddenContent2", 2);
     // $(".topLayer2").css("height", "auto");
     //   test();
 
@@ -81,7 +81,7 @@ $("#section3C").click(function(){
 
     sectionEnterPage("#section4A",".sectionsContainer3");
     sliderDot(".dot3",".dot4","#sliderDots3","var(--white)");
-    displayHiddenContent(".hiddenContent3",0.001);
+    displayHiddenContent(".hiddenContent3",2);
 
 })
 
@@ -92,7 +92,7 @@ $("#section4C").click(function(){
 
     sectionEnterPage("#section5A",".sectionsContainer4");
     sliderDot(".dot4",".dot5","#sliderDots4","var(--white)");
-    displayHiddenContent(".hiddenContent4",0.001);
+    displayHiddenContent(".hiddenContent4",2);
 
 })
 
@@ -103,7 +103,7 @@ $("#section5B").click(function(){
 
     sectionEnterPage("#section6A",".sectionsContainer5");
     sliderDot(".dot5",".dot6","#sliderDots5","var(--white)");
-    displayHiddenContent(".hiddenContent5",0.001);
+    displayHiddenContent(".hiddenContent5",2);
 
 })
 
@@ -113,7 +113,7 @@ $("#section6B").click(function(){
 
     sectionEnterPage("#section7A",".sectionsContainer6");
     sliderDot(".dot6",".dot7","#sliderDots6","var(--white)");
-    displayHiddenContent(".hiddenContent6",0.001);
+    displayHiddenContent(".hiddenContent6",2);
 
 })
 
@@ -124,7 +124,7 @@ $("#section7C").click(function(){
 
     sectionEnterPage("#section8A",".sectionsContainer7");
     sliderDot(".dot7",".dot8","#sliderDots7","var(--white)");
-    displayHiddenContent(".hiddenContent7",0.001);
+    displayHiddenContent(".hiddenContent7",2);
 
 })
 
@@ -135,7 +135,7 @@ $("#section8B").click(function(){
 
     sectionEnterPage("#section9A",".sectionsContainer8");
     sliderDot(".dot8",".dot9","#sliderDots8","var(--white)");
-    displayHiddenContent(".hiddenContent8",1);
+    displayHiddenContent(".hiddenContent8",2);
 
 })
 
@@ -145,7 +145,7 @@ $("#section9C").click(function(){
 
     sectionEnterPage("#section10A",".sectionsContainer9");
     sliderDot(".dot9",".dot10","#sliderDots9","var(--white)");
-    displayHiddenContent(".hiddenContent9",1);
+    displayHiddenContent(".hiddenContent9",2);
 
 })
 
@@ -156,7 +156,7 @@ $("#section10C").click(function(){
 
     sectionEnterPage("#section11A",".sectionsContainer10");
     sliderDot(".dot10",".dot11","#sliderDots10","var(--white)");
-    displayHiddenContent(".hiddenContent10",1);
+    displayHiddenContent(".hiddenContent10",2);
 
 })
 
@@ -167,7 +167,7 @@ $("#section11C").click(function(){
 
     sectionEnterPage("#section12A",".sectionsContainer11");
     sliderDot(".dot11",".dot12","#sliderDots11","var(--white)");
-    displayHiddenContent(".hiddenContent11",1);
+    displayHiddenContent(".hiddenContent11",2);
 
 })
 
