@@ -1,3 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&family=Lexend+Mega&family=Space+Mono:ital,wght@0,700;1,400&display=swap');
+
+
+
+
 
 /* DECLARING VARIABLES */
 :root{
@@ -32,15 +37,14 @@ body{
     text-align: center;
     font-size: 1vw;
     padding:5vw;
+    font-family: 'IBM Plex Mono', 'Space Mono', 'Courier New', Courier, monospace;
 }
 
-p{
-    font-family: 'Courier New', Courier, monospace;
-}
 
 /* remove the black border that shows up when clicking the button */
 button{
     outline:none;
+    font-family: 'IBM Plex Mono', 'Space Mono', 'Courier New', Courier, monospace;
 }
 
 /* BIG PARENT FOR FLEXBOXES */
@@ -248,6 +252,8 @@ button{
     position:relative;
     z-index:-1;
 }
+
+
 
 .hallwayHorizontalModule{
     height:100%;
@@ -616,6 +622,20 @@ button{
     bottom:0px;
     z-index:-1;
 }
+/* adjustment for left hallway pillars since the borders won't show up */
+.hallwayHorizontal.hallwayHorizontalLeft .pillarContainer.pillar1 .pillarTrapezoidBorder{
+    left: calc(1*var(--borderOutline)/2);
+}
+
+.hallwayHorizontal.hallwayHorizontalLeft .pillarContainer.pillar2 .pillarTrapezoidBorder{
+    left: calc(-0.5*var(--borderOutline));
+    width: calc(100% + var(--borderOutline)/2);
+}
+
+.hallwayHorizontal.hallwayHorizontalLeft .pillarContainer.pillar3 .pillarTrapezoidBorder{
+    left: calc(0.1*var(--borderOutline));
+    width: calc(100% + var(--borderOutline)/2);
+}
 
 .pillarTrapezoid{
     border-bottom:10.5vw solid var(--white);
@@ -651,6 +671,21 @@ button{
     left:14.7777%;
     z-index: 1;
 }
+
+/* left hallway pillars adjustment */
+.hallwayHorizontal.hallwayHorizontalLeft .pillarContainer.pillar3 .pillarTrapezoidLineRectangle{
+    width:70.355%;
+}
+
+.hallwayHorizontal.hallwayHorizontalLeft .pillarContainer.pillar1 .pillarTrapezoidLineRectangle{
+    width:70.355%;
+}
+
+.hallwayHorizontal.hallwayHorizontalLeft .pillarContainer.pillar4 .pillarTrapezoidLineRectangle{
+    left: calc(14*var(--borderOutline));
+}
+
+
 
 .pillarTrapezoidLineMask{
     background-color: white;
@@ -693,31 +728,92 @@ button{
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
 
 
-
-
-
-
-
-
-
-
-
-
-
-/* ROOMS */
-#individualRooms{
-    background-color:wheat;
-    width: 20%;
-    /* height: 100%; */
-    flex: 3;
-}
-
-#meetingRoom{
-    background-color:teal; 
+/*//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////// LIBRARY /////////////////////////////////////////////////////////////////////////////////////////////////////
+ */
+#library{
+    /* background-color:teal;  */
+    border: var(--borderOutlineRooms) solid black;
     flex: 3; 
-    /* width: 20%; */
     height: 100%;
+    position:relative;
+    overflow:hidden;
 }
+
+/* library room - image */
+#libraryImage{
+    width: 100%;
+    height: 100%;
+    position:absolute;
+    left:0;
+    top:0;
+}
+
+/* library light container */
+#libraryGlow{
+    border-radius: 100%;
+    height: calc((832/664)*100%);
+    width: calc((832/1503)*100%);
+    position: absolute;
+    bottom: calc((164/664)*100%);
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+#libraryGlow img{
+    width:100%;
+    height:100%;
+    position:absolute;
+    left:0;
+    top:0;
+}
+
+/* library light image */
+#libraryBlueLight{
+    z-index:3;
+}
+
+/* library light glowing part  */
+#libraryBlur{
+    filter: blur(15px);
+    z-index:2;
+}
+
+/* library book that leads to The Great Silence Website */
+#libraryBookImage{
+    width:100%;
+    height:100%;
+}
+
+@keyframes float{
+    0%{
+        transform: translate(-50%,-25%);
+        
+    }
+    50%{
+        transform: translate(-50%, -15%);
+    }
+    100%{
+        transform: translate(-50%, -25%);
+
+    }
+}
+
+#libraryBook{
+    position:absolute;
+    left: 50%;
+    top: 25%;
+    transform: translate(-50%,-25%);
+    animation: float 3s ease-in-out infinite;
+}
+
+
+
+
+
+
 
 #welcomeRoom{
     background-color: rgb(211, 80, 57);
@@ -742,7 +838,7 @@ button{
 //////// COCKPIT /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
 #cockpit{
     background-color: transparent;
-    border: var(--borderOutlineRooms) solid var(--grey);
+    border: var(--borderOutlineRooms) solid black;
     flex: 3;
     height: 100%;
     color:var(--white);
@@ -846,7 +942,7 @@ button{
     background-color: transparent;
         border:calc(var(--borderOutlineCockpit)*1.5) solid var(--darkerCyan);
         border-radius: 5vw;
-    font-family: 'Courier New', Courier, monospace;
+    /* font-family: 'IBM Plex Mono', 'Space Mono', 'Courier New', Courier, monospace; */
         font-weight: bolder;
         font-size:2em;
         color:var(--darkerCyan);
@@ -1758,9 +1854,18 @@ GLOW EFFECT FOR TRAPEZOID
 https://stackoverflow.com/questions/54436650/adding-shadow-to-trapezoid
 
 
-
 REMOVE BORDER THAT SHOWS UP WHEN CLICKING THE BUTTON
 https://stackoverflow.com/questions/19886843/how-to-remove-outline-border-from-input-button
 
+
+CSS FLOATING ANIMATION
+https://codepen.io/MarioDesigns/pen/woJgeo
+
+
+ADD A CLICKABLE LINK TO AN IMAGE
+https://www.w3schools.com/tags/tryit.asp?filename=tryhtml_link_image
+
 */
+
+
 

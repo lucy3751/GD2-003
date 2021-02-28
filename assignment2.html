@@ -11,40 +11,37 @@
     </head>
 
     <body>
-
-        <div class="sittingVertical">
-
-             <div id="individualRooms">
-                <h1>Individual Rooms</h1>
-                <p>-login system
-                    <br>
-                    -users can customize their individual rooms
-                    <br> 
-                    -maybe a journal for them to store their
-                     thoughts?
-                </p>
-            </div>
-
-            <div class="hallwayVertical">
-                <h2>hallway</h2>
-                <div class="hallwayFloor">floor</div>
-            </div>
-    
-        </div>
-
-
-
+         <!--/////////////////////////////////////////////// 
+            ////////////// HORIZONTAL BOXES /////////////////////
+        /////////////////////////////////////////////////  -->
         <div class="sittingHorizontal">
            
-            <div id="meetingRoom">
-                <h1>Meeting Room</h1>
-                <p>This is where you can chat with passengers of this spaceship!</p>
+            <!-- //////////////LIBRARY//////////////////////////
+            ///////////////////////////////////////////////////// -->
+            <div id="library">
+
+                <!-- library image -->
+                <img id="libraryImage" src="images/library.svg" alt="library image">
+
+                <!-- library blue glowing light -->
+                <div id="libraryGlow">
+                    <img id="libraryBlueLight" src="images/libraryBlueLight.svg">
+                    <img id="libraryBlur" src="images/libraryBlur.svg">
+                </div>
+                
+                <!-- book that leads to The Great Silence Website -->
+                <div id="libraryBook">
+                    <a href="bookshelf/text.html">
+                        <img id="libraryBookImage" src="images/libraryBook.svg" alt="book to The Great Silence Website">
+                    </a>
+                </div>
+
             </div>
 
 
            <!-- /////////////HALLWAY HORIZONTAL/////////////////
                 /////////////////////////////////////////////// -->
-                <div class="hallwayHorizontal">
+                <div class="hallwayHorizontal hallwayHorizontalLeft">
             
                 
                     <!-- /////////////PILLARS -->
@@ -336,9 +333,7 @@
 
              <!-- /////////////HALLWAY HORIZONTAL/////////////////
                 /////////////////////////////////////////////// -->
-            <div class="hallwayHorizontal">
-            
-                
+            <div class="hallwayHorizontal hallwayHorizontalRight">
                 <!-- /////////////PILLARS -->
                 <div class="pillarsBigContainer">
                     
@@ -612,8 +607,6 @@
                     </div>
 
                 </div>
-
-
             </div>
 
 
@@ -731,7 +724,7 @@
                 </div>
 
 
-                               <!-- ///////////BIG CONTROL PANEL -->    
+                <!-- ///////////BIG CONTROL PANEL -->    
                 <div id="bigControlPanelContainer">
                     
                     <div id="bigControlPanelTrapezoidOutline"></div>
@@ -885,18 +878,21 @@
                 </div>
             </div>
 
-
-
-
         </div>
 
    
 
 
-
+        <!--/////////////////////////////////////////////// 
+            ////////////// VERTICAL BOXES /////////////////////
+        /////////////////////////////////////////////////  -->
         <div class="sittingVertical" id="sittingVerticalBottom">
             
+            <!-- /////////////RAMP/////////////////
+            /////////////////////////////////////////////// --> 
             <div id="ramp">
+
+                <!-- //////TOP PART OF THE RAMP -->
                 <div id="rampTop">
                     <div id="rampTopFloor">
                         blue floor
@@ -910,38 +906,43 @@
                     </div>
                 </div>
 
+                <!-- ///////BOTTOM PART OF THE RAMP -->
                 <div id="rampBottom">
-                    hello
+                   
                     <div id="rampBottomFloor"></div>
+                    
+                    <!-- THE FLOOR PATTERNS -->
+                            <!-- FIRST (TOP) -->
                     <div class="rampBottomFloorPattern">
                         <div class="rampBottomFloorPatternSide"></div>
                         <div class="rampBottomFloorPatternCenter"></div>
                         <div class="rampBottomFloorPatternCenterMask"></div>   
                     </div>
 
+                            <!-- SECOND  -->
                     <div class="rampBottomFloorPattern" id="rampBottomFloorPattern2">
                         <div class="rampBottomFloorPatternSide"></div>
                         <div class="rampBottomFloorPatternCenter"></div>
                         <div class="rampBottomFloorPatternCenterMask"></div>   
                     </div>
+
+                            <!-- THIRD  -->
                     <div class="rampBottomFloorPattern" id="rampBottomFloorPattern3">
                         <div class="rampBottomFloorPatternSide"></div>
                         <div class="rampBottomFloorPatternCenter"></div>
                         <div class="rampBottomFloorPatternCenterMask"></div>   
                     </div>
+
+                            <!-- FOURTH  -->
                     <div class="rampBottomFloorPattern" id="rampBottomFloorPattern4">
                         <div class="rampBottomFloorPatternSide"></div>
                         <div class="rampBottomFloorPatternCenter"></div>
                         <div class="rampBottomFloorPatternCenterMask"></div>   
                     </div>
                 </div>
+
             </div>
 
-            <!-- <div id="lab">
-                <h1>Lab</h1>
-                <p>Share your amazing creations!</p>
-            </div> -->
-    
         </div>
 
       
