@@ -35,9 +35,9 @@ body{
     background:rgb(9, 2, 64);
     color: black;
     text-align: center;
-    font-size: 1vw;
-    padding:5vw;
-    font-family: 'IBM Plex Mono', 'Space Mono', 'Courier New', Courier, monospace;
+    font-size: 14px;
+    padding-top:1.6vw;
+    font-family: 'IBM Plex Mono', 'Space Mono', 'Courier New', Courier, monospace;  
 }
 
 
@@ -60,6 +60,7 @@ button{
 
 #sittingVerticalBottom{
     height:140vw; 
+    transition: ease-in 1s;
 }
 
 .sittingHorizontal{
@@ -80,18 +81,27 @@ button{
     flex:2;
     width:10%;
     position:relative;
-    z-index:-1;
+    z-index:1;   
 }
 
 /*////// RAMP - TOP PART */
 #rampTop{
     /* background-color: purple; */
     width: 100%;
-    height: 42.546%;
+    height: 32.546%;
+    /* height: 28.546%; */
+    overflow:hidden;
     position:absolute;
         top:0;
         left:0;
+    z-index: 2;
+    transition: ease-in 0.5s;
 }
+
+#rampTop.closeRampTop{
+    top: -32.5%;
+}
+
 
 /* blue floor */
 #rampTopFloor{
@@ -149,8 +159,16 @@ button{
     width:95.9644%;
     height:57.4544%;
     position:absolute;
-        bottom:0;
+        bottom:15%;
         left: calc((100% - 95.9644%)/2);
+    transition: ease-in 1.5s;
+    z-index:1;
+}
+
+
+/* ////////// CLOSE THE RAMP ANIMATION */
+#rampBottom.closeRampBottom{
+    bottom:70%;
 }
 
 #rampBottomFloor{
@@ -223,6 +241,82 @@ button{
 }
 
 
+/*////// RAMP - BUTTON TO STATION / SECONDARY SPACE */
+#returnStation{
+    /* background-color:purple; */
+    width: 15%;
+    height: 15%;
+    position: absolute;
+        bottom: -5%;
+        left: 50%;
+    transform: translateX(-50%);
+    animation: float 3s ease-in-out infinite;
+}
+
+
+/* arrow - border*/
+.arrowVerticalBorder{
+    background-color: var(--darkerCyan);
+    width: 30%;
+    height: 97%;
+    position: absolute;
+        top:0%;
+        left: 50%;
+    transform: translateX(-50%);
+    z-index:2;
+}
+
+.arrowPointBorder{
+    border-left: calc(1.8vw + var(--borderOutlineRamp)) solid var(--darkerCyan);
+    border-bottom: calc(1.8vw + var(--borderOutlineRamp)) solid var(--darkerCyan);
+    width: calc(5vw + var(--borderOutlineRamp));
+    height: calc(5vw + var(--borderOutlineRamp));
+    transform-origin: bottom left ;
+    transform: rotate(-45deg) translateX(calc(25% + 0.25*var(--borderOutlineRamp)));
+    position:absolute;
+        bottom: calc(-20% - 0.5*var(--borderOutlineRamp));
+}
+
+
+
+/* arrow */
+.arrowVertical{
+    background-color: var(--cyan);
+    width: calc(30% - var(--borderOutlineRamp));
+    height: calc(97% - var(--borderOutlineRamp));
+    position: absolute;
+        top: calc(var(--borderOutlineRamp)/2);
+        left: 50%;
+    transform: translateX(-50%);
+    z-index:2;
+
+}
+
+.arrowPoint{
+    border-left: 1.8vw solid var(--cyan);
+    border-bottom: 1.8vw solid var(--cyan);
+    width: 5vw;
+    height: 5vw;
+    transform-origin: bottom left ;
+    transform: rotate(-45deg) translateX(25%);
+    position:absolute;
+        bottom:-20%;
+}
+
+
+
+/*arrow - glow */
+.glow{
+    filter: blur(20px);
+    z-index: 1;
+}
+
+
+
+
+
+
+
 /*//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////// HALLWAYS /////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -243,6 +337,7 @@ button{
 
 /* ///////////HALLWAY HORIZONTAL////////////// */
 .hallwayHorizontal{
+    border: var(--borderOutlineRooms) solid black;
     overflow: hidden;
     background-color: transparent;
     height: 37vw;
@@ -809,28 +904,273 @@ button{
     animation: float 3s ease-in-out infinite;
 }
 
+/* ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 
 
 
 
-
-
+/*//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////// WELCOME ROOM /////////////////////////////////////////////////////////////////////////////////////////////////////
+ */
 #welcomeRoom{
-    background-color: rgb(211, 80, 57);
+    /* background-color: rgb(211, 80, 57); */
+    border: var(--borderOutlineRooms) solid black;
     flex: 2.7;
     /* width: 20%; */
-    height: 100%;
+    height: 105%;
     position:relative;
+    z-index:3;
+    overflow: hidden;
+}
+
+/* scale all svg to 100% of parent */
+#welcomeRoom img{
+    width:100%;
+    height:100%;
+}
+
+/* container that holds the blue screen */
+.welcomeRoomLightContainer{
+    /* background: green; */
+    width:calc((912/1351)*100%);
+    height:calc((665/697)*100%);
+    position: absolute;
+        top: 50%;
+        left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+/* BLUE SCREEN  */
+#welcomeRoomBlueScreen{
+    position: absolute;
+        top:0;
+        left:0;
+}
+
+/* blue screen blur */
+#welcomeRoomBlur{
+    position: absolute;
+        top:0;
+        left:0;
+    filter: blur(20px);
+}
+
+/* blue screen light strip */
+#welcomeRoomLightStrip{
+    position: absolute;
+        top:0;
+        left:0;
+}
+
+/* welcome room - plants */
+#welcomeRoomPlantsContainer{
+    width:calc((1133/1351)*100%);
+    height:calc((306/697)*100%);
+    position:absolute;
+        bottom:-10%;
+        left:50%;
+            transform: translateX(-50%);
+}
+
+
+/* INFROMATION ON BLUE SCREEN  */
+.welcomeRoomInformation{
+    /* background: purple; */
+    width: 80%;
+    height: 80%;
+    position: absolute;
+        top:50%;
+        left:50%;
+        transform:translate(-50%,-50%);
+    padding-top:5%;
+}
+
+
+
+
+/* INFROMATION 1 */
+
+/* buttons */
+.welcomeRoomButtonContainer{
+    width: 100%;
+    /* background: green; */
+    height: 40%;
+    position:absolute;
+        bottom:10%;
+        left:0;
+}
+
+.welcomeRoomButtons{
+     background-color: transparent;
+        border:calc(var(--borderOutlineCockpit)*3) solid var(--indigo);
+        border-radius:2vw;
+    margin:auto;
+    cursor:pointer;
+    transition-duration: 0.2s;
+    width: 30%;
+    height: 40%;
+    color: var(--indigo);
+}
+
+
+.welcomeRoomButtons:hover{
+    background-color: var(--indigo);
+    color:var(--white);
+}
+
+.welcomeRoomButtons#launch{
+    position:absolute;
+    top:0;
+    left:50%;
+    transform: translateX(-50%);
+}
+
+.welcomeRoomButtons.leave{
+    position:absolute;
+    bottom:0;
+    left:50%;
+    transform: translateX(-50%);
+}
+
+
+/* INFROMATION 2 */
+
+#welcomeRoomInformation2{
+    display: none;
+}
+
+#departing{
+    padding-bottom:1.5em;
+}
+
+
+/* INFROMATION 3 */
+
+#welcomeRoomInformation3{
+    display: none;
+}
+
+/* signs */
+#welcomeRoomSignage{
+    /* background-color: green; */
+    margin-top:5%;
+    width: 40%;
+    height: 20%;
+    position: absolute;
+        top: 25%;
+        left:50%;
+        transform: translateX(-50%);
+}
+
+#librarySignContainer{
+    /* background-color: black; */
+    width: 100%;
+    height:45%;
+    position: absolute;
+        top:0;
+        left:0;
+}
+
+#cockpitSignContainer{
+    /* background-color: darkcyan; */
+    width: 100%;
+    height:45%;
+    position: absolute;
+    bottom:0;
+    left:0;
+}
+
+/* arrows */
+.welcomeRoomSignageArrow{
+    /* background-color: white; */
+    width: 30%;
+    height: 100%;
+    position:absolute;
+        left:0;
+        top:0;
+}
+
+.arrowHorizontal{
+    background-color: var(--indigo);
+    width:100%;
+    height: 20%;
+    position:absolute;
+        right:0;
+        top:50%;
+        transform:translateY(-50%);
+}
+
+.arrowPointTriangle{
+    /* width: 1vw;
+    height: 1vw; */
+    border-right: 1.2vw solid  var(--indigo);
+    border-bottom: 1.2vw solid transparent;
+    border-top: 1.2vw solid transparent;
+    position:absolute;
+        left:-12%;
+        top:50%;
+        transform:translateY(-50%);
+}
+
+.arrowPointTriangleLeft{
+    /* width: 1vw;
+    height: 1vw; */
+    border-left: 1.2vw solid  var(--indigo);
+    border-bottom: 1.2vw solid transparent;
+    border-top: 1.2vw solid transparent;
+    position:absolute;
+        right:-12%;
+        top:50%;
+        transform:translateY(-50%);
+}
+
+/* text */
+.welcomeRoomSignageText{
+    /* background-color: green; */
+    width: 70%;
+    position:absolute;
+        right:-10%;
+        top:50%;
+        transform:translateY(-50%);
+    text-align: left;
 }
 
 
 
 
 
+.paragraphStyle1{
+    font-size:1em;
+}
 
 
+.headingStyle1{
+    font-size:12em;
+    font-weight: bold;
+    color: var(--indigo);
+}
+
+.headingStyle2{
+    font-size:3em;
+    font-weight: bold;
+    color: var(--indigo);
+}
+
+.headingStyle3{
+    font-size:2em;
+    font-weight: bold;
+    color: var(--indigo);
+}
 
 
+br{
+    content:"";
+    display:block;
+    margin:2em;
+}
 
 
 /* ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
