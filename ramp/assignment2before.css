@@ -1,0 +1,444 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&family=Lexend+Mega&family=Space+Mono:ital,wght@0,700;1,400&display=swap');
+
+
+
+
+
+/* DECLARING VARIABLES */
+:root{
+    --borderOutline: 1.3px;
+    --borderOutlineCockpit: calc(1.5*var(--borderOutline));
+    --roundedCornerBorderOutline:1.1px;
+    --borderOutlineRooms: 5px;
+    --borderOutlineRamp: 5px;
+    --backgroundColor: rgb(9,2,64);
+
+    /* COLOURS */
+    --orange:#f6892f;
+    --red:#db3e2d;
+    --beige:#e3e1d4;
+    --cyan:#6dcde4;
+    --darkerCyan:#00aeef;
+    --indigo:#052f45;
+    --grey:#3e5960;
+    --white:white;
+}
+
+/* BROWSER PROPERTIES RESET */
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    background:rgb(9, 2, 64);
+    color: black;
+    text-align: center;
+    font-size: 14px;
+    font-family: 'IBM Plex Mono', 'Space Mono', 'Courier New', Courier, monospace;  
+}
+
+
+/* remove the black border that shows up when clicking the button */
+button{
+    outline:none;
+    font-family: 'IBM Plex Mono', 'Space Mono', 'Courier New', Courier, monospace;
+}
+
+
+
+
+/* BIG PARENT FOR FLEXBOXES */
+.sittingVertical{
+    /* background-color: green; */
+    display:flex;
+        flex-direction: column; /*column=y-axis , row=x-axis */
+        align-items: center;  /*applies to the cross-axis (the axis crossing the main axis)*/
+        justify-content: center; /*applies to the main-axis */
+    width: 500vw;
+    height: 200vw;
+} 
+
+#sittingVerticalBottom{
+    height:140vw; 
+    transition: ease-in 1s;
+}
+
+/* /////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////
+////////////////// RAMP ///////////////////////////////////// */
+
+
+#ramp{
+    /* background-color: darkcyan; */
+    flex:2;
+    width:10%;
+    position:relative;
+    z-index:1;   
+}
+
+/*////// RAMP - TOP PART */
+#rampTop{
+    /* background-color: purple; */
+    width: 100%;
+    height: 32.546%;
+    /* height: 28.546%; */
+    overflow:hidden;
+    position:absolute;
+        top:0;
+        left:0;
+    z-index: 2;
+    transition: ease-in 0.5s;
+}
+
+
+/* blue floor */
+#rampTopFloor{
+    background-color: var(--indigo);
+    border: var(--borderOutlineRamp) solid var(--grey);
+    border-top:none;
+    border-bottom:none;
+    width:100%;
+    height:85.3411%;
+    position:absolute;
+        top:0;
+        left:0;
+}
+
+.rampTopFloorTiles{
+    background-color: var(--grey);
+    width:89.567%;
+    height: 50.6013%;
+    position:absolute;
+        bottom: 5.0968%;
+        left: 5.0968%;
+    border-radius:2vw;
+}
+
+#rampTopFloorTilesTop{
+    bottom: calc(5.0968% + 50.6013% + 5.0968%);
+}
+
+/* orange link part */
+#rampTopLink{
+    background-color: var(--orange);
+    width:100%;
+    height:14.6589%;
+    position:absolute;
+        left:0;
+        bottom:0;
+}
+
+#rampTopLinkMask{  
+    border-bottom:5vw solid var(--indigo);
+    border-left:1.5vw solid transparent;
+    border-right:1.5vw solid transparent;
+    width:37.213%;
+    /* height:58.2544%; */
+    position:absolute;
+        bottom:0;
+        left:31.3952%;
+}
+
+/*////// RAMP - BOTTOM PART */
+#rampBottom{
+    background-color: var(--grey);
+    border: var(--borderOutlineRamp) solid var(--indigo);
+    border-top:none;
+    width:95.9644%;
+    height:57.4544%;
+    position:absolute;
+        bottom:15%;
+        left: calc((100% - 95.9644%)/2);
+    transition: ease-in 1.5s;
+    z-index:1;
+}
+
+
+#rampBottomFloor{
+    background-color: var(--indigo);
+    width: 87.73379%;
+    height:calc(100% - ((100% - 87.73379%)/2));
+    position:absolute;
+        top:0;
+        left: calc((100% - 87.73379%)/2);
+}
+
+/* ramp floor pattern whole container */
+.rampBottomFloorPattern{
+    /* background-color: white; */
+    width:100%;
+    height:6.06471%;
+    position: absolute;
+        top:20%;
+        /* top: calc((51.8032%/1767.6365%)*100); */
+        left:0;
+}
+
+
+#rampBottomFloorPattern2{
+    top:40%;
+    /* top: 17.789%; */
+}
+
+#rampBottomFloorPattern3{
+    top:60%;
+    /* top: 32.641%; */
+}
+
+#rampBottomFloorPattern4{
+    top: 80%;
+    /* top: 47.497%; */
+}
+
+
+
+/* ramp floor pattern module */
+.rampBottomFloorPatternSide{
+    background-color: var(--grey);
+    height:29.883%;
+    width:100%;
+    position:absolute;
+        bottom:0;
+        left:0;
+}
+
+
+.rampBottomFloorPatternCenter{
+    background-color: var(--grey);
+    height:100%;
+    width:69.0107%;
+    position:absolute;
+        bottom:0;
+        left:15.024%;
+    transform: perspective(400px) rotateX(20deg);
+}
+
+.rampBottomFloorPatternCenterMask{
+    background-color: var(--indigo);
+    height:73.5353%;
+    width:61.5047%;
+    position:absolute;
+        bottom:-2%;
+        left:18.77189%;
+    transform: perspective(400px) rotateX(20deg);
+}
+
+
+
+
+
+/*////// RAMP - BUTTON TO STATION / SECONDARY SPACE */
+@keyframes float{
+    0%{
+        transform: translate(-50%,-25%);
+        
+    }
+    50%{
+        transform: translate(-50%, -15%);
+    }
+    100%{
+        transform: translate(-50%, -25%);
+
+    }
+}
+
+#returnStation{
+    /* background-color:purple; */
+    width: 15%;
+    height: 15%;
+    position: absolute;
+        bottom: -5%;
+        left: 50%;
+    transform: translateX(-50%);
+    animation: float 3s ease-in-out infinite;
+}
+
+
+/* station arrow - border*/
+.arrowVerticalBorder{
+    background-color: var(--darkerCyan);
+    width: 30%;
+    height: 97%;
+    position: absolute;
+        top:0%;
+        left: 50%;
+    transform: translateX(-50%);
+    z-index:2;
+}
+
+.arrowPointBorder{
+    border-left: calc(1.8vw + var(--borderOutlineRamp)) solid var(--darkerCyan);
+    border-bottom: calc(1.8vw + var(--borderOutlineRamp)) solid var(--darkerCyan);
+    width: calc(5vw + var(--borderOutlineRamp));
+    height: calc(5vw + var(--borderOutlineRamp));
+    transform-origin: bottom left ;
+    transform: rotate(-45deg) translateX(calc(25% + 0.25*var(--borderOutlineRamp)));
+    position:absolute;
+        bottom: calc(-20% - 0.5*var(--borderOutlineRamp));
+}
+
+
+
+/* station arrow */
+.arrowVertical{
+    background-color: var(--cyan);
+    width: calc(30% - var(--borderOutlineRamp));
+    height: calc(97% - var(--borderOutlineRamp));
+    position: absolute;
+        top: calc(var(--borderOutlineRamp)/2);
+        left: 50%;
+    transform: translateX(-50%);
+    z-index:2;
+
+}
+
+.arrowPoint{
+    border-left: 1.8vw solid var(--cyan);
+    border-bottom: 1.8vw solid var(--cyan);
+    width: 5vw;
+    height: 5vw;
+    transform-origin: bottom left ;
+    transform: rotate(-45deg) translateX(25%);
+    position:absolute;
+        bottom:-20%;
+}
+
+
+
+/*arrow - glow */
+.glow{
+    filter: blur(20px);
+    z-index: 1;
+}
+
+
+/*////// RAMP - BUTTON TO SPACESHIP*/
+#enterSpaceship{
+/* background-color:purple; */
+    width: 14.4%;
+    height: 30.9%;
+    position: absolute;
+        top:15%;
+        left:50%;
+        transform: translateX(-50%);
+    animation: float 3s ease-in-out infinite;
+}
+
+/* spaceship arrow border  */
+.arrowVerticalBorderSpaceship{
+    background-color: var(--red);
+    width: 30%;
+    height: 97%;
+    position: absolute;
+        top:0%;
+        left: 50%;
+    transform: translateX(-50%);
+    z-index:2;
+}
+
+.arrowPointBorderSpaceship{
+    border-right: calc(1.8vw + var(--borderOutlineRamp)) solid var(--red);
+    border-top: calc(1.8vw + var(--borderOutlineRamp)) solid var(--red);
+    width: calc(5vw + var(--borderOutlineRamp));
+    height: calc(5vw + var(--borderOutlineRamp));
+    transform-origin: bottom left ;
+    transform: rotate(-45deg) translateX(calc(25% + 0.25*var(--borderOutlineRamp)));
+    position:absolute;
+        top: calc(17% - 0.5*var(--borderOutlineRamp));
+}
+
+/* spaceship arrow */
+.arrowVerticalSpaceship{
+    background-color: var(--orange);
+    width: calc(30% - var(--borderOutlineRamp));
+    height: calc(97% - var(--borderOutlineRamp));
+    position: absolute;
+        top: calc(var(--borderOutlineRamp)/2);
+        left: 50%;
+    transform: translateX(-50%);
+    z-index:2;
+
+}
+
+.arrowPointSpaceship{
+    border-right: 1.8vw solid var(--orange);
+    border-top: 1.8vw solid var(--orange);
+    width: 5vw;
+    height: 5vw;
+    transform-origin: bottom left ;
+    transform: rotate(-45deg) translateX(25%);
+    position:absolute;
+        top: calc(17% - 0.9*var(--borderOutlineRamp));
+}
+
+
+/* 
+
+///////////////NOTES//////////////////
+
+HIEARCHY:;
+IDs
+Classes
+Generic elements
+
+IDs overrule classes, classes overrule generic elements
+
+
+
+SOME CSS MEASUREMENTS (from https://www.w3schools.com/cssref/css_units.asp)
+
+em - relative to the parent element's font size
+ex - relative to x-height of the current font (the parent?)
+vw - relative to 1% of the width of the viewport (the browser window size)
+vh - relative to 1% of the height of the viewport
+% - relative to the parent element
+
+
+
+
+
+////////////SOURCES/////////
+
+POSITIONING IN CSS
+https://medium.com/front-end-weekly/absolute-centering-in-css-ea3a9d0ad72e
+
+CSS SHAPES:
+https://css-tricks.com/the-shapes-of-css/#trapezoid-shape
+
+SKEWING RECTANGLE INTO A TRAPEZOID
+https://stackoverflow.com/questions/23177903/css-transform-to-skew-the-shape-to-a-trapezium
+
+
+ADDING/SUBTRACTING VALUES IN CSS
+https://stackoverflow.com/questions/8643401/is-there-a-way-to-add-and-subtract-values-in-css
+
+
+ROUNDED CORNERS OUTLINE USING BOX SHADOWS
+https://stackoverflow.com/questions/5394116/outline-radius
+
+
+USING CSS VARIABLES TO CHANGE BORDER VALUES MORE EFFICIENTLY
+https://www.w3schools.com/css/css3_variables.asp
+
+
+GLOW EFFECT FOR TRAPEZOID
+https://stackoverflow.com/questions/54436650/adding-shadow-to-trapezoid
+
+
+REMOVE BORDER THAT SHOWS UP WHEN CLICKING THE BUTTON
+https://stackoverflow.com/questions/19886843/how-to-remove-outline-border-from-input-button
+
+
+CSS FLOATING ANIMATION
+https://codepen.io/MarioDesigns/pen/woJgeo
+
+
+ADD A CLICKABLE LINK TO AN IMAGE
+https://www.w3schools.com/tags/tryit.asp?filename=tryhtml_link_image
+
+*/
+
+
+

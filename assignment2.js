@@ -3,7 +3,7 @@ var number=3
 
 
 //EXECUTABLE CODE
-inputPopUp();
+// inputPopUp();
 
 // FUNCTIONS
 
@@ -75,6 +75,12 @@ function closeRamp(){
         $("#rampTop").addClass("closeRampTop");//close ramp top
         $("#sittingVerticalBottom").css("height","1vh");//height of the page decrease to 1vh
     },2000)
+
+    setTimeout(function(){
+        $(".bigContainer").css("height","100vh");//resize height to 1 vh
+        $(".bigContainer").css("width","auto");//resize width to reveal the other rooms
+        $(".bigContainer").css("overflow-x","visible");//resize height to 1 vh
+    },3000)
 
 }
 

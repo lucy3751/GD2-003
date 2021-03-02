@@ -41,11 +41,21 @@ body{
 }
 
 
+
 /* remove the black border that shows up when clicking the button */
 button{
     outline:none;
     font-family: 'IBM Plex Mono', 'Space Mono', 'Courier New', Courier, monospace;
 }
+
+/* BIG CONTAINER TO CROP THE VIEWPORT SO THAT IT SHOWS ONLY A CERTAIN PART OF THE WEBSITE */
+.bigContainer{
+    width:110vw;
+    height:200vh;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
 
 /* BIG PARENT FOR FLEXBOXES */
 .sittingVertical{
@@ -161,8 +171,8 @@ button{
     position:absolute;
         bottom:15%;
         left: calc((100% - 95.9644%)/2);
+        z-index:1;
     transition: ease-in 1.5s;
-    z-index:1;
 }
 
 
