@@ -1,0 +1,138 @@
+/*  //////////////
+//////////////////
+STYLING BEFORE LOADING SLICK SLIDER CODE*/
+#title{
+    text-align: center;
+    margin: 30px auto;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 30px;
+}
+
+#slideshow{
+    width: 100%;
+    height: 100vh;
+    background-color: green;
+    /* set to position relative for the arrows' position absolute*/
+    position: relative;
+}
+
+#slider{
+    background-color: black;
+    width: 50%;
+    height: 500px;
+
+    /* position the slider to the center */
+    /* margin: 0px auto; */
+    /* or use position absolute */
+    position:absolute; 
+        top:50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+
+    /* set overflow to prevent the slider content from going out of the div */
+    overflow: hidden;
+
+}
+
+.sliderContent{
+    /* width doesn't seem to work for the child, set its parent width instead */
+    /* setting height of the child works, but % unit doesnt work */
+    height: 500px;
+
+    /* set the slider content to display as side by side blocks (rows), instead of columns */
+    display:inline-block;
+
+    background-color: darkcyan;
+    margin: 0px 10px;
+}
+
+
+
+/*  //////////////
+//////////////////
+STYLING AFTER LOADING SLICK SLIDER */
+
+/* arrows */
+.arrows{
+    position:absolute;
+    top: 50%;
+    cursor: pointer;
+}
+
+
+#arrowLeft{
+    border-right: 2vw solid white;
+    border-top: 2vw solid transparent;
+    border-bottom: 2vw solid transparent;
+    left: 10%;
+}
+
+#arrowLeft:hover{
+    border-right: 2vw solid black;
+}
+
+#arrowRight{
+    border-left: 2vw solid white;
+    border-top: 2vw solid transparent;
+    border-bottom: 2vw solid transparent;
+
+    right: 10%;
+}
+
+#arrowRight:hover{
+    border-left: 2vw solid black;
+}
+
+
+.sliderImage{
+    display: block;
+    margin-left:auto;
+    margin-right: auto;
+    /* width: 100%; */
+    height: 100%;
+}
+
+
+
+/* stationary slider */
+
+#stationarySlider{
+    width:20%;
+    height: 10%;
+    background-color: purple;
+    position:absolute;
+        bottom:2%;
+        left: 50%;
+        transform: translate(-50%);
+    overflow: hidden;
+}
+
+
+.stationarySliderContent{
+    height: 5vw;
+    /* width: 50%; */
+    background-color: darkcyan;
+    display:inline-block;
+    /* position:absolute;
+       top: 50%;
+       left: 50%;
+       transform: translate(-50%,-50%); */
+}
+
+.sliderButton{
+    background: black;
+    color: rgb(192, 188, 188);
+    height: 100%;
+    width: 100%;
+    transition: ease-out 0.3s;
+    cursor: pointer;
+
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.sliderButton:hover{
+    color: rgb(24, 24, 24);
+    background: white;
+}

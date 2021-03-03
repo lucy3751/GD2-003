@@ -12,6 +12,7 @@
     --borderOutlineRooms: 5px;
     --borderOutlineRamp: 5px;
     --backgroundColor: rgb(9,2,64);
+    --transparentBlue: rgba(78,198,224,0);
 
     /* COLOURS */
     --orange:#f6892f;
@@ -249,81 +250,6 @@ button{
         left:18.77189%;
     transform: perspective(400px) rotateX(20deg);
 }
-
-
-/*////// RAMP - BUTTON TO STATION / SECONDARY SPACE */
-#returnStation{
-    /* background-color:purple; */
-    width: 15%;
-    height: 15%;
-    position: absolute;
-        bottom: -5%;
-        left: 50%;
-    transform: translateX(-50%);
-    animation: float 3s ease-in-out infinite;
-}
-
-
-/* arrow - border*/
-.arrowVerticalBorder{
-    background-color: var(--darkerCyan);
-    width: 30%;
-    height: 97%;
-    position: absolute;
-        top:0%;
-        left: 50%;
-    transform: translateX(-50%);
-    z-index:2;
-}
-
-.arrowPointBorder{
-    border-left: calc(1.8vw + var(--borderOutlineRamp)) solid var(--darkerCyan);
-    border-bottom: calc(1.8vw + var(--borderOutlineRamp)) solid var(--darkerCyan);
-    width: calc(5vw + var(--borderOutlineRamp));
-    height: calc(5vw + var(--borderOutlineRamp));
-    transform-origin: bottom left ;
-    transform: rotate(-45deg) translateX(calc(25% + 0.25*var(--borderOutlineRamp)));
-    position:absolute;
-        bottom: calc(-20% - 0.5*var(--borderOutlineRamp));
-}
-
-
-
-/* arrow */
-.arrowVertical{
-    background-color: var(--cyan);
-    width: calc(30% - var(--borderOutlineRamp));
-    height: calc(97% - var(--borderOutlineRamp));
-    position: absolute;
-        top: calc(var(--borderOutlineRamp)/2);
-        left: 50%;
-    transform: translateX(-50%);
-    z-index:2;
-
-}
-
-.arrowPoint{
-    border-left: 1.8vw solid var(--cyan);
-    border-bottom: 1.8vw solid var(--cyan);
-    width: 5vw;
-    height: 5vw;
-    transform-origin: bottom left ;
-    transform: rotate(-45deg) translateX(25%);
-    position:absolute;
-        bottom:-20%;
-}
-
-
-
-/*arrow - glow */
-.glow{
-    filter: blur(20px);
-    z-index: 1;
-}
-
-
-
-
 
 
 
@@ -1223,7 +1149,7 @@ br{
 }
 
 #nextDestinationRectangleUI{
-    background-color: rgba(78,198,224,0);
+    background-color: var(--transparentBlue);
         border:calc(var(--borderOutlineCockpit)*1.5) solid var(--cyan);
         border-radius: 1vw;
     /* width:94.144%; */
@@ -1238,8 +1164,9 @@ br{
 /* content container */
 #nextDestinationContentContainer{
     /* background-color: purple; */
-    width: calc((123/174)*100%);
+    /* width: calc((123/174)*100%); */
     height: 100%;
+    width: 90%;
     position:absolute;
         left:50%;
         top:0;
@@ -1248,9 +1175,10 @@ br{
 
 /* next destination text */
 #nextDestinationTextContainer{
-    /* background-color: green; */
-    color:var(--orange);
+    /* background-color: black; */
+    color:var(--cyan);
         font-weight: bold;
+        font-size: 1.7em;
     height: calc((12/113)*100%);
     width:100%;
     position:absolute;
@@ -1261,14 +1189,17 @@ br{
 
 #nextDestinationText{
     position:absolute;
-        bottom:0;
+        top:50%;
         left:50%;
-        transform: translateX(-50%);
+        transform: translate(-50%,-50%);
 }
 
-/* slider */
-#nextDestinationSlider{
-    background-color: darkcyan;
+
+
+
+/* SLIDER */
+#nextDestination-arrowsSlider{
+     /* background-color: darkblue; */
     width: 100%;
     height: calc((81/113)*100%);
     position:absolute;
@@ -1277,9 +1208,100 @@ br{
         transform: translateX(-50%);
 }
 
-/* Go button */
+/* parent of content inside the slider */
+#nextDestinationSlider{
+     /* background-color: purple; */
+     width:70%;
+     height:100%;
+     margin:0px auto;
+
+     overflow:hidden;
+     position:absolute;
+        top:50%;
+        left:50%;
+        transform: translate(-50%,-50%);
+}
+
+#nextDestinationSlider img{
+    width: 100%;
+    height: 100%;
+}
+
+.sliderContent{
+    /* background-color: var(--indigo); */
+    height:16vw;
+    /* set the slider content to display as side by side blocks (rows), instead of columns */
+    display:inline-block;
+
+    /* background-color: darkcyan; */
+    margin: 0.3vw 4vw;
+}
+
+.slick-track{
+    margin:auto;
+}
+
+/* slider - arrows outline */
+.nextDestinationSliderArrowOutline{
+    border-top: calc(2vw + var(--borderOutlineCockpit)*2) solid transparent;
+    border-bottom: calc(2vw + var(--borderOutlineCockpit)*2) solid transparent;
+    position:absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    cursor: pointer;
+    border-radius: 3%;
+}
+
+#arrowLeftOutline{
+    border-right: calc(2vw + var(--borderOutlineCockpit)*2) solid var(--cyan);
+    left: calc(5% - var(--borderOutlineCockpit));
+}
+
+#arrowRightOutline{
+    border-left: calc(2vw + var(--borderOutlineCockpit)*2) solid var(--cyan);
+    right: calc(5% - var(--borderOutlineCockpit)*1.5);
+}
+
+
+/* slider - arrows */
+.nextDestinationSliderArrow{
+    border-top: 2vw solid transparent;
+    border-bottom: 2vw solid transparent;
+    position:absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    cursor: pointer;
+    border-radius: 3%;
+    transition: ease-out 0.3s;
+}
+
+#arrowLeft{
+    border-right: 2vw solid rgb(30, 61, 113);
+    left: 5%;
+}
+
+#arrowLeft:hover{
+    border-right: 2vw solid var(--cyan);
+}
+
+#arrowRight{
+    border-left: 2vw solid rgb(30, 61, 113);
+    right: 5%;
+}
+
+#arrowRight:hover{
+    border-left: 2vw solid var(--cyan);
+}
+
+
+
+
+
+
+
+/* GO BUTTON */
 #nextDestinationGoButtonContainer{
-    /* background-color: purple; */
+    /* background-color: darkcyan; */
     height:calc((21/113)*100%);
     width:100%;
     position:absolute;
@@ -1288,25 +1310,42 @@ br{
         transform: translateX(-50%);
 }
 
-#nextDestinationGoButton{
+/* Go buttons stationary slider wrapper */
+#nextDestination-stationarySlider{
+    /* background: purple; */
+    width: 30%;
+        position:absolute;
+            left:50%;
+            top:50%;
+            transform: translate(-50%,-50%);
+}
+
+.stationarySliderContent{
+    /* background-color: black; */
+    height: 4vw;
+    display:inline-block;
+}
+
+
+/* Go buttons stlying */
+.nextDestinationGoButton{
     background-color: transparent;
-        border:calc(var(--borderOutlineCockpit)*1.5) solid var(--darkerCyan);
-        border-radius: 5vw;
-    /* font-family: 'IBM Plex Mono', 'Space Mono', 'Courier New', Courier, monospace; */
+        border:calc(var(--borderOutlineCockpit)*1.5) solid var(--cyan);
+        border-radius: 2vw;
         font-weight: bolder;
         font-size:2em;
-        color:var(--darkerCyan);
-    padding: 0.5% 10%;
+        color:var(--cyan);
+    padding: 0.5% 20%;
     position:absolute;
         left:50%;
         top:50%;
         transform: translate(-50%,-50%);
     cursor:pointer;
-    transition-duration: 0.4s;
+    transition: ease-out 0.4s;
 }
 
-#nextDestinationGoButton:hover{
-    background-color: var(--darkerCyan);
+.nextDestinationGoButton:hover{
+    background-color: var(--cyan);
     color:var(--white);
 }
 
