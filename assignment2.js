@@ -6,7 +6,7 @@ var number=3
 $(document).ready(function(){
 
     // //welcomeRoom - popup to input name to display on the welcome screen
-    // inputPopUp();
+    inputPopUp();
 
     //welcomeRoom - launch
     $(".welcomeRoomButtons#launch").click(function(){
