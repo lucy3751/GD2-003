@@ -6,7 +6,7 @@
 
 /* COLOURS */
     --black: #121212;
-    --white: rgba(238, 238, 238, 0.9);
+    --white: rgb(219, 219, 219);
     
 
 }
@@ -21,13 +21,23 @@
 
 
 body{
-    background: green;
-    /* height:1200vw; */
- 
+    background: rgb(39, 22, 22);
+    /* z-index:2; */
+    height:auto; 
 }
 
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+
+
+
+/* ////// HEADING STYLES /////// */
 .headingStyle1{
-    font-family: IBM Plex Mono, Space Mono, 'Courier New', Courier, monospace;
+    font-family: 'IBM Plex Mono', 'Space Mono', 'Courier New', Courier, monospace;
     color: var(--white);
     font-size:2em;
     line-height: 1.4;
@@ -35,198 +45,511 @@ body{
     font-weight:normal;
 }
 
+/* larger than headingStyle1 */
+.headingStyle2{
+    font-family: 'IBM Plex Mono', 'Space Mono', 'Courier New', Courier, monospace;
+    font-size:8em;
+    font-weight: 700;
+    color: var(--white);
+    line-height: 0.5em;
+    
+}
+
+
+/* ////// PARAGRAPH STYLES/////// */
 .paragraphStyle1{
-    font-family:IBM Plex Mono;
+    font-family: "IBM Plex Mono", 'Space Mono', 'Courier New', Courier, monospace;
     color: var(--white);
     font-size: 1.5em;
 }
 
-
-.smallText{
+.paragraphStyle2{
+    font-family: 'IBM Plex Mono', 'Space Mono', 'Courier New', Courier, monospace;
     font-size:1em;
+    color:var(--white);
 }
 
+.paragraphStyle3{
+    font-family: 'IBM Plex Mono', 'Space Mono', 'Courier New', Courier, monospace;
+    font-size:0.8em;
+    color:var(--white);
+}
+
+
+/* ////// TEXT COLOR /////// */
 .textBlack{
     color: var(--black);
 }
 
-.topLayer{
-    /* position: relative; */
-    z-index: 1;
-    height: 55%;
-    width: 100%;
-    /* margin-top: 300px; */
-    /* background: var(--black); */
-    /* background:green; */
-}
 
-/* .bottomLayer{
-    position: fixed;
-    z-index: 0;
-    top: 0;
-    left: 0;
-    height: 90%;
-    width: 100%;
-
-    background: var(--white);
-} */
-
-.topLayer2{
-    /* position: relative; */
-    z-index: 1;
-    height: 55%;
-    width: 100%;
-    /* margin-top: 50%; */
-    background: var(--black);
-} */
-
-.shape{
-    background-color:var(--white);
-    height:50%;
-}
-
-
-
-
-
-
-
+/* ////// TEXT ALIGNMENT /////// */
 .centeredText{
-    /* background:yellow; */
+    /* padding-left: 20%;
+    padding-right: 20%; */
     text-align:center;  
 }
 
-#fermiParadox{
-    /* margin-top:25%; */
-}
-
-
-
-/* INTRODUCTION */
-.introduction{
-    padding-top: 10%;
-    padding-left:20%;
-    padding-right: 20%;
-    padding-bottom: 0%;
+.sideText{
+    padding-top: 8%;
+    padding-left: 5%;
+    padding-right: 5%;
     display: flex;
-        flex-direction: column;
-        align-items:center;
-        justify-content: center;
-    /* height:500vw;  */
-
-    background-color: var(--black);
+        flex-direction: row;
+    text-align: left;
 }
 
-#introductionp1{
-    /* background-color:blue; */
-    padding-bottom:10%;
-    
+.span3Columns{
+    flex:3;
+}
+
+.span2Columns{
+    flex:2;
+}
+
+.span1Column{
+    /* background-color: purple; */
+    flex:1;
+}
+
+
+
+/* ////// LAYERS /////// */
+.navbar{
+    width: 5vw;
+    height: 70vh;
+    background-color: rgba(31, 47, 169, 0.4);
+    position: fixed;
+        top: 50%;
+        right: 0%;
+        transform: translateY(-50%);
+    z-index: 50;
+    transition: ease-in-out 0.4s;
+}
+
+
+.topLayer{
+    /* have to set a position in order for z-index to work */
+    position:relative;
+    width: 100%;
+    background: var(--black);
+    z-index: 20;
+}
+
+
+.bottomLayer{
+    /* fixed position relative to the viewport */
+    position: fixed;
+        top: 0;
+        left: 0;
+    /* padding-top:0%; */
+    height:100vh;
+    width: 100%;
+    background:var(--white);
+    z-index: 10;
+}
+
+.topLayer2{
+    /* have to set a position in order for z-index to work */
+    background-color: var(--black);
+    position:relative;
+    z-index: 20;
+    /* height: 10vh; */
+    width: 100%;
+    /* need margin-top in order for parallax effect to work */
+    margin-top: 100vh;
+} 
+
+
+/* ////////// NAVIGATION BAR //////////// */
+.navbar:hover{
+    background-color: rgb(37, 55, 193);
+}
+
+#navDotsContainer{
+    position:absolute;
+        top: 50%;
+        left:50%;
+        transform: translate(-50%,-50%);
+}
+
+.navDots{
+    cursor: pointer;
+    transition: ease-out 0.2s;
+}
+
+.navDots:hover{
+    color: cyan;
+    /* font-size: 1.5em; */
+}
+
+a:link{
+    text-decoration: none;
+    color: var(--white);
+}
+
+a:visited{
+    text-decoration: none;
+    color: var(--white);
+}
+
+
+
+
+/* //// SECTION 1 /////  */
+
+#section1{
+    padding: 10% 20%;
+    position: relative;
+}
+
+/* all divs in section 1 */
+#section1 div{
+    padding-bottom:40%;
 }
 
 
 .line{
     background-color: white;
-    width: 1px;
-    /* can only use % for height if height of "introduction" is defined in values */
-    height:3000px;
+    width: 0.1vw;
+    height:150vh;
+    position:relative;
+        left: 50%;
+        transform: translate(-50%);
+ 
+}
+
+#lineBeginning{
+    margin-top: -30%;
+    margin-bottom:5%;
 }
 
 
-#introductionp2{
-    /* background-color:green; */
-    padding-top: 5%;
-    padding-bottom: 25%;
-}
 
 
-#introductionVoices{
-    /* background-color:blue; */
-}
 
-
-.sectionsContainer{
-    /* background-color:rgb(4, 4, 70); */
+/* //// SECTION 2 /////  */
+#section2A{
     position: relative;
-    overflow:hidden;
 }
 
-/* SECTION ONE */
-
-.section1{
-    padding-top: 15%;
-    padding-bottom: 20%;
-    padding-left: 20%;
-    padding-right: 20%;
-    /* background-color:rgb(1, 55, 1); */
-    background-color: black;
-
-    cursor:pointer;
-}
-
-.sliderDots{
-    padding-bottom:5%;
-    background-color: green;
-}
-
-
-/* SECTION TWO */
-
-.section2{
-    position: absolute;
-        top:0px;
-        left:100%;
-    
-    padding-top: 15%;
-    padding-bottom: 20%;
-    padding-left: 20%;
-    padding-right: 20%;
-    /* background-color:black; */
-    width:100%;
-    transition:ease 0.6s;
-}
-
-.section2.active{
-   left:0px;
-
+#section2A div{
+    padding-bottom: 10%;
 }
 
 #section2p1{
-    background-color: green;
+    padding: 20% 0px;
 }
-
-#section2p2{
-    font-size:3em;
-}
-
-
-
  
+/* tooltip of the numbers */
+.tooltip{
+    /* background-color: darkcyan; */
+    position:relative;
+    display:inline-block;
+    border-bottom: 0.5vw solid var(--white);
+}
 
-  /* https://www.w3schools.com/howto/howto_js_slideshow.asp
-  https://codepen.io/doodlemarks/pen/aFcly */
+.tooltipText{
+    /* visibility: hidden; */
+    /* width: 100%; */
+    height: 100%;
+    padding: 10%;
+    /* background-color: var(--black); */
+    position: absolute;
+    bottom:-200%;
+    right: 0%;
+        /* transform: translate(-50%); */
+    color:var(--black);
+    transition:ease-in-out 0.4s;
+   
+}
 
+.tooltipText::after{
+    content: "";
+    position:absolute;
+        bottom:100%;
+        right:10%;
+    border-bottom: 2vw solid var(--black);
+    border-right: 2vw solid var(--black);
+    border-left: 2vw solid transparent;
+    border-top: 2vw solid transparent;
+    transition:ease-in-out 0.4s;
+    
+}
 
+.tooltip:hover .tooltipText{
+    /* background-color: var(--white); */
+    color:var(--white);
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* .container{
-    display:flex;
-    flex-direction: column;
-    padding: 5%;
+/* .tooltip:hover .tooltipText::after{
+    border-bottom: 2vw solid var(--white);
+    border-right: 2vw solid var(--white);
 } */
+
+
+#universeAgeTooltip{
+    width: 200%;
+    position: absolute;
+    bottom:-200%;
+    left: 0%;
+}
+
+
+
+
+
+
+
+
+
+
+#section2p1-FermiParadox{
+    padding-top: 15%; 
+    letter-spacing: 2.5em;
+}
+
+
+
+
+
+
+/* //// SECTION 3 /////  */
+#section3{
+    position: relative;
+}
+
+#section3p1{
+    padding-top: 20%;
+    padding-left: 20%;
+    padding-right: 20%;
+}
+
+#floatingVoicesImage{
+    /* background-color: green; */
+    /* height: 200vh;
+    width: 50vw; */
+    padding-top:40%;
+    height: 100%;
+    width: 100%;
+}
+
+#section3p1-2{
+    padding-top:10%;
+    padding-bottom: 50%;
+}
+
+#section3p2{
+    padding-bottom: 20%;
+}
+ 
+#section3p3Image{
+    /* background-color: darkcyan; */
+    /* height: 80vh; */
+}
+
+#section3p3{
+    padding-bottom: 20%;
+}
+
+
+/* //// SECTION 4 /////  */
+#section4p1{
+    padding-bottom: 10%;
+}
+
+#section4p1Image{
+    position:relative;
+    padding-bottom:20%;
+}
+
+/* tooltip for image hover */
+#section4p1Image .tooltipTextImage{
+    padding: 10%;
+    /* background-color: darkcyan; */
+    position: absolute;
+        bottom:10%;
+        left: -40%;
+        /* transform: translate(-50%); */
+    color:var(--black);
+    transition:ease-in-out 0.4s;
+}
+
+#section4p1Image:hover .tooltipTextImage{
+    color:var(--white);
+}
+
+
+
+
+#section4p6{
+    padding-left: 20%;
+    padding-right: 20%;
+    padding-bottom: 30%;
+}
+
+#section4p3{
+    padding-top:30%;
+    padding-bottom: 30%;
+}
+
+
+/* //// SECTION 5 /////  */
+#section5p1{
+    padding-bottom: 20%;
+}
+
+
+
+/* //// SECTION 6 /////  */
+#section6p1{
+    padding-top: 30%;
+}
+
+#section6p3{
+    padding: 30% 20%;
+}
+
+
+/* //// SECTION 7 /////  */
+#section7p1{
+    padding-bottom: 20%;
+}
+
+#section7p3{
+    padding: 30% 20%
+}
+
+#section7p4{
+    padding: 0px 20%;
+    padding-bottom: 20%;;
+}
+
+
+
+/* //// SECTION 8 /////  */
+#section8p3{
+    padding:20% 20%;
+}
+
+
+/* //// SECTION 9 /////  */
+#section9p1{
+    padding: 20% 20%;
+}
+
+#section9p5{
+    padding: 30% 20%;
+}
+
+
+/* //// SECTION 10 /////  */
+#section10p1{
+    padding: 0px 20%;
+    padding-bottom: 50%;
+}
+
+#section10p1-2{
+    padding: 20% 20%;
+}
+
+#section10p5{
+    padding: 30% 20%;
+}
+
+
+/* //// SECTION 11 /////  */
+#section11p3{
+    padding: 30% 20% 20%;
+}
+
+#section11p3-silencing{
+    padding: 30% 0;
+}
+
+/* //// SECTION 12 /////  */
+#section12p3{
+    padding: 30% 20% 5%;
+}
+
+#section12p5{
+    padding: 5% 20% 0%;
+}
+
+#section12p5Image{
+    /* background-color: purple; */
+    width:fit-content;
+    margin:0px auto;
+    transform: scale(0.7);
+    position: relative;
+}
+
+
+/* tooltip for image hover */
+#section12p5Image .tooltipTextImage{
+    padding: 10%;
+    /* background-color: darkcyan; */
+    position: absolute;
+        bottom:0%;
+        left: 100%;
+    
+    color:var(--black);
+    transition:ease-in-out 0.4s;
+    text-align: left;
+}
+
+#section12p5Image:hover .tooltipTextImage{
+    color:var(--white);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.breakStyle1{
+    content:"";
+    display:block;
+    margin-bottom:3em;
+}
+
+.breakStyle2{
+    content:"";
+    display:block;
+    margin-bottom:2.5em;
+}
+
+.breakStyle3{
+    content:"";
+    display:block;
+    margin-bottom:4em;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .leftParagraphContainer{
     display:flex;

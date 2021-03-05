@@ -4,29 +4,44 @@
 
     <head>
         <title>The Great Silence</title>
-        <link rel="stylesheet" href="text.css">
+        <link rel="stylesheet" href="text2.css">
     </head>
 
     <body>
 
-     
+        <div class="navbar">
+            <div id="navDotsContainer" class="paragraphStyle1">
+                <a href="#section1"><div class="navDots">*</div></a>
+                <a href="#section2A"><div class="navDots">*</div></a>
+                <a href="#section3"><div class="navDots">*</div></a>
+                <a href="#section4"><div class="navDots">*</div></a>
+                <a href="#section5"><div class="navDots">*</div></a>
+                <a href="#section6"><div class="navDots">*</div></a>
+                <a href="#section7"><div class="navDots">*</div></a>
+                <a href="#section8"><div class="navDots">*</div></a>
+                <a href="#section9"><div class="navDots">*</div></a>
+                <a href="#section10"><div class="navDots">*</div></a>
+                <a href="#section11"><div class="navDots">*</div></a>
+                <a href="#section12"><div class="navDots">*</div></a>
+            </div>
+        </div>
 
         <div class="topLayer">
 
-            <!-- first paragraph down to voices (included) -->
-            <div id="introduction">
-
-                <div class="centeredText headingStyle1" id="introductionp1">
+            <!-- SECTION 1 -->
+            <div id="section1">
+            
+                <div class="centeredText headingStyle1">
                     The humans use Arecibo to look for extraterrestrial intelligence. Their desire to make a connection is so strong that they’ve created an ear capable of hearing across the universe.
                 </div>
 
-                <div class="line"></div>
+                <div class="line" id="lineBeginning"></div>
 
-                <div class="centeredText paragraphStyle1" id="introductionp2">
-                    But I and my fellow parrots are right here. Why aren’t they interested in listening to our
+                <div class="centeredText paragraphStyle1">
+                    But I and my fellow parrots are right here. Why aren’t they interested in listening to our...
                 </div>
                 
-                <div class="centeredText paragraphStyle1" id="introductionp2Voices">
+                <div class="centeredText paragraphStyle1" id="section1p2-2Voices">
                         <p style="color:rgba(238, 238, 238, 0.9);">voices?</p>
                         <p style="color:rgba(238, 238, 238, 0.855);">voices?</p>
                         <p style="color:rgba(238, 238, 238, 0.81);">voices?</p>
@@ -49,594 +64,428 @@
                         <p style="color:rgba(238, 238, 238, 0.06);">voices?</p>
                         <p style="color:rgba(238, 238, 238, 0.015);">voices?</p>
                 </div>   
-
+            
+                <div class="centeredText paragraphStyle1">
+                    We’re a nonhuman species capable of communicating with them. Aren’t we exactly what humans are looking for?
+                </div>
+            
             </div>
 
-            <!-- section 1 transition to section 2 -->
-            <div class="sectionsContainer">
-                      
-                <div class="cursorNextWhite" id="section1">
-                    
-                    <div class="centeredText paragraphStyle1" id="section1p3">
-                        We’re a nonhuman species capable of communicating with them. Aren’t we exactly what humans are looking for?
+        
+
+            <!-- SECTION 2A -->
+            <div id="section2A">
+
+                <div class="sideText">
+                    <div class="span3Columns paragraphStyle1">
+                        The universe is so vast that intelligent life must surely have arisen many times...
                     </div>
-
-                </div>
-
-                <div class="sideText" id="section2A">
-
-                    
-                    <div class="span3Columns paragraphStyle1" id="section2p1">
-                        The universe is so vast that intelligent life must surely have arisen many times.
-                    </div>  
 
                     <div class="span1Column"></div>
-                    
-                    <div class="span1Column" id="section2p1Right">
+                
+                    <div class="span1Column">
                         <div class="paragraphStyle2">The diameter of the observable universe is approximately</div>
-                        <div class="headingStyle2" id="section2p1Number">93</div>   
+                        <div class="tooltip">
+                            <div class="headingStyle2">93</div>
+                            <span class="tooltipText paragraphStyle3">
+                                http://www.bbc.com/earth/story/20160610-it-took-centuries-but-we-now-know-the-size-of-the-universe#:~:text=The%20observable%20Universe%20is%2C%20of,billion%20light%20years%20in%20diameter.
+                            </span>
+                        </div>
                         <div class="paragraphStyle2">billion light years</div>
-                    </div>
-
+                    </div>              
                 </div>
 
-            </div>
-
-            <!-- slider dots -->
-            <div class="sliderDotsContainer centeredText paragraphStyle1">   
-                <div id="sliderDots1">
-                    <span class="dot1" style="color:aqua">*</span>
-                    <span class="dot2">*</span>
-                    <span>*</span>
-                    <span>*</span>
-                    <span>*</span>
-                    <span>*</span>
-                    <span>*</span>
-                    <span>*</span>
-                    <span>*</span>
-                    <span>*</span>
-                    <span>*</span>
-                    <span>*</span>
-                </div>
-            </div>
-
-            <!-- section 2 - content after/underneath the slider -->            
-            <div class="hiddenContent" id="section2BContainer">
-                <div class="sideText" id="section2B">
-                    <div class="span1Column" id="section2Bp2Left">
+                <div class="sideText">
+                    <div class="span1Column">
                         <div class="paragraphStyle2">The universe is currently</div>
-                        <div class="headingStyle2">13.8</div>
+                        <div class="tooltip">
+                            <div class="headingStyle2">13.8</div>
+                            <span class="tooltipText paragraphStyle3" id="universeAgeTooltip">
+                                https://www.scientificamerican.com/article/how-old-is-the-universe/
+                            </span>
+                        </div>
                         <div class="paragraphStyle2">billion years old</div>
                     </div>
 
                     <div class="span1Column"></div>
 
-                    <div class="span3Columns paragraphStyle1" id="section2Bp2">The universe is also so old that even one technological species would have had time to expand and fill the galaxy.</div>
+                    <div class="span3Columns paragraphStyle1">
+                        The universe is also so old that even one technological species would have had time to expand and fill the galaxy...
+                    </div>
                 </div>
 
-                <div id="section2B2">
-                    <div class="centeredText paragraphStyle1" id="section2B2p3">Yet there is no sign of life anywhere except on Earth. Humans call this the</div>
-                    <div class="centeredText headingStyle2" id="section2B2p3FermiParadox">Fermi paradox.</div>
+                <div class="centeredText paragraphStyle1" id="section2p1">
+                    Yet there is no sign of life anywhere except on Earth. Humans call this the...
                 </div>
-        
-            </div>    
+                
+                <div class="centeredText paragraphStyle1" id="section2p1-FermiParadox">
+                    Fermi
+                    <br class="breakStyle1">
+                    paradox.
+                </div>
+
+            </div>
 
         </div>   
 
-        <!-- bottom layer for parallax hidden effect -->
-        <div class="bottomLayer hiddenContent">
-
-                <!-- section 2 transition to section 3 -->
-                <div class="sectionsContainer2">
-                    <div class="sideText cursorNextBlack" id="section2C">
-                        <div class="paragraphStyle1 textBlack span3Columns" id="section2CLeft">
-                            One proposed solution to the Fermi paradox is that intelligent species actively try to conceal their presence, to avoid being targeted by hostile invaders.
-                            <br>
-                            Speaking as a member of a species that has been driven nearly to extinction by humans, I can attest that this is a wise strategy.
-                            <br>
-                            It makes sense to remain quiet and avoid attracting attention.
-                        </div>
-                        
-                        <div class="span1Column"></div>
-                        <div class="span1Column"></div>
-                    </div>
-
-                    <div id="section3A" class="paragraphStyle1 textBlack">
-                        <div class="centeredText" id="section3p1">
-                            The Fermi paradox is sometimes known as the Great Silence. The universe ought to be a cacophony of
-                        </div>
-                    </div>
-                </div>
-   
-
-                  <!-- slider dots 2-->
-                <div class="sliderDotsContainer centeredText paragraphStyle1 textBlack" id="sliderDots2">   
-                    <div>
-                        <span>*</span>
-                        <span class="dot2" style="color:aqua">*</span>
-                        <span class="dot3">*</span>
-                        <span>*</span>
-                        <span>*</span>
-                        <span>*</span>
-                        <span>*</span>
-                        <span>*</span>
-                        <span>*</span>
-                        <span>*</span>
-                        <span>*</span>
-                        <span>*</span>
-                        
-                    </div>
+            <!-- SECTION 2B -->
+      <!-- bottom Layer - parallax effect -->
+        <div class="bottomLayer">
+            <div class="sideText paragraphStyle1 textBlack">
+                <div class="span3Columns">
+                    One proposed solution to the Fermi paradox is that intelligent species actively try to conceal their presence, to avoid being targeted by hostile invaders.
+                    <br class="breakStyle2">
+                    Speaking as a member of a species that has been driven nearly to extinction by humans, I can attest that this is a wise strategy.
+                    <br class="breakStyle2">
+                    It makes sense to remain quiet and avoid attracting attention.
                 </div>
 
-            
-            
-                <!-- section 3 - content underneath the slider dots -->
-                <div class="hiddenContent2" id="section3B">
-                    <div class="centeredText paragraphStyle1">
-                        <div id="floatingVoicesImage"></div>
-                        <div id="section3p1b">but instead it’s disconcertingly quiet.</div>
-                    </div>
-                
-                    <div id="section3Background">
-                        <div class="sideText paragraphStyle1">  
-                            <div class="span3Columns" id="section3p2">
-                                Some humans theorize that intelligent species go extinct before they can expand into outer space. If they’re correct, then the hush of the night sky is the silence of a graveyard.
-                            </div>
-                            <div class="span1Column"></div>
-                            <div class="span1Column"></div>
-                        </div>
+                <div class="span2Columns"></div>
+            </div>
 
-                        <div class="sideText">
-                            <div class="span1Column"></div>
-                            <div id="section3p3Image">
-                                <img src="graphics/constellation.svg">
-                            </div>
-                        </div>
-                    </div>     
-                </div>
+        </div>
 
-                
-                <!-- section 3 transition to section 4 -->
-                <div class="hiddenContent2 sectionsContainer3"> 
-                    <div class="sideText cursorNextWhite" id="section3C">  
-                            <div class="span3Columns paragraphStyle1" id="section3p3">
-                                Hundreds of years ago, my kind was so plentiful that the Río Abajo Forest resounded with our voices. Now we’re almost gone. Soon this rainforest may be as silent as the rest of the universe.
-                            </div>
-                            <div class="span1Column"></div>
-                            <div class="span1Column"></div>
-                    </div>
-
-                    <div class="sideText" id="section4A">
-                        <div class="span3Columns paragraphStyle1" id="section4p1">
-                            There was an African grey parrot named Alex. He was famous for his cognitive abilities. Famous among humans, that is.
-                            <br>
-                            A human researcher named Irene Pepperberg spent thirty years studying Alex. She found that not only did Alex know the words for shapes and colors, he actually understood the concepts of shape and color.
-                        </div>
-                        <div class="span1Column"></div>
-                        <div class="span1Column"></div>
-                    </div>
-
-                </div>
-
-                <!-- slider dots 3-->
-                <div class="hiddenContent2 sliderDotsContainer centeredText paragraphStyle1">   
-                    <div id="sliderDots3">
-                        <span>*</span>
-                        <span>*</span>
-                        <span class="dot3" style="color:aqua">*</span>
-                        <span class="dot4">*</span>
-                        <span>*</span>
-                        <span>*</span>
-                        <span>*</span>
-                        <span>*</span>
-                        <span>*</span>
-                        <span>*</span>
-                        <span>*</span>
-                        <span>*</span>
-                    </div>
-                </div>
-                
-                <!-- section 4 - content underneath the slider dots-->
-                <div class="hiddenContent3" id="section4B">
-                    <div class="sideText">
-                        <div class="span1Column"></div>
-                        <div class="span1Column"></div>
-                        <div id="section4p1Image" class="headingStyle2 span2Columns">
-                            image
-
-                        </div>
-                        
-                    </div>
-
-                    <div class="sideText" id="section4p3">
-                        <div class="span3Columns paragraphStyle1">
-                        Many scientists were skeptical that a bird could grasp abstract concepts. Humans like to think they’re unique. But eventually Pepperberg convinced them that Alex wasn’t just repeating words, that he understood what he was saying.
-                        <br>
-                        Out of all my cousins, Alex was the one who came closest to being taken seriously as a communication partner by humans.
-                        <br>
-                        Alex died suddenly, when he was still relatively young. The evening before he died, Alex said to Pepperberg,
-                        </div>
-                        <div class="span1Column"></div>
-                        <div class="span1Column"></div>
-                    </div>
-
-                    <div class="centeredText paragraphStyle1" id="section4p5">
-                        “You be good. I love you.”
-                    </div>
-                </div>   
-                
-                <!-- section 4 transition to section 5 -->
-                <div class="sectionsContainer4 hiddenContent3">
-                    <div class="cursorNextWhite" id="section4C">
-                        <div class="centeredText paragraphStyle1" id="section4p6">
-                            If humans are looking for a connection with a nonhuman intelligence, what more can they ask for than that?
-                        </div>
-                    </div>
-
-                    <div class="sideText paragraphStyle1" id="section5A">
-                        <div class="span3Columns">
-                            Every parrot has a unique call that it uses to identify itself; biologists refer to this as the parrot’s “contact call.”
-                        </div>
-                        <div class="span1Column"></div>
-
-                        <div class="span3Columns">
-                            In 1974, astronomers used Arecibo to broadcast a message into outer space intended to demonstrate human intelligence. That was humanity’s contact call.
-                        </div>
-                    </div>
-                </div>
-
-               <!-- slider dots 4 -->
-                <div class="hiddenContent3 sliderDotsContainer centeredText paragraphStyle1">   
-                    <div id="sliderDots4">
-                        <span>*</span>
-                        <span>*</span>
-                        <span>*</span>
-                        <span class="dot4" style="color:aqua">*</span>
-                        <span class="dot5">*</span>
-                        <span>*</span>
-                        <span>*</span>
-                        <span>*</span>
-                        <span>*</span>
-                        <span>*</span>
-                        <span>*</span>
-                        <span>*</span>
-                    </div>
-                </div>
-
-
-                <!-- section 5 - content underneath slider dots -->
-                <!-- section 5 transition to section 6-->
-                <div class="sectionsContainer5 hiddenContent4">
-                    <div class="sideText paragraphStyle1 cursorNextWhite" id="section5B">
-                        <div class="span3Columns">
-                            In the wild, parrots address each other by name. One bird imitates another’s contact call to get the other bird’s attention.
-                        </div>
-
-                        <div class="span1Column"></div>
-
-                        <div class="span3Columns">
-                            If humans ever detect the Arecibo message being sent back to Earth, they will know someone is trying to get their attention.
-                        </div>
-                    </div>
-
-                    <div class="sideText paragraphStyle1" id="section6A">
-                        <div class="span3Columns">
-                            Parrots are vocal learners: we can learn to make new sounds after we’ve heard them. It’s an ability that few animals possess. A dog may understand dozens of commands, but it will never do anything but bark.
-                            <br>
-                            Humans are vocal learners, too. We have that in common. So humans and parrots share a special relationship with sound. We don’t simply cry out. We pronounce. We enunciate.
-                        </div>
-                        <div class="span1Column"></div>
-                        <div class="span1Column"></div>
-                    </div>
-                </div>
-
-                 <!-- slider dots 5 -->
-                 <div class="hiddenContent4 sliderDotsContainer centeredText paragraphStyle1">   
-                    <div id="sliderDots5">
-                        <span>*</span>
-                        <span>*</span>
-                        <span>*</span>
-                        <span>*</span>
-                        <span class="dot5" style="color:aqua">*</span>
-                        <span class="dot6">*</span>
-                        <span>*</span>
-                        <span>*</span>
-                        <span>*</span>
-                        <span>*</span>
-                        <span>*</span>
-                        <span>*</span>
-                    </div>
-                </div>
-
-                <!-- section 6 transition to section 7  -->
-                <div class="hiddenContent5 sectionsContainer6">
-                    <div class="centeredText paragraphStyle1 cursorNextWhite" id="section6B">
-                            Perhaps that’s why humans built Arecibo the way they did. A receiver doesn’t have to be a transmitter, but Arecibo is both. It’s an ear for listening, and a mouth for speaking.
-                    </div>
                     
-                    <div class="sideText paragraphStyle1" id="section7A">
-                        <div class="span3Columns">
-                            Humans have lived alongside parrots for thousands of years, and only recently have they considered the possibility that we might be intelligent.
-                            <br>
-                            I suppose I can’t blame them. We parrots used to think humans weren’t very bright. It’s hard to make sense of behavior that’s so different from your own.
-                        </div>
-                        <div class="span1Column"></div>
-                        <div class="span1Column"></div>
+        <div class="topLayer2">
+
+
+            <!-- SECTION 3 -->
+            <div id="section3" class="paragraphStyle1">
+
+                <div class="centeredText" id="section3p1">
+                    The Fermi paradox is sometimes known as the Great Silence. The universe ought to be a cacophony of...
+                </div>
+
+                <div id="floatingVoicesImage">
+                    <img src="graphics/section3p1Voices.svg">
+                </div>
+                
+                <div class="centeredText" id="section3p1-2">
+                    but instead it’s disconcertingly quiet
+                </div>
+
+                
+
+                <div class="sideText">  
+                    <div class="span3Columns" id="section3p2">
+                        Some humans theorize that intelligent species go extinct before they can expand into outer space. If they’re correct, then the hush of the night sky is the silence of a graveyard.
+                    </div>
+                    <div class="span2Columns"></div>
+                </div>
+
+                <div class="sideText">
+                    <div class="span1Column"></div>
+                    <div class="span3Columns" id="section3p3Image">
+                        <img src="graphics/constellation.svg">
                     </div>
                 </div>
 
-                 <!-- slider dots 6 -->
-                 <div class="hiddenContent5 sliderDotsContainer centeredText paragraphStyle1">   
-                    <div id="sliderDots6">
-                        <span>*</span>
-                        <span>*</span>
-                        <span>*</span>
-                        <span>*</span>
-                        <span>*</span>
-                        <span class="dot6" style="color:aqua">*</span>
-                        <span class="dot7">*</span>
-                        <span>*</span>
-                        <span>*</span>
-                        <span>*</span>
-                        <span>*</span>
-                        <span>*</span>
+                <div class="sideText">  
+                    <div class="span3Columns" id="section3p3">
+                        Hundreds of years ago, my kind was so plentiful that the Río Abajo Forest resounded with our voices. Now we’re almost gone. Soon this rainforest may be as silent as the rest of the universe.
+                    </div>
+                    <div class="span2Columns"></div>
+                </div>
+            </div>
+
+
+
+
+
+            <!-- SECTION 4 -->
+            <div id="section4" class="paragraphStyle1">
+
+                <div class="sideText">
+                    <div class="span3Columns" id="section4p1">
+                        There was an African grey parrot named Alex. He was famous for his cognitive abilities. Famous among humans, that is.
+                        <br class="breakStyle2">
+                        A human researcher named Irene Pepperberg spent thirty years studying Alex. She found that not only did Alex know the words for shapes and colors, he actually understood the concepts of shape and color.
+                    </div>
+                    <div class="span2Columns"></div>
+                </div>
+
+                <div class="sideText">
+                    <div class="span2Columns"></div>
+
+                    <div id="section4p1Image" class="span2Columns paragraphStyle3">
+                        <img  src="images/Parrot.jpg">
+                            <div class="tooltipTextImage" style="font-size:0.8em">
+                                http://www.whenwetalkaboutanimals.org/2018/12/10/<br>ep-4-irene-pepperberg/
+                            </div>
+                    </div> 
+                </div>
+
+                <div class="sideText">
+                    <div class="span3Columns">
+                        Many scientists were skeptical that a bird could grasp abstract concepts. Humans like to think they’re unique. But eventually Pepperberg convinced them that Alex wasn’t just repeating words, that he understood what he was saying.
+                        <br class="breakStyle2">
+                        Out of all my cousins, Alex was the one who came closest to being taken seriously as a communication partner by humans. Alex died suddenly, when he was still relatively young. The evening before he died, Alex said to Pepperberg,...
+                    </div>
+                    <div class="span2Columns"></div>
+                </div>
+
+                <div class="centeredText" id="section4p3">
+                    “You be good. I love you.”
+                </div>    
+
+                <div class="centeredText" id="section4p6">
+                    If humans are looking for a connection with a nonhuman intelligence, what more can they ask for than that?
+                </div>
+
+            </div>
+
+
+
+
+
+            <!-- SECTION 5 -->
+            <div id="section5" class="paragraphStyle1">
+                <div class="sideText" id="section5p1">
+                    <div class="span3Columns">
+                        Every parrot has a unique call that it uses to identify itself; biologists refer to this as the parrot’s “contact call.”
+                    </div>
+                    <div class="span1Column"></div>
+
+                    <div class="span3Columns">
+                        In 1974, astronomers used Arecibo to broadcast a message into outer space intended to demonstrate human intelligence. That was humanity’s contact call.  
                     </div>
                 </div>
 
+                <div class="sideText" id="section5p3">
+                    <div class="span3Columns">
+                        In the wild, parrots address each other by name. One bird imitates another’s contact call to get the other bird’s attention.
+                    </div>
 
-                <!-- section 7  - content underneath the slider dots -->
-                <div class="hiddenContent6" id="section7B">
-                    <div class="centeredText paragraphStyle1">
-                        <div id="section7p3">
-                            But parrots are more similar to humans than any extraterrestrial species will be, and humans can observe us up close; they can look us in the eye.
-                        </div>
+                    <div class="span1Column"></div>
+
+                    <div class="span3Columns">
+                        If humans ever detect the Arecibo message being sent back to Earth, they will know someone is trying to get their attention.
                     </div>
                 </div>
+            </div>
 
 
-                <!-- section 7 transition to section 8 -->
-                <div class="hiddenContent6 sectionsContainer7">
-                    <div class="centeredText paragraphStyle1 cursorNextWhite" id="section7C">
+
+
+
+            <!-- SECTION 6 -->
+            <div id="section6" class="paragraphStyle1">
+                <div class="sideText" id="section6p1">
+                    <div class="span3Columns">
+                        Parrots are vocal learners: we can learn to make new sounds after we’ve heard them. It’s an ability that few animals possess. A dog may understand dozens of commands, but it will never do anything but bark.
+                        <br class="breakStyle2">
+                        Humans are vocal learners, too. We have that in common. So humans and parrots share a special relationship with sound. We don’t simply cry out. We pronounce. We enunciate.
+                    </div>
+                    <div class="span2Columns"></div>
+                </div>
+
+                <div class="centeredText" id="section6p3">
+                    Perhaps that’s why humans built Arecibo the way they did. A receiver doesn’t have to be a transmitter, but Arecibo is both. It’s an ear for listening, and a mouth for speaking.
+                </div>
+            </div>
+
+            
+
+
+
+
+            <!-- SECTION 7 -->
+            <div id="section7" class="paragraphStyle1">
+
+                <div class="sideText">
+                    <div class="span3Columns" id="section7p1">
+                        Humans have lived alongside parrots for thousands of years, and only recently have they considered the possibility that we might be intelligent.
+                        <br class="breakStyle2">
+                        I suppose I can’t blame them. We parrots used to think humans weren’t very bright. It’s hard to make sense of behavior that’s so different from your own.
+                    </div>
+                    <div class="span2Columns"></div>
+                </div>
+
+                <div class="centeredText">
+                    <div id="section7p3">
+                        But parrots are more similar to humans than any extraterrestrial species will be, and humans can observe us up close; they can look us in the eye.
+                    </div>
+
+                    <div id="section7p4">
                         How do they expect to recognize an alien intelligence if all they can do is eavesdrop from a hundred light-years away?
                     </div>
-
-                    <div class="sideText paragraphStyle1" id="section8A">
-                        <div class="span3Columns">
-                        It’s no coincidence that “aspiration” means both hope and the act of breathing.
-                        <br>
-                        When we speak, we use the breath in our lungs to give our thoughts a physical form. The sounds we make are simultaneously our intentions and our life force.
-                        </div>
-                        <div class="span1Column"></div>
-                        <div class="span1Column"></div>
-                    </div>
-                </div>
-
-
-                  <!-- slider dots 7 -->
-                  <div class="hiddenContent6 sliderDotsContainer centeredText paragraphStyle1">   
-                    <div id="sliderDots7">
-                        <span>*</span>
-                        <span>*</span>
-                        <span>*</span>
-                        <span>*</span>
-                        <span>*</span>
-                        <span>*</span>
-                        <span class="dot7" style="color:aqua;">*</span>
-                        <span class="dot8">*</span>
-                        <span>*</span>
-                        <span>*</span>
-                        <span>*</span>
-                        <span>*</span>
-                    </div>
-                </div>
-
-                <!-- section 8 transition to section 9 -->
-                <div class="hiddenContent7 sectionsContainer8">
-                    <div class="centeredText paragraphStyle1 cursorNextWhite" id="section8B">
-                        I speak, therefore I am. Vocal learners, like parrots and humans, are perhaps the only ones who fully comprehend the truth of this.
-                    </div>
-
-                    <div class="centeredText paragraphStyle1" id="section9A">
-                        <div>
-                            There’s a pleasure that comes with shaping sounds with your mouth. It’s so primal and visceral that, throughout their history, humans have considered the activity a pathway to the divine.
-                        </div>
-                    </div>
-                </div>
-
-                <!-- slider dots 8 -->
-                <div class="hiddenContent7 sliderDotsContainer centeredText paragraphStyle1">   
-                    <div id="sliderDots8">
-                        <span>*</span>
-                        <span>*</span>
-                        <span>*</span>
-                        <span>*</span>
-                        <span>*</span>
-                        <span>*</span>
-                        <span>*</span>
-                        <span class="dot8" style="color:aqua;">*</span>
-                        <span class="dot9">*</span>
-                        <span>*</span>
-                        <span>*</span>
-                        <span>*</span>
-                    </div>
-                </div>    
-            
-                <!-- setion 9 - content underneath the slider dots -->
-                <div class="hiddenContent8" id="section9B">
-                    <div class="sideText paragraphStyle1">
-                        <div class="span3Columns">
-                        Pythagorean mystics believed that vowels represented the music of the spheres, and chanted to draw power from them.
-                        <br>
-                        Pentecostal Christians believe that when they speak in tongues, they’re speaking the language used by angels in heaven.
-                        <br>
-                        Brahman Hindus believe that by reciting mantras, they are strengthening the building blocks of reality.
-                        </div>
-                        <div class="span1Column"></div>
-                        <div class="span1Column"></div>
-                    </div>
-                </div>
-
-                <!--section 9 transition to section 10  -->
-                <div class="hiddenContent8 sectionsContainer9">
-                    <div class="centeredText paragraphStyle1 cursorNextWhite" id="section9C">
-                    Only a species of vocal learners would ascribe such importance to sound in their mythologies. We parrots can appreciate that.    
-                    </div>
-
-                    <div class="centeredText paragraphStyle1" id="section10A">
-                        According to Hindu mythology, the universe was created with a sound: 
-                    </div>
-                </div>
-
-                <!-- slider dots 9 -->
-                <div class="hiddenContent8 sliderDotsContainer centeredText paragraphStyle1">   
-                    <div id="sliderDots9">
-                        <span>*</span>
-                        <span>*</span>
-                        <span>*</span>
-                        <span>*</span>
-                        <span>*</span>
-                        <span>*</span>
-                        <span>*</span>
-                        <span>*</span>
-                        <span class="dot9" style="color:aqua;">*</span>
-                        <span class="dot10">*</span>
-                        <span>*</span>
-                        <span>*</span>
-                    </div>
-                </div>  
-
-                <!-- section 10 content underneath slider dots -->
-                <div class="hiddenContent9" id="section10B">
-                    <div class="centeredText headingStyle2" id="section10Bp1Om">
-                        “om.” 
-                    </div>
-                    <div class="centeredText paragraphStyle1" id="section10Bp1">
-                        It is a syllable that contains within it everything that ever was and everything that will be.
-                    </div>
-                    <div class="sideText paragraphStyle1" id="section10Bp2">
-                        <div class="span3Columns">
-                        When the Arecibo telescope is pointed at the space between stars, it hears a faint hum.
-                        <br>
-                        Astronomers call that the cosmic microwave background. It’s the residual radiation of the Big Bang, the explosion that created the universe fourteen billion years ago.
-                        <br>
-                        But you can also think of it as a barely audible reverberation of that original “om.” That syllable was so resonant that the night sky will keep vibrating for as long as the universe exists.
-                        </div>
-                        <div class="span1Column"></div>
-                        <div class="span1Column"></div>
-                    </div>
                 </div>
                 
-                <!-- section 10 transition to section 11 -->
-                <div class="hiddenContent9 sectionsContainer10">
-                    <div class="centeredText paragraphStyle1 cursorNextWhite" id="section10C">
-                        When Arecibo is not listening to anything else, it hears the voice of creation.
-                    </div>
+            </div>
 
-                    <div class="sideText paragraphStyle1" id="section11A">
-                        <div class="span3Columns">
-                            We Puerto Rican parrots have our own myths. They’re simpler than human mythology, but I think humans would take pleasure from them.
-                            <br>
-                            Alas, our myths are being lost as my species dies out. I doubt the humans will have deciphered our language before we’re gone.
-                        </div>
-                        <div class="span1Column"></div>
-                        <div class="span1Column"></div>
+
+
+
+
+
+            <!-- SECTION 8  -->
+            <div id="section8" class="paragraphStyle1">
+               
+                <div class="sideText" id="section8p1">
+                    <div class="span3Columns">
+                    It’s no coincidence that “aspiration” means both hope and the act of breathing.
+                    <br class="breakStyle2">
+                    When we speak, we use the breath in our lungs to give our thoughts a physical form. The sounds we make are simultaneously our intentions and our life force.
                     </div>
+                    <div class="span2Columns"></div>
                 </div>
 
-
-                <!-- slider dots 10 -->
-                <div class="hiddenContent9 sliderDotsContainer centeredText paragraphStyle1">   
-                    <div id="sliderDots10">
-                        <span>*</span>
-                        <span>*</span>
-                        <span>*</span>
-                        <span>*</span>
-                        <span>*</span>
-                        <span>*</span>
-                        <span>*</span>
-                        <span>*</span>
-                        <span>*</span>
-                        <span class="dot10" style="color:aqua;">*</span>
-                        <span class="dot11">*</span>
-                        <span>*</span>
-                    </div>
+                <div class="centeredText" id="section8p3">
+                    I speak, therefore I am. Vocal learners, like parrots and humans, are perhaps the only ones who fully comprehend the truth of this.
                 </div>
 
+            </div>
 
-                <!-- section 11 content underneath slider dots -->
-                <div class="hiddenContent10 centeredText paragraphStyle1" id="section11B">
-                    <div id="section11Bp3">
+
+
+
+
+
+
+            <!-- SECTION 9 -->
+            <div id="section9" class="paragraphStyle1">
+
+                <div class="centeredText" id="section9p1">
+                    There’s a pleasure that comes with shaping sounds with your mouth. It’s so primal and visceral that, throughout their history, humans have considered the activity a pathway to the divine.
+                </div>
+
+                <div class="sideText">
+                    <div class="span3Columns" id="section9p2">
+                    Pythagorean mystics believed that vowels represented the music of the spheres, and chanted to draw power from them.
+                    <br class="breakStyle2">
+                    Pentecostal Christians believe that when they speak in tongues, they’re speaking the language used by angels in heaven.
+                    <br class="breakStyle2">
+                    Brahman Hindus believe that by reciting mantras, they are strengthening the building blocks of reality.
+                    </div>
+                    <div class="span2Columns"></div>
+                </div>
+
+                <div class="centeredText" id="section9p5">
+                    Only a species of vocal learners would ascribe such importance to sound in their mythologies. We parrots can appreciate that.    
+                </div>
+            </div>
+
+
+
+
+
+
+            <!-- SECTION 10 -->
+            <div id="section10">
+
+                <div class="centeredText paragraphStyle1" id="section10p1">
+                    According to Hindu mythology, the universe was created with a sound: 
+                </div>
+
+                <div class="centeredText headingStyle2" id="section10p1-Om">
+                    “om.” 
+                </div>
+
+                <div class="centeredText paragraphStyle1" id="section10p1-2">
+                    It is a syllable that contains within it everything that ever was and everything that will be.
+                </div>
+
+                <div class="sideText paragraphStyle1" id="section10p2">
+                    <div class="span3Columns">
+                        When the Arecibo telescope is pointed at the space between stars, it hears a faint hum.
+                        <br class="breakStyle2">
+                        Astronomers call that the cosmic microwave background. It’s the residual radiation of the Big Bang, the explosion that created the universe fourteen billion years ago.
+                        <br class="breakStyle2">
+                        But you can also think of it as a barely audible reverberation of that original “om.” That syllable was so resonant that the night sky will keep vibrating for as long as the universe exists.
+                    </div>
+                    <div class="span2Columns"></div>
+                </div>
+
+                <div class="centeredText paragraphStyle1 cursorNextWhite" id="section10p5">
+                    When Arecibo is not listening to anything else, it hears the voice of creation.
+                </div>
+
+            </div>
+
+
+
+
+
+
+            <!-- SECTION 11 -->
+            <div id="section11" class="paragraphStyle1">
+
+                <div class="sideText" id="section11p1">
+                    <div class="span3Columns">
+                        We Puerto Rican parrots have our own myths. They’re simpler than human mythology, but I think humans would take pleasure from them.
+                        <br class="breakStyle2">
+                        Alas, our myths are being lost as my species dies out. I doubt the humans will have deciphered our language before we’re gone.
+                    </div>
+                    <div class="span2Columns"></div>
+                </div>
+
+                <div class="centeredText">
+                    <div id="section11p3">
                         So the extinction of my species doesn’t just mean the loss of a group of birds. It’s also the disappearance of
                     </div>
-                    <div id="section11Bp3Language">our language,</div> 
-                    <div id="section11Bp3Rituals">our rituals,</div>
-                    <div id="section11Bp3Traditions">our traditions.</div> 
+                    <div class="breakStyle3" id="section11p3-language">our language,</div> 
+                    <div class="breakStyle3" id="section11p3-rituals">our rituals,</div>
+                    <div class="breakStyle3" id="section11p3-traditions">our traditions.</div> 
+                    <div id="section11p3-silencing"> It’s the silencing of our voice.</div>
                 </div>
+            </div>
 
 
-                <!-- section 11 transition to section 12 -->
-                <div class="hiddenContent10 sectionsContainer11">
-                    <div class="centeredText paragraphStyle1 cursorNextWhite" id="section11C">
-                            It’s the silencing of our voice.
-                    </div>
 
-                    <div class="sideText paragraphStyle1" id="section12A">
+
+
+
+            <!-- SECTION 12 -->
+            <div id="section12">
+                
+                <div class="sideText paragraphStyle1" id="section12p1">
                     <div class="span3Columns">
                         Human activity has brought my kind to the brink of extinction, but I don’t blame them for it. They didn’t do it maliciously. They just weren’t paying attention.
-                        <br>
+                        <br class="breakStyle2">
                         And humans create such beautiful myths; what imaginations they have. Perhaps that’s why their aspirations are so immense. Look at Arecibo. Any species who can build such a thing must have greatness within them.
                     </div>
 
-                    <div class="span1Column"></div>
-                    <div class="span1Column"></div>
-                    </div>
+                    <div class="span2Columns"></div>
                 </div>
 
-                 <!-- slider dots 11 -->
-                 <div class="hiddenContent10 sliderDotsContainer centeredText paragraphStyle1">   
-                    <div id="sliderDots11">
-                        <span>*</span>
-                        <span>*</span>
-                        <span>*</span>
-                        <span>*</span>
-                        <span>*</span>
-                        <span>*</span>
-                        <span>*</span>
-                        <span>*</span>
-                        <span>*</span>
-                        <span>*</span>
-                        <span class="dot11" style="color:aqua;">*</span>
-                        <span class="dot12">*</span>
+                <div class="centeredText paragraphStyle1">
+
+                    <div id="section12p3">
+                        My species probably won’t be here for much longer; it’s likely that we’ll die before our time and join the Great Silence. But before we go, we are sending a message to humanity. We just hope the telescope at Arecibo will enable them to hear it.
+                    <br class="breakStyle2">
+                        The message is this:  
                     </div>
+
+                    <div class="line"></div>
+
+                    <div id="section12p5">
+                        You be good. I love you.   
+                    </div>
+
+                    <div id="section12p5Image">
+                        <img src="images/AreciboMessage.svg">
+                        <div class="tooltipTextImage paragraphStyle3">
+                            https://www.naic.edu/pkg/webutils/challenge/about-message.html
+                        </div>    
+                    </div>
+
+                    <div class="centeredText paragraphStyle3" style="padding-bottom:20%;">
+                        Story by Ted Chiang 
+                        <br class="breakStyle2">
+                        https://nautil.us/issue/75/story/the-great-silence
+                    </div>
+                   
                 </div>
 
-                <!-- section 12 content underneath slide dots -->
-                <div class="hiddenContent11 centeredText paragraphStyle1" id="section12B">
-                    <div id="section12Bp3">
-                    My species probably won’t be here for much longer; it’s likely that we’ll die before our time and join the Great Silence. But before we go, we are sending a message to humanity. We just hope the telescope at Arecibo will enable them to hear it.
-                    <br>
-                    The message is this:  
-                    </div>
-
-                    <div id="section12Bp5">
-                    You be good. I love you.   
-                    </div>
-                    <div class="centeredText" id="section12Bp5Image">
-                    message image
-                    </div>
-                </div>
-
-        </div>
-
-        <!-- layer to keep the section 2-3 parallax effect working -->
-        <div class="topLayer2 hiddenContent cursorNextWhite">
-        </div>
-
-
-  
+               
 
 
 
+            </div>
+
+
+        </div>        
+        
 
         <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
     
