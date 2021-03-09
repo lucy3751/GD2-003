@@ -11,7 +11,6 @@
     --roundedCornerBorderOutline:1.1px;
     --borderOutlineRooms: 5px;
     --borderOutlineRamp: 5px;
-    --backgroundColor: rgb(9,2,64);
 
     /* COLOURS */
     --orange:#f6892f;
@@ -22,6 +21,14 @@
     --indigo:#052f45;
     --grey:#3e5960;
     --white:white;
+
+    /* background colors */
+    --blue1:rgb(100,188,214);
+    --blue2: rgb(1,85,146);
+    --blue3: rgb(9, 2, 64);
+    --green: rgb(4,132,68);
+    --green2: rgb(125, 175, 18);
+
 }
 
 /* BROWSER PROPERTIES RESET */
@@ -32,12 +39,14 @@
 }
 
 body{
-    background:rgb(9, 2, 64);
+    background:var(--green);
+    background: linear-gradient(0deg, var(--green2) 0%, var(--green));
     color: black;
     text-align: center;
     font-size: 14px;
     font-family: 'IBM Plex Mono', 'Space Mono', 'Courier New', Courier, monospace;  
 }
+
 
 
 /* remove the black border that shows up when clicking the button */
@@ -47,6 +56,19 @@ button{
 }
 
 
+/* #bigContainer{
+    overflow-x:hidden;
+} */
+
+
+/* #start{
+    background: purple;
+    width: 85vw;
+    height: 5vw;
+    position: absolute;
+    left: 212%;
+    bottom: -150%;
+} */
 
 
 /* BIG PARENT FOR FLEXBOXES */
@@ -437,6 +459,10 @@ https://codepen.io/MarioDesigns/pen/woJgeo
 
 ADD A CLICKABLE LINK TO AN IMAGE
 https://www.w3schools.com/tags/tryit.asp?filename=tryhtml_link_image
+
+CSS GRADIENT
+https://cssgradient.io/
+
 
 */
 

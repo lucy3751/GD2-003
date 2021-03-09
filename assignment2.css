@@ -6,13 +6,11 @@
 
 /* DECLARING VARIABLES */
 :root{
-    --borderOutline: 1.3px;
-    --borderOutlineCockpit: calc(1.5*var(--borderOutline));
-    --roundedCornerBorderOutline:1.1px;
-    --borderOutlineRooms: 5px;
-    --borderOutlineRamp: 5px;
-    --backgroundColor: rgb(9,2,64);
-    --transparentBlue: rgba(78,198,224,0);
+    --borderOutline: 0.1vw;
+    --borderOutlineCockpit: 0.125vw;
+    /* --roundedCornerBorderOutline:1.1px; */
+    --borderOutlineRooms: 0.5vw;
+    --borderOutlineRamp: 0.5vw;
 
     /* COLOURS */
     --orange:#f6892f;
@@ -23,6 +21,15 @@
     --indigo:#052f45;
     --grey:#3e5960;
     --white:white;
+    --transparentBlue: rgba(78,198,224,0);
+
+    /* background colors */
+    --blue1:rgb(100,188,214);
+    --blue2: rgb(1,85,146);
+    --blue3: rgb(9, 2, 64);
+    --green: rgb(4,132,68);
+
+
 }
 
 /* BROWSER PROPERTIES RESET */
@@ -32,14 +39,37 @@
     padding:0;
 }
 
+
+
 body{
-    background:rgb(9, 2, 64);
+    background-color: var(--green);
     color: black;
     text-align: center;
     font-size: 14px;
     padding-top:1.6vw;
     font-family: 'IBM Plex Mono', 'Space Mono', 'Courier New', Courier, monospace;  
+
 }
+
+@keyframes fly{
+    0%{
+        background-color: var(--green);
+        
+    }
+    50%{
+        background-color: var(--blue1);
+    }
+    100%{
+        background-color: var(--blue3);
+
+    }
+}
+
+body.active{
+    animation: fly 3s ease-in-out;
+    animation-fill-mode: forwards; 
+}
+
 
 
 
@@ -53,10 +83,13 @@ button{
 .bigContainer{
     width:110vw;
     height:200vh;
-    overflow-x: hidden;
-    overflow-y: hidden;
-}
 
+    /* the background drawings falls apart when this is on*/
+    /* overflow-x: hidden; */
+
+    /* library container lags when this is on */
+    /* overflow-y: hidden; */
+}
 
 /* BIG PARENT FOR FLEXBOXES */
 .sittingVertical{
@@ -282,7 +315,15 @@ button{
     flex-direction: row;
     position:relative;
     z-index:-1;
+
+    opacity: 0;
+    transition: ease-in-out 3s;
+}   
+
+.hallwayHorizontal.active{
+opacity: 100;
 }
+
 
 
 
@@ -435,8 +476,8 @@ button{
 
 .hallwayHorizontalWindowBottomMask{
     /* background-color: var(--indigo); */
-    background-color: var(--backgroundColor);
-    border-top: 1px solid var(--backgroundColor);
+    background-color: var(--green);
+    border-top: 1px solid var(--green);
     border-left: var(--borderOutline) solid black;
     border-right: var(--borderOutline) solid black;
     border-bottom: var(--borderOutline) solid black;
@@ -447,6 +488,28 @@ button{
     top:calc(0px - var(--borderOutline));
     /* skew the rectangle into a trapezoid */
     transform: perspective(70px) rotateX(-20deg);
+}
+
+@keyframes flyMask{
+    0%{
+        background-color: var(--green);
+        border-top: var(--green);
+        
+    }
+    50%{
+        background-color: var(--blue1);
+        border-top: var(--blue1);
+    }
+    100%{
+        background-color: var(--blue3);
+        border-top: var(--blue3);
+
+    }
+}
+
+.hallwayHorizontalWindowBottomMask.active{
+    animation: flyMask 3s ease-in-out;
+    animation-fill-mode: forwards; 
 }
 
 
@@ -654,7 +717,7 @@ button{
     z-index:-1;
 }
 /* adjustment for left hallway pillars since the borders won't show up */
-.hallwayHorizontal.hallwayHorizontalLeft .pillarContainer.pillar1 .pillarTrapezoidBorder{
+/* .hallwayHorizontal.hallwayHorizontalLeft .pillarContainer.pillar1 .pillarTrapezoidBorder{
     left: calc(1*var(--borderOutline)/2);
 }
 
@@ -666,7 +729,11 @@ button{
 .hallwayHorizontal.hallwayHorizontalLeft .pillarContainer.pillar3 .pillarTrapezoidBorder{
     left: calc(0.1*var(--borderOutline));
     width: calc(100% + var(--borderOutline)/2);
-}
+} */
+
+
+
+
 
 .pillarTrapezoid{
     border-bottom:10.5vw solid var(--white);
@@ -696,15 +763,15 @@ button{
 .pillarTrapezoidLineRectangle{
     border-top:var(--borderOutline)solid black;
     height:4.8033%;
-    width:70.253%;
+    width:70%;
     position:absolute;
     bottom:16.9146%;
-    left:14.7777%;
+    left:15%;
     z-index: 1;
 }
 
 /* left hallway pillars adjustment */
-.hallwayHorizontal.hallwayHorizontalLeft .pillarContainer.pillar3 .pillarTrapezoidLineRectangle{
+/* .hallwayHorizontal.hallwayHorizontalLeft .pillarContainer.pillar3 .pillarTrapezoidLineRectangle{
     width:70.355%;
 }
 
@@ -714,7 +781,7 @@ button{
 
 .hallwayHorizontal.hallwayHorizontalLeft .pillarContainer.pillar4 .pillarTrapezoidLineRectangle{
     left: calc(14*var(--borderOutline));
-}
+} */
 
 
 
@@ -734,7 +801,7 @@ button{
     border-left:var(--borderOutline)solid black;
     height:29.7047%;
     position:absolute;
-    bottom:9.41815%;
+    bottom:9.2%;
     left:49.9872%;
     z-index: 3;
 }
@@ -770,6 +837,13 @@ button{
     height: 100%;
     position:relative;
     overflow:hidden;
+
+    opacity: 0;
+    transition: ease-in-out 3s;
+}
+
+#library.active{
+    opacity: 100;
 }
 
 /* library room - image */
@@ -1120,7 +1194,22 @@ br{
     color:var(--white);
     position:relative;
     overflow: hidden;
+
+    opacity: 0;
+    transition: ease-in-out 3s;
+}   
+
+#cockpit.active{
+opacity: 100;
 }
+
+
+
+
+
+
+
+
 
 /* ///// COCKPIT - NEXT DESTINATION PANEL //////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////*/
@@ -1223,8 +1312,42 @@ br{
 }
 
 #nextDestinationSlider img{
+    /* background-color: purple; */
     width: 100%;
-    height: 100%;
+    height: 80%;
+}
+
+.planetBlur{
+    position: absolute;
+    top:50%;
+    transform: translateY(-50%);
+    left:0;
+    z-index:1;
+
+}
+
+.planetImage{
+    position:absolute;
+    top:50%;
+    transform: translateY(-50%);
+    left:0;
+    z-index:2;
+}
+
+.planetTextDistance{
+    width: 100%;
+    position:absolute;
+    bottom:0%;
+    transform: translateX(-50%);
+    left:50%;
+}
+
+.planetText{
+    width: 100%;
+    position:absolute;
+    top:0%;
+    transform: translateX(-50%);
+    left:50%;
 }
 
 .sliderContent{
@@ -1232,6 +1355,7 @@ br{
     height:16vw;
     /* set the slider content to display as side by side blocks (rows), instead of columns */
     display:inline-block;
+    position:relative;
 
     /* background-color: darkcyan; */
     margin: 0.3vw 4vw;
@@ -2126,6 +2250,534 @@ br{
     z-index: 3;
 }
 
+/*//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+ */
+
+
+
+
+
+
+
+
+/*//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////// BACKGROUND SPACE DRAWINGS /////////////////////////////////////////////////////////////////////////////////////////////////////
+ */
+
+ .backgroundDrawings{
+    opacity: 0;
+    transition: ease-in-out 3s;
+    transition-delay: 2s;
+    z-index:-2;
+    /* height:200vh; */
+}
+
+
+ .backgroundDrawings.active{
+    opacity: 100;
+ }
+
+
+ .backgroundDrawings img{
+    width:100%;
+    height:100%;
+}
+
+
+/* glow animation */
+@keyframes glowStyle1{
+    0%{
+        filter:blur(5px);
+        
+    }
+    50%{
+        filter:blur(30px);
+    }
+    100%{
+        filter:blur(5px);
+
+    }
+}
+
+@keyframes glowStyle2{
+    0%{
+        filter:blur(5px);
+        
+    }
+    50%{
+        filter:blur(10px);
+    }
+    100%{
+        filter:blur(5px);
+
+    }
+}
+
+@keyframes glowStyle3{
+    0%{
+        filter:blur(1px);
+        
+    }
+    50%{
+        filter:blur(5px);
+    }
+    100%{
+        filter:blur(1px);
+
+    }
+}
+
+
+
+/* blur styles */
+.blurStyle1{
+    animation: glowStyle1 5s ease-in-out infinite;
+}
+
+
+.blurStyle2{
+    animation: glowStyle2 5s ease-in-out infinite;
+}
+
+
+.blurStyle3{
+    animation: glowStyle2 5s ease-in-out infinite;
+}
+
+
+
+
+
+
+/* //////////////// */
+/* welcome room */
+.bg-library1{
+    /* background-color: purple; */
+    width: 15vw;
+    height: 15vw;
+    position:absolute;
+    top:10%;
+    left: 30%;
+}
+
+
+.bg-library2{
+    background:var(--red);
+    border-radius: 100%;
+    width: 2vw;
+    height: 2vw;
+    position: absolute;
+    top: 10%;
+    left: 60%;
+}
+
+
+.bg-hallway-l-2{
+    /* background-color: purple; */
+    width: 10vw;
+    height: 10vw;
+    position:absolute;
+    top:20%;
+    left: 120%;
+    z-index:-1;
+}
+
+
+/* //////////////// */
+/* left hallway */
+.bg-hallway-l-1{
+    /* background-color: purple; */
+    width: 25vw;
+    height: 25vw;
+    position:absolute;
+    top:10%;
+    left: 195%;
+    z-index:-1;
+}
+
+/* //////////////// */
+/* right hallway */
+.bg-hallway-r-1{
+    /* background-color: purple; */
+    width: 7vw;
+    height: 7vw;
+    position:absolute;
+    top:20%;
+    left: 320%;
+    z-index:-1;
+}
+
+@keyframes astroidMove{
+    0%{
+        position:absolute;
+        left: 350%;
+        top:40%;
+        transform: rotate(0deg);
+
+        
+    }
+    50%{
+        position:absolute;
+        left: 420%;
+        top:35%;
+        transform: rotate(90deg);
+    }
+    100%{
+        position:absolute;
+        left: 350%;
+        top:40%;
+        transform: rotate(0deg);
+    }
+}
+
+
+.bg-hallway-r-2-astroid{
+    width: 5vw;
+    height: 5vw;
+    z-index:-1;
+    position:absolute;
+    top:40%;
+    left: 320%;
+    animation: astroidMove 20s ease-in-out infinite;
+}
+
+
+
+/* //////////////// */
+/* cockpit */
+.bg-cockpit-1{
+    /* background-color: purple; */
+    width: 25vw;
+    height: 25vw;
+    position:absolute;
+    top:15%;
+    left: 400%;
+    z-index:-2;
+}
+
+
+.bg-cockpit-2-planet{
+    /* background-color: purple; */
+    width: 10vw;
+    height: 10vw;
+    position:absolute;
+    top:12%;
+    left: 480%;
+    z-index:-1;
+}
+
+
+/* //////////////// */
+/* stars */
+.star1{
+    background-color: var(--white);
+    border-radius: 100%;
+    width: 0.5vw;
+    height: 0.5vw;
+    z-index:-1;
+}
+
+.star2{
+    background-color: var(--white);
+    border-radius: 100%;
+    width: 0.25vw;
+    height: 0.25vw;
+    z-index:-1;
+}
+
+.star3{
+    background-color: var(--white);
+    border-radius: 100%;
+    width: 0.2vw;
+    height: 0.2vw;
+    z-index:-1;
+}
+
+
+
+/* library */
+.star1.bg-library{
+    position:absolute;
+    top:25%;
+    left: 64%;
+}
+
+.star2.bg-library{
+    position:absolute;
+    top:30%;
+    left: 65%;
+}
+
+.star3.bg-library{
+    position:absolute;
+    top:50%;
+    left: 56%;
+}
+
+.star3.bg-library-1{
+    position: absolute;
+    top: 10%;
+    left: 75%;
+}
+
+
+/* left hallway */
+.star1.bg-hallway{
+    position:absolute;
+    top:45%;
+    left: 154%;
+}
+
+.star1.bg-hallway-1{
+    position: absolute;
+    top: 34%;
+    left: 185%;
+}
+
+.star1.bg-hallway-2{
+    position: absolute;
+    top: 54%;
+    left: 217%;
+}
+
+.star2.bg-hallway{
+    position:absolute;
+    top:48%;
+    left: 156%;
+}
+
+.star2.bg-hallway-1{
+    position: absolute;
+    top: 25%;
+    left: 194%;
+}
+
+.star2.bg-hallway-2{
+    position: absolute;
+    top: 51%;
+    left: 129%;
+}
+
+.star2.bg-hallway-3{
+    position: absolute;
+    top: 63%;
+    left: 211%;
+}
+
+
+.star3.bg-hallway{
+    position:absolute;
+    top:30%;
+    left: 160%;
+}
+
+.star3.bg-hallway-2{
+    position: absolute;
+    top: 36%;
+    left: 114%;
+}
+
+.star3.bg-hallway-3{
+    position: absolute;
+    top: 46%;
+    left: 190%;
+}
+
+.star3.bg-hallway-4{
+    position: absolute;
+    top: 75%;
+    left: 214%;
+}
+
+
+/* right hallway */
+.star1.bg-hallway-r{
+    position: absolute;
+    top: 74%;
+    left: 294%;
+}
+
+.star1.bg-hallway-r-1{
+    position: absolute;
+    top: 19%;
+    left: 287%;
+}
+
+.star1.bg-hallway-r-2{
+    position: absolute;
+    top: 34%;
+    left: 314%;
+}
+
+.star1.bg-hallway-r-3{
+    position: absolute;
+    top: 24%;
+    left: 390%;
+}
+
+.star2.bg-hallway-r{
+    position: absolute;
+    top: 64%;
+    left: 290%;
+}
+
+.star2.bg-hallway-r-1{
+    position: absolute;
+    top: 51%;
+    left: 320%;
+}
+
+.star2.bg-hallway-r-2{
+    position: absolute;
+    top: 51%;
+    left: 350%;
+}
+
+.star2.bg-hallway-r-3{
+    position: absolute;
+    top: 31%;
+    left: 357%;
+}
+
+.star2.bg-hallway-r-4{
+    position: absolute;
+    top: 37%;
+    left: 340%;
+}
+
+.star2.bg-hallway-r-5{
+    position: absolute;
+    top: 36%;
+    left: 380%;
+}
+
+.star2.bg-hallway-r-6{ 
+    position: absolute;
+    top: 46%;
+    left: 396%;
+}
+
+
+
+
+.star3.bg-hallway-r{
+    position: absolute;
+    top: 33%;
+    left: 297%;
+}
+
+.star3.bg-hallway-r-1{
+    position: absolute;
+    top: 22%;
+    left: 290%;
+}
+
+.star3.bg-hallway-r-2{
+    position: absolute;
+    top: 42%;
+    left: 322%;
+}
+
+.star3.bg-hallway-r-3{
+    position: absolute;
+    top: 50%;
+    left: 394%;
+}
+
+
+
+
+/* cockpit */
+.star1.bg-cockpit{
+    position: absolute;
+    top: 8%;
+    left: 418%;
+}
+
+.star1.bg-cockpit-1{
+    position: absolute;
+    top: 76%;
+    left: 407%;
+}
+
+.star1.bg-cockpit-2{
+    position: absolute;
+    top: 77%;
+    left: 498%;
+}
+
+.star1.bg-cockpit-3{
+    position: absolute;
+    top: 50%;
+    left: 487%;
+}
+
+.star1.bg-cockpit-4{
+    position: absolute;
+    top: 24%;
+    left: 467%;
+}
+
+
+
+
+
+
+.star2.bg-cockpit{
+    position: absolute;
+    top: 47%;
+    left: 490%;
+}
+
+
+.star2.bg-cockpit-2{
+    position: absolute;
+    top: 80%;
+    left: 406%;
+}
+
+
+
+.star3.bg-cockpit{
+    position: absolute;
+    top: 63%;
+    left: 426%
+}
+
+.star3.bg-cockpit-1{
+    position: absolute;
+    top: 50%;
+    left: 441%
+}
+
+.star3.bg-cockpit-2{
+    position: absolute;
+    top: 76%;
+    left: 497%
+}
+
+.star3.bg-cockpit-3{
+    position: absolute;
+    top: 76%;
+    left: 497%
+}
+
+.star3.bg-cockpit-4{
+    position: absolute;
+    top: 47%;
+    left: 464%;
+}
+
+
+
+
+
+
+
+
 
 
 
@@ -2133,10 +2785,9 @@ br{
 
 /* ////////////////////
 ////////LAB/////////// */
-#lab{
+/* #lab{
     background-color: rgb(230, 233, 57);
     width: 20%;
-    /* height: 100%; */
     flex: 1;
 }
 
@@ -2148,11 +2799,7 @@ br{
     position:absolute;
         left:50%;
         top:50%;
-    transform: translate(-50%,-50%); /*this is to pull the rectangle back to the center. Position is based on the top left corner of the rectangle*/
-    
-   
-
-}
+    transform: translate(-50%,-50%);  */
 
 
 
@@ -2253,6 +2900,9 @@ https://codepen.io/MarioDesigns/pen/woJgeo
 
 ADD A CLICKABLE LINK TO AN IMAGE
 https://www.w3schools.com/tags/tryit.asp?filename=tryhtml_link_image
+
+IMAGE OPACITY
+https://www.w3schools.com/css/css_image_transparency.asp
 
 */
 

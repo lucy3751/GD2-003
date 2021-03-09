@@ -13,6 +13,16 @@ $(document).ready(function(){
         //swap screen to information 2 group
         $("#welcomeRoomInformation1").css("display","none")
         $("#welcomeRoomInformation2").css("display","block");
+
+        //change background
+        $(document.body).addClass("active");
+        $(".hallwayHorizontalWindowBottomMask").addClass("active");
+        $(".backgroundDrawings").addClass("active");
+
+        //reveal the other rooms
+        $("#library").addClass("active");
+        $(".hallwayHorizontal").addClass("active");
+        $("#cockpit").addClass("active");
     
         //count down
         countDown();

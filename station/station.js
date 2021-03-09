@@ -9,6 +9,10 @@
             var ctx;
             var w;
             var h;
+            var animationFrame; //variable to hold the requestAnimationFrame from the animation function (in order to stop it)
+            var circlesTimeCalled = false;//boolean for the circlesTime function conditionals
+
+      
         
 
             var allCircles=[];
@@ -44,9 +48,12 @@
             window.addEventListener("resize", resizeCanvas, false);
 
             function resizeCanvas() {
+                console.log(circlesTimeCalled);
+
+
                     canvas.width = w = window.innerWidth;
                     canvas.height = h = window.innerHeight;
-                    canvas.style.border="5px dotted var(--beige)" //this actually takes values from the linked stylesheet!
+                    canvas.style.border="0px dotted var(--beige)" //this actually takes values from the linked stylesheet!
                 
                     //objects for testing
                     var circle1={
@@ -69,10 +76,11 @@
                         "angleChange":90
                     } 
 
-                    //PLATFORMS
 
+                    //PLATFORMS
                     var platformDarkRed={
-                        "x": w/2/2,
+                        // "x": w/2/2,
+                        "x": w/12/2,
                         "y": w/12/2,
                         "width": w/12,
                         "radius":w/12/2,
@@ -90,7 +98,8 @@
                     }
         
                     var platformGreen={
-                        "x": w-(w/2/2),
+                        // "x": w-(w/2/2),
+                        "x": w-(w/12/2),
                         "y": w/12/2,
                         "width":w/12,
                         "radius":w/12/2,
@@ -108,7 +117,8 @@
                     }
         
                     var platformCyan={
-                        "x": w-w/2/2,
+                        // "x": w-w/2/2,
+                        "x": w-(w/12/2),
                         "y": h-(w/12/2),
                         "width":w/12,
                         "radius":w/12/2,
@@ -124,8 +134,10 @@
                         "height": w/12,
                         "color":"#79461D"
                     }
+
                     var platformLightRed={
-                        "x": w/2/2,
+                        // "x": w/2/2,
+                        "x": w/12/2,
                         "y": h-(w/12/2),
                         "width":w/12,
                         "radius":w/12/2,
@@ -146,70 +158,65 @@
                     
                    var allPlatforms=[platformDarkRed,platformOrange,platformGreen,platformIndigo,platformCyan,platformBrown,platformLightRed,platformGrey];
 
-                   
-                    
-                    document.querySelector("#myCanvas").onclick=click;
-                    
-                    
-
-                    // console.log(w,h);
-
-                    //  put drawings inside this function to prevent it from getting cleared once browser window changes
-                    // drawStuff(); 
+                     // console.log(w,h);
 
 
+
+/////////// PUT DRAWINGS HERE TO PREVENT FROM GETTING CLEARED WHEN BROWSWER WINDOW RESIES ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                                     
                     
 
-                    animation();
-
-                    
-
+                
+                    //CALLING FUNCTIONS
+                    document.querySelector("#myCanvas").onclick=click;                   
+                    circlesTime();
+                    pauseStartAnimation();
+                
                     //circle(circle1);
                     // circle2(w/2,h/2,50,"blue");
                     
 
                    
+                    
+                    
+                  
 
-                    // console.log(w,h);
-
-
-                    function animation(){
-                        
-
+                    //FUNCTIONS THAT USES OBJECTS ONLY IN AVILABLE IN THIS SCOPE
+                    function animation(){                       
+                                             
                         clearCanvas();
-                        
-                        
                         drawPlatforms();
+                        showCurrentTime();
+                        audioVolumeIncrease(); 
 
-                        
-                        
-                        
+                        // ANIMATION OF THE CIRCLES 
                         for(var i=0;i<allCircles.length;i++){
 
+                            currentX=allCircles[i].x;
+                            currentY=allCircles[i].y;
+                   
                             circle(allCircles[i]);
                             forward(allCircles[i]);
+                         
+
                             bounce(allCircles[i],Math.random()*45+180);
                             collisionTestArray(allCircles[i],allCircles);
-                            // collisionTestArray(allCircles[i],allPlatforms);
-                            
+                                       
                       
-                            
-                            for (var p=0; p<allPlatforms.length && allCircles[i] !== undefined;p++){
+                            //ANIMATION FOR THE CIRCLES AND PLATFORM 
+                            for (var p=0; p<allPlatforms.length && 
+                                allCircles[i] !== undefined;p++){ //to prevent the for loop for using the spliced index from allCircles array
                                 // console.log("i:",i,"p:",p)
                                 // console.log("allCircles:",allCircles);
                                 collisionCirclePlatform(allCircles[i],allPlatforms[p]);
                                 collision(allCircles[i],allPlatforms[p]);
                             }
-                                               
-                            
+ 
                         }
-                        
-
-
-                        
-
-
-
+    
+                        //TEST ANIMATIONS
                         // circle(circle1);
                         // // circle(circle2);
                         // forward(circle1);
@@ -220,12 +227,23 @@
                         // collision(circle1,circle2);
                         
                     
-                        requestAnimationFrame(animation);
+                        animationFrame = requestAnimationFrame(animation);
+                        
                     }
 
 
+                    /*///FUNCTION TO PREVENT SHAPES FROM SPEEDING UP WHEN BROWSWER WINDOW GETS RESIZED
+                    when browswer window gets resized, the animation function 
+                    gets called again, which causes the shapes to speed up*/
+                    function pauseStartAnimation(){
+                        window.cancelAnimationFrame(animationFrame);//"pauses" the animation (with the circles' object values (which are changed by the animation) still stored)
+                        clearCanvas();//clears the canvas
+                        animation();//plays the animation again
+                    }
 
 
+                  
+                    ///DRAW THE PLATFORMS
                     function drawPlatforms(){
                         rectangle(platformDarkRed);
                         rectangle(platformOrange);
@@ -243,31 +261,103 @@
             }
             resizeCanvas();
 
+          
+            
 
 
-            // function drawStuff() {
-            //         // do your drawing stuff here
-            // }
+/////////// DRAWING FUNCTIONS ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+            
 
 
-            // DRAWING FUNCTIONS
-
-
-             // /////////// INTERACTIVE FUNCTIONS  ///////////////
+            // /////////// INTERACTIVE FUNCTIONS  ///////////////
             //////////////////////////////////////////////////////
+
+
+            // CLICK FUNCTION
             function click(event){
                 addCircle(allCircles,event.offsetX,event.offsetY);//add a new circle based on the position of the cursor
                 
-                document.querySelector("#myAudio").play(); //play audio
-                audioVolumeIncrease();          
+                document.querySelector("#myAudio").play(); //play audio         
             }
 
 
+
+            ///SHOW CURRENT TIME ON THE CENTER OF THE PAGE
+            function showCurrentTime(){
+                var t= new Date();
+                
+                var hours = t.getHours();
+                var minutes = t.getMinutes();
+                var seconds = t.getSeconds();
+         
+                //add 0 for single digit numbers
+                var hoursString = ("0" + hours). slice(-2); //slice -2 takes the last two digits of the string
+                var minutesString = ("0" + minutes). slice(-2);
+                var secondsString = ("0" + seconds). slice(-2);
+
+
+                document.querySelector("#showTime").innerHTML = (hoursString + ":" + minutesString + ":" + secondsString);               
+               
+            }
+
+
+           
+
+            //NUMBER OF INITIAL CIRCLES BASED ON THE CURRENT TIME
+            function circlesTime(){
+
+            if (circlesTimeCalled == false){  //to prevent the function getting called when resizing the browser window  
+                var date = new Date();
+                var time = date.getHours();
+
+                if( time>=7 && time <= 22){//if time is in the 7-22 range
+              
+                // console.log("current time:", time);
+
+                    if( time>=7 && time<=10 || time>=17 && time<=18){   // -7-10am rush hour, // -5-6pm rush hour
+                        
+                        for(var i=0;i<40;i++){
+                            addCircle(allCircles,Math.floor(Math.random()*w),Math.floor(Math.random()*h));
+                        }
+                        
+                        console.log ("rush hour");
+                        
+                    }else if(time>=11 && time<=13){ // -11-1pm lunch
+                    
+                        for(var i=0;i<20;i++){
+                            addCircle(allCircles,Math.floor(Math.random()*w),Math.floor(Math.random()*h));
+                        }
+
+                        console.log("lunch");
+
+                    }else if( 14<=time<=16 || 19<=time<=22){  // -2-4pm silent, // -7-10pm silent?
+                        
+                        for(var i=0;i<5;i++){
+                            addCircle(allCircles,Math.floor(Math.random()*w),Math.floor(Math.random()*h));
+                        }
+                        
+                        console.log("silent");
+
+                    }
+
+                }
+                circlesTimeCalled = true;
+            }
+        }
+
+
+
+
+
+
+
+            ///AUDIO VOLUME BASED ON THE NUMBER OF CIRCLES
             function audioVolumeIncrease(){
                 var sound = document.querySelector("#myAudio");
                
-                console.log(allCircles.length);
-
                 //volume takes in value from 0-1 (percentages)
                 sound.volume = 0; //start audio at silence
                 
@@ -281,13 +371,13 @@
                     sound.volume=1;
                 }              
 
-                console.log("audio is playing at " + sound.volume + " volume");
+                // console.log("audio is playing at " + sound.volume + " volume");
 
             }
 
 
 
-
+         
             
 
             // /////////// GENERATE SHAPE FUNCTIONS  ///////////////
@@ -305,7 +395,7 @@
                     // "angle": 180,
                     "angleChange":90
                 })
-                
+                // console.log(allCircles.length);
             }
             
 
@@ -315,31 +405,11 @@
 
             // /////////// DRAWING FUNCTIONS  ///////////////
             /////////////////////////////////////////////////
-            function drawPlatformsImage(){
-                
-                image(50,h/2,100,100,"./images/rocket.svg");
-                image(w/2,50,100,100,"./images/rocket.svg");
-                image(w-50,h/2,100,100,"./images/rocket.svg");
-                image(w/2,h-50,100,100,"./images/rocket.svg");
-            }
-            
+        
 
-            //PLATFORMS
-            function image(x,y,width,height,source){
-                var x;
-                var y;
-                var width;
-                var height;
-                var source;
-
-                var img=new Image();
-                img.src=source;//("./images/rocket.svg")
-                img.onload=function(){
-                    ctx.drawImage(img,x-width/2,y-height/2,width,height);
-                    //(img, x-coordinate, y-coordinate, width, height)
-                    //coordinates based on top left corner
-                    }
-
+             //CLEAR CANVAS FOR ANIMATION
+             function clearCanvas(){
+                ctx.clearRect(0,0,w,h);
             }
 
 
@@ -361,7 +431,7 @@
             ctx.fill();
             }
 
-            
+                    
            
             //CIRCLE (TESTING)
             function circle2(x,y,r,color){   
@@ -384,10 +454,7 @@
             }
 
             
-            //cCLEAR CANVAS FOR ANIMATION
-            function clearCanvas(){
-                ctx.clearRect(0,0,w,h);
-            }
+           
            
 
 
@@ -404,6 +471,7 @@
             function forward(object,newDistance){
                 var changeX;
                 var changeY;
+
                 var oneDegree = 2*Math.PI/360; //angle is in radians, hence have to convert to degrees
 
                 //if the distance in parameter is undefined, use the distance from the object
@@ -416,6 +484,7 @@
                
                 object.x = object.x + changeX
                 object.y+=changeY
+               
             }
 
 
@@ -435,7 +504,7 @@
 
 
 
-               // /////////// COLLISION FUNCTIONS ///////////////
+            // /////////// COLLISION FUNCTIONS ///////////////
             /////////////////////////////////////////////////
 
 
@@ -465,6 +534,8 @@
                  
             }
 
+
+
             /* TESTING THE COLLISION OF THE CIRCLES IN THE ARRAY 
                 if the specific circle does not equal to all the circles in the array, then there is collision b/w them */
             function collisionTestArray(object,array){
@@ -481,9 +552,6 @@
 
                      
               
-            
-
-
             /*COLLISION B/W TWO OBJECTS - 
             */
            function collision (object1, object2){
@@ -541,30 +609,7 @@
                 }
             }
         
-            
-
-            
-           
-
-            
-
-            
-
-            
-
-            
-
-
-
-
-
-
-
-
-
-
-
-            
+  
         })();
 
 
@@ -583,7 +628,7 @@
 console.log("station");
 
 
-//SOURCE
+//////////// SOURCE //////////////////////
 
 //make html canvas full size
 //https://stackoverflow.com/questions/4288253/html5-canvas-100-width-height-of-viewport
@@ -594,3 +639,8 @@ console.log("station");
 
 //change volume of html audio
 //https://www.w3schools.com/tags/av_prop_volume.asp
+
+//get the current time
+//https://stackoverflow.com/questions/10599148/how-do-i-get-the-current-time-only-in-javascript
+//https://stackoverflow.com/questions/18229022/how-to-show-current-time-in-javascript-in-the-format-hhmmss/18229149
+//https://stackoverflow.com/questions/3605214/javascript-add-leading-zeroes-to-date
