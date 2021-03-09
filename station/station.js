@@ -48,7 +48,7 @@
             window.addEventListener("resize", resizeCanvas, false);
 
             function resizeCanvas() {
-                console.log(circlesTimeCalled);
+                // console.log(circlesTimeCalled);
 
 
                     canvas.width = w = window.innerWidth;
@@ -184,12 +184,13 @@
                   
 
                     //FUNCTIONS THAT USES OBJECTS ONLY IN AVILABLE IN THIS SCOPE
-                    function animation(){                       
+                    function animation(){    
+                                           
                                              
                         clearCanvas();
                         drawPlatforms();
                         showCurrentTime();
-                        audioVolumeIncrease(); 
+                     
 
                         // ANIMATION OF THE CIRCLES 
                         for(var i=0;i<allCircles.length;i++){
@@ -280,7 +281,9 @@
             function click(event){
                 addCircle(allCircles,event.offsetX,event.offsetY);//add a new circle based on the position of the cursor
                 
-                document.querySelector("#myAudio").play(); //play audio         
+                document.querySelector("#myAudio").play(); //play audio  
+                
+                audioVolumeIncrease(); 
             }
 
 
@@ -371,7 +374,7 @@
                     sound.volume=1;
                 }              
 
-                // console.log("audio is playing at " + sound.volume + " volume");
+                console.log("audio is playing at " + sound.volume + " volume");
 
             }
 
